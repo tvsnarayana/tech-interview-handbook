@@ -10,3 +10,9 @@
 - How will the work I’ll be doing contribute to the organization’s mission?
 
 Source: [Business Insider](http://www.businessinsider.sg/impressive-job-interview-questions-2015-3/)
+
+### Ask This Question to End Your Job Interview on a Good Note
+
+- I was wondering what your best moment so far at (company name here) was?
+
+Source: [lifehacker](http://lifehacker.com/ask-this-question-to-end-your-job-interview-on-a-good-n-1787624433)
