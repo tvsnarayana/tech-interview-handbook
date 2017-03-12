@@ -1,9 +1,12 @@
+Questions to ask at the end of the interview
+==
+
 ### 8 most impressive questions you can ask in a job interview
 
 (2 omitted for lack of quality)
 
 - What can I help to clarify that would make hiring me an easy decision?
-- How do you see this position evolving in the next three years? 
+- How do you see this position evolving in the next three years?
 - What's the most frustrating part of working here?
 - Who's your ideal candidate and how can I make myself more like them?
 - What concerns/reservations do you have about me for this position?
