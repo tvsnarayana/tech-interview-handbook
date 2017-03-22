@@ -12,4 +12,3 @@ Interview Formats
 - Online coding test.
 - Technical phone screen (non-coding).
 - Onsite: 2 coding, 1 system design/architecture, 2 culture fit.
-
