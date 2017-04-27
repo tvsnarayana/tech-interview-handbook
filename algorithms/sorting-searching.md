@@ -1,4 +1,4 @@
-Sorting
+Sorting and Searching
 ==
 
 ## Airbnb
@@ -19,3 +19,7 @@ Sorting
 Example Output:
 [[0,4],[11,12],[16,23]]
 ~~~
+
+## Facebook
+
+- If you have 500 revisions of a program, write a program that will find and return the FIRST bad revision given a `isBad(revision i)` function.

@@ -28,6 +28,15 @@ Behavioural
 - In my professional experience have you worked on something without getting approval from your manager?
 - Tell me a situation where you would have done something differently from what you actually did.
 
+### Facebook
+
+- Why do you want to work for Facebook?
+- Why do you want to work on a front end position?
+- Tell me about a project you had and how you solved it?
+- Name a difficult challenge you faced while working on a project.
+- Tell me about a conflict you had at work and how you dealt with it?
+- Are you a designer or developer? You can't possibly be both. It's incomprehensible.
+
 ### Slack
 
 - Tell me something about your internship.
