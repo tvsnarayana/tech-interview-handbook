@@ -24,7 +24,7 @@ Behavioural
 - How do you deal with a failed deadline?
 - Use [STAR](https://www.wikiwand.com/en/Situation,_Task,_Action,_Result) format.
 - Why do you want to work for Amazon?
-- Talked about a situation where you had a conflict with my teammate.
+- Talked about a situation where you had a conflict with a teammate.
 - In my professional experience have you worked on something without getting approval from your manager?
 - Tell me a situation where you would have done something differently from what you actually did.
 
@@ -71,3 +71,13 @@ Behavioural
 - What are your most interesting subjects and why?
 - Did you find any bug in Slack?
 - What is your favorite feature and why?
+
+### Stack Overflow
+
+- What have you built?
+- What is the hardest technical problem you have run into?
+- How did you solve it?
+
+**Source**
+
+- https://stackoverflow.blog/2017/04/27/how-to-talk-about-yourself-in-an-interview/
