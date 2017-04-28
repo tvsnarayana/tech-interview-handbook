@@ -32,10 +32,16 @@ Behavioural
 
 - Why do you want to work for Facebook?
 - Why do you want to work on a front end position?
-- Tell me about a project you had and how you solved it?
-- Name a difficult challenge you faced while working on a project.
+- Tell me about a problem you had and how you solved it?
+- How do you tackle challenges? Name a difficult challenge you faced while working on a project.
 - Tell me about a conflict you had at work and how you dealt with it?
 - Are you a designer or developer? You can't possibly be both. It's incomprehensible.
+- What are you excited about?
+– Imagine it is your first day here at Facebook. What do you want to work on? What features would you improve on?
+– Why are you interested in Facebook? Know about our technical environment, projects, challenges, etc. and what would you passionate about working on!
+– What are the most interesting projects you have worked on and how might they be relevant to the Facebook environment?
+– What are some of the biggest professional challenges you have faced, and how did you overcome them?
+
 
 ### Slack
 

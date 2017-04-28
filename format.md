@@ -17,4 +17,4 @@ Interview Formats
 
 - Skype chat (with a couple of technical questions at the end).
 - 2 technical screening Skype / CoderPad interviews.
-- On-site: 1 behavioural, 2 technical coding interview, 1 design/architecture.
+- On-site: 1 behavioural (Jedi), 2 technical coding interview (Ninja), 1 design/architecture (Pirate).
