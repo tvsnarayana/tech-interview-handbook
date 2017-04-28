@@ -9,7 +9,7 @@ Interview Formats
 
 ### Grab
 
-- Online coding test.
+- Online coding test on Codility.
 - Technical phone screen (non-coding).
 - On-site: 2 coding, 1 system design/architecture, 2 culture fit.
 

@@ -42,6 +42,23 @@ Behavioural
 – What are the most interesting projects you have worked on and how might they be relevant to the Facebook environment?
 – What are some of the biggest professional challenges you have faced, and how did you overcome them?
 
+### Hired
+
+- Tell me about yourself.
+- What is your biggest strength and area of growth?
+- Why are you interested in this opportunity?
+- What are your salary expectations?
+- Why are you looking to leave your current company?
+- What is your biggest strength and area of growth?
+- Tell me about a time your work responsibilities got a little overwhelming. What did you do?
+- Give me an example of a time where you had a difference of opinion with a team member. How did you handle that?
+- Tell me about a challenge you faced recently in your role. How did you tackle it? What was the outcome?
+- Where do you want to be in five years?
+- Tell me about a time you needed information from someone who wasn’t responsive. What did you do?
+
+**Source**
+
+- https://hired.com/blog/candidates/10-top-interview-questions-how-to-answer/
 
 ### Slack
 
