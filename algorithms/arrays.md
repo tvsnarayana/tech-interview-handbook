@@ -15,3 +15,18 @@ Arrays
 
 - Flatten an array iteratively and recursively.
 - Given an input array and another array that describes a new index for each element, mutate the input array so that each element ends up in their new index. Discuss the runtime of the algorithm and how you can be sure there won't be any infinite loops.
+- Given an array of non-negative numbers, find continuous subarray with sum to S.
+  - http://blog.gainlo.co/index.php/2016/06/01/subarray-with-given-sum/
+- Determine if any 3 integers in an array sum to 0.
+  - http://blog.gainlo.co/index.php/2016/07/19/3sum/
+
+### Uber
+
+- Given an array of string, find duplicate elements.
+  - http://blog.gainlo.co/index.php/2016/05/10/duplicate-elements-of-an-array/
+- Given an array of integers, find a maximum sum of non-adjacent elements. For example, inputs [1, 0, 3, 9, 2] should return 10 (1 + 9).
+  - http://blog.gainlo.co/index.php/2016/12/02/uber-interview-question-maximum-sum-non-adjacent-elements/
+- Given an array of integers, modify the array by moving all the zeros to the end (right side). The order of other elements doesn’t matter. For example, `[1, 2, 0, 3, 0, 1, 2]`, the program can output `[1, 2, 3, 1, 2, 0, 0]`.
+  - http://blog.gainlo.co/index.php/2016/11/18/uber-interview-question-move-zeroes/
+- Given an array, return the length of the longest increasing contiguous subarray. For example, if the input is `[1, 3, 2, 3, 4, 8, 7, 9]`, the output should be 4 because the longest increasing array is `[2, 3, 4, 8]`.
+  - http://blog.gainlo.co/index.php/2017/02/02/uber-interview-questions-longest-increasing-subarray/
