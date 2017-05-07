@@ -8,7 +8,7 @@ discover corner cases you might have missed out or even point you to the optimal
 
 - Clarify about the question upon hearing it.
   - How is the dictionary stored?
-- Input validation
+- Input validation:
   - How big is the range of input values?
   - What kind of input is there? Are there negative numbers? Floating points?
   - Are there duplicates within the input?
@@ -16,7 +16,9 @@ discover corner cases you might have missed out or even point you to the optimal
   - Always validate input first. Check if the input is empty, positive, etc. Never assume you are given the valid params. Alternatively, ask interviewers for clarification, which can save you from unnecessary checkings.
 - Can the input be preprocessed to reduce lookup time?
 - Are there any time/space complexity requirements/constraints?
-- Check corner cases
+- Check corner cases:
+  - Check for off-by-1 errors.
+  - Check that concatenation of values are of same type: int/str/list.
   - After finishing your code, use a few example inputs to test your solution.
 
 ### Numbers
@@ -74,6 +76,10 @@ discover corner cases you might have missed out or even point you to the optimal
 - Recursion is common for trees. When you notice the subtree problem can be used to solve the whole problem, you should try recursion.
 - It's possible that your recursive function needs to return two values.
 - If the question involves summation of paths, be sure to check whether nodes can be negative.
+
+### Binary Trees
+
+- In-order traversal of a binary tree is insufficient to uniquely serialize a tree. Pre-order/post-order traversal is also required.
 
 ### Binary Search Trees
 
