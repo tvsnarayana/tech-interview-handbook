@@ -81,3 +81,9 @@ Behavioural
 **Source**
 
 - https://stackoverflow.blog/2017/04/27/how-to-talk-about-yourself-in-an-interview/
+
+### General
+
+- What project are you currently working on?
+- What is the most challenging aspect of your current project?
+- What was the most difficult bug that you fixed in the past 6 months?
