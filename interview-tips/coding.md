@@ -27,6 +27,18 @@ discover corner cases you might have missed out or even point you to the optimal
 - Check for and handle overflow/underflow.
 - Handle negative numbers.
 
+### Math
+
+- Sum of 1 to N = (n+1) * n/2
+- Sum of GP = 2^0 + 2^1 + 2^2 + 2^3 + ... 2^n = 2^(n+1) - 1
+- Permutations of N = N! / (N-K)!
+- Combinations of N = N! / (K! * (N-K)!)
+
+### Binary
+
+- To check if a number is a power of 2, `n & n-1 == 0`.
+- Use the XOR operator `^` to flip bits. Usually combined with `1 << k` to shift the k-th bit: `num ^ (1 << k)`.
+
 ### Arrays
 
 - Corner cases:
@@ -48,6 +60,18 @@ discover corner cases you might have missed out or even point you to the optimal
 - Common string algorithms:
   - [KMP](https://www.wikiwand.com/en/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm) for efficient searching of substring
   - [Rabin Karp](https://www.wikiwand.com/en/Rabin%E2%80%93Karp_algorithm) rolling hash
+
+**Non-repeating Chars**
+
+- Use a 26-bit bitmask to indicate which lowercase latin characters are inside the string.
+
+~~~
+mask = 0
+for c in set(word):
+  mask |= (1 << (ord(c) - ord('a')))
+~~~
+
+- To determine if two strings have common characters, perform & and the two bitmasks and if the result is non-zero, the two strings do have common characters. `mask_a & mask_b > 0`
 
 **Anagrams**
 
@@ -85,6 +109,13 @@ discover corner cases you might have missed out or even point you to the optimal
 
 - In-order traversal will give you all elements in order.
 
-### Linked List
+### Linked Lists
 
-- Linked list problem sometimes can be solved without external storage. Try to borrow ideas from reverse a linked link problem.
+- Sometimes a dummy node at the head and/or tail can help to handle many edge cases. Be sure to remember to remove them at the end.
+- Linked lists problem sometimes can be solved without external storage. Try to borrow ideas from reverse a linked link problem.
+- For deletion in linked lists, you can either modify the node values or change the node pointers. You might need to keep a reference to the previous element.
+- For partioning linked lists, create two separate linked lists and join them back together.
+- Linked lists problems share similarity with array problems, think about how you would do it for an array and try to apply it to a linked list.
+- Two pointer approaches are common:
+  - One pointer is k nodes ahead of the other to get the kth from last of the list.
+  - One pointer increments twice as much as the other to get the middle of the list.
