@@ -111,10 +111,10 @@ for c in set(word):
 
 ### Linked Lists
 
-- Sometimes a dummy node at the head and/or tail can help to handle many edge cases. Be sure to remember to remove them at the end.
-- Linked lists problem sometimes can be solved without external storage. Try to borrow ideas from reverse a linked link problem.
+- A dummy node at the head and/or tail might help to handle many edge cases. Be sure to remember to remove them at the end.
+- Sometimes linked lists problem can be solved without external storage. Try to borrow ideas from reverse a linked link problem.
 - For deletion in linked lists, you can either modify the node values or change the node pointers. You might need to keep a reference to the previous element.
-- For partioning linked lists, create two separate linked lists and join them back together.
+- For partitioning linked lists, create two separate linked lists and join them back together.
 - Linked lists problems share similarity with array problems, think about how you would do it for an array and try to apply it to a linked list.
 - Two pointer approaches are common:
   - One pointer is k nodes ahead of the other to get the kth from last of the list.
