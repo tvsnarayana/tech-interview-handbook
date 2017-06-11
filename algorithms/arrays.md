@@ -4,11 +4,9 @@ Arrays
 ### Airbnb
 
 - In an Arrays of Arrays , e.g. given [[], [1,2,3], [4,5], [], [], [6,7], [8], [9,10], [], []], print : 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, and implement an iterator that supports hasNext(), next() and remove methods,( the essence lies in how you would access the elements).
-- You're given a 3x3 board of a tile puzzle, with 8 tiles numbered 1 to 8, and an empty spot. You can move any tile adjacent to the empty spot, to the empty spot, creating an empty spot where the tile originally was. The goal is to find a series of moves that will solve the board, i.e. get [ [1, 2, 3], [4, 5, 6], [7, 8, - ] ] where - is the empty tile.
 - Given a menu (list of items prices), find all possible combinations of items that sum a particular value K.
 - Paginate an array with constraints, such as skipping certain items.
 - Implement a circular buffer using an array.
-- Boggle implementation. Given a dictionary, and a matrix of letters, find all the words in the matrix that are in the dictionary. (Going across, down or diagonally).
 - Given array of arrays, sort them in ascending order.
 
 ### Facebook
@@ -19,6 +17,13 @@ Arrays
   - http://blog.gainlo.co/index.php/2016/06/01/subarray-with-given-sum/
 - Determine if any 3 integers in an array sum to 0.
   - http://blog.gainlo.co/index.php/2016/07/19/3sum/
+- Your input is an array of integers. Move all the zeroes at the end while preserving the order of the other elements. You are not allowed to use any extra storage.
+- You have a list of people, and a function that return true/false if one person knows the second person. Write a function that finds a VIP, which everybody knows and he doesn't know anybody else.
+- Given an array of integers, find the subarray with the largest sum. Do it in linear time.
+- You a have a vector with the heights of an island (at point 1, point 2 etc) and you want to know how much water would remain on this island (without flowing away).
+- Task schedule: given a sequence of task like A B C(means 3 different tasks), and a coldtime, which means you need to wait for that much time to start next [same] task, output the best task-finishing sequence. eg. input: AAABBB, 2. Output: AB_AB_AB. ( "_" represents do nothing and wait)
+- You are given a bunch of dominoes. Write a function that determines if any two of those dominoes add up to [6, 6] (e.g. [1,4] + [5, 2]).
+- Given an array a contains all digits 0-9. [1, 4, 2, 1] which represents 1421 Add one to the number and return the array. return [1, 4, 2, 2] which represents 1422.
 
 ### Uber
 

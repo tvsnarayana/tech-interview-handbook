@@ -4,15 +4,32 @@ Coding Questions
 These are questions you can think in your head or clarify with the interviewer. They may lead you to
 discover corner cases you might have missed out or even point you to the optimal approach!
 
-### General
+### Steps
 
+- Repeat the question back at the interviewer.
+  - Make sure you understand exactly what he is asking.
+  - If you misunderstood and when you repeat back the question, he'll clarify.
 - Clarify about the question upon hearing it.
   - How is the dictionary stored?
-- Input validation:
+  - How big is the input?
   - How big is the range of input values?
   - What kind of input is there? Are there negative numbers? Floating points?
   - Are there duplicates within the input?
   - Extreme cases of the input?
+- Explain your high level approach to the interviewer.
+  - Consider various approaches and explain out loud why it will/will not work.
+  - Start with a brute force approach, even though it is unlikely the one you will be coding.
+  - Only start coding after he has given you the go ahead.
+- Start coding.
+  - Always be explaining what you are doing to the interviewer.
+- Review your code.
+  - Come up with small test cases.
+  - Walk through the code (not your algorithm!) with those sample input like a debugger.
+- Analyze the time/space complexity.
+
+### General
+
+- Input validation:
   - Always validate input first. Check if the input is empty, positive, etc. Never assume you are given the valid params. Alternatively, ask interviewers for clarification, which can save you from unnecessary checkings.
 - Can the input be preprocessed to reduce lookup time?
 - Are there any time/space complexity requirements/constraints?
@@ -34,6 +51,10 @@ discover corner cases you might have missed out or even point you to the optimal
 - Permutations of N = N! / (N-K)!
 - Combinations of N = N! / (K! * (N-K)!)
 
+### Geometry
+
+- When comparing euclidean distance between two points, just take d_x^2 + d_y^2. It is unnecessary to squareroot the value.
+
 ### Binary
 
 - To check if a number is a power of 2, `n & n-1 == 0`.
@@ -44,12 +65,14 @@ discover corner cases you might have missed out or even point you to the optimal
 - Corner cases:
   - Empty array
   - Array with 2 elements
-- Are there duplicate values?
+- Are there duplicate values? Does it affect the answer?
 - Check for array out of bounds.
 - Is the array sorted or partially sorted? If it is, some form of binary search should be possible.
 - Having two indices to traverse/compare two string/arrays is quite common. For example, we use the same approach to merging two sorted arrays.
 - Sorting the array first may significantly simplify the problem.
 - Sometimes you can traverse from the right rather than from the left.
+- For questions where summation of a subarray is involved, pre-computation using hashing or a prefix/suffix sum might be useful.
+- If question asks for O(1) space, perhaps using the array itself as a hash table might be useful. If array only has positive values from 1 to N, negate the value at that index to indicate presence of that number.
 
 ### Strings
 

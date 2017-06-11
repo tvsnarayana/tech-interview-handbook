@@ -27,6 +27,9 @@ Example Output:
 - If you have 500 revisions of a program, write a program that will find and return the FIRST bad revision given a `isBad(revision i)` function.
 - Given a list of meeting times, checks if any of them overlaps. The follow-up question is to return the minimum number of rooms required to accommodate all the meetings.
   - http://blog.gainlo.co/index.php/2016/07/12/meeting-room-scheduling-problem/
+- Search for an item in a sorted, but rotated, array.
+- Merge two sorted. lists. Then merge k sorted lists.
+- Given a list of numbers and a function that returns Low, Medium, or High, sort the list by Lows, then Mediums, then Highs.
 
 ### Uber
 

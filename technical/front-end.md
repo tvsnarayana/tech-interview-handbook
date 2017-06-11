@@ -21,3 +21,8 @@ Front End
   - How would you ensure the child is positioned in the top right of the parent picture?
 - If you were building a search tool and wanted search results to pop up as you typed but the server call was taxing, write a function that gets called on every key down but calls the server when the user stops typing for 400ms.
 - How many times would `addEventListener('scroll', handleScroll);` run as the user looks at their News Feed? And what would be user experience if the `handleScroll` function takes 100ms to execute. How could you implement debouncing? Say you wanted the `handleScroll` function to be called only after 200ms has passed between scroll events.
+- Pretty print JSON object.
+
+### Google
+
+- Write a function to find the nearest link on a webpage given the mouse x,y coordinates. If your algorithm just iterates through all the links, give an idea of how to make it faster.

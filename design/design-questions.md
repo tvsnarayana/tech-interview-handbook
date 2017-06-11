@@ -68,6 +68,15 @@ Source: https://github.com/jwasham/coding-interview-university#system-design-sca
 
 ### Airbnb
 
-- Design an Internationalization System
-- Rebuild Twitter from the ground up
+- Design an Internationalization System.
+- Rebuild Twitter from the ground up.
 
+### Facebook
+
+- Design recommended friends feature.
+- Design the Google search bar that prompts you with suggestions as you type in it. These suggestions are not personalized but based on most popular queries in the past by all Google users. e.g. as you type "Fac" in the search bar the drop down prompts you with "Facebook" or "Facts about Great Britain" and so on based on recent most.
+- Design proximity service.
+- Design a news feed that retrieves pictures on each post.
+- Design a self driving car with artificial intelligence.
+- Design a chat architecture.
+- How would you design a url-shortening service?

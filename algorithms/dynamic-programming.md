@@ -16,9 +16,14 @@ The above array would represent an example booking period as follows -
 // Dec 6 - 7
 // Dec 7 - 12
 
-The answer would be to pick dec 1-5 (5 days) and then pick dec 7-12 for a total of 10 days of occupancy, at the same time, leaving atleast 1 day gap for cleaning between reservations.
+The answer would be to pick dec 1-5 (5 days) and then pick dec 7-12 for a total of 10 days of occupancy, at the same time, leaving at least 1 day gap for cleaning between reservations.
 
 Similarly,
 // [3, 6, 4] => 7
 // [4, 10, 3, 1, 5] => 15
 ~~~
+
+### Facebook
+
+- How many string representations are there for an int (ex. 12432) where a->1, b->2, ... z->26.
+- Given a list of denominations (e.g., [ 1, 2, 5 ] means you have coins worth $1, $2, and $5) and a number k, find all possible combinations, if any, of coins in the given denominations that add up to k, including repeats.
