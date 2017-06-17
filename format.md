@@ -13,7 +13,6 @@ Interview Formats
 - 2 technical screening Skype / CoderPad interviews.
 - On-site: 1 behavioural (Jedi), 2 technical coding interview (Ninja), 1 design/architecture (Pirate).
 
-
 ### Grab
 
 - Online coding test on Codility.

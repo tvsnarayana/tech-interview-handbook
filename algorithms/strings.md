@@ -1,7 +1,7 @@
 Strings
 ==
 
-### Generic
+### General
 
 ### Airbnb
 

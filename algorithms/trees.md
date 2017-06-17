@@ -20,7 +20,7 @@ Trees
 - Given a binary tree, output all the node to leaf paths of it.
 - Given a string of characters without spaces, is there a way to break the string into valid words without leftover characters.
 - Print a binary tree level by level.
-- How to find if a binary tree was "complete" (i.e, if all leaf nodes were either at the maximum depth or max depth-1, and were 'pressed' along the left side of the tree).
+- Determine if a binary tree is "complete" (i.e, if all leaf nodes were either at the maximum depth or max depth-1, and were 'pressed' along the left side of the tree).
 - Find the longest path in a binary tree. The path may start and end at any node.
 - Determine if a binary tree is a BST.
 - Given a binary tree, serialize it into a string. Then deserialize it.
