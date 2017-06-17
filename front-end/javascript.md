@@ -39,12 +39,14 @@ JavaScript
 - Reference: https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/README.md
 - Prototype chain
 - `this` keyword
+  - https://rainsoft.io/gentle-explanation-of-this-in-javascript/
 - Classes
 
 ### Async
 
 - Reference: https://github.com/getify/You-Dont-Know-JS/blob/master/async%20&%20performance/README.md#you-dont-know-js-async--performance
 - `setTimeout` and `setInterval`
+- Event Loop
 - Debounce and Throttle
 - Callbacks
 - Promises

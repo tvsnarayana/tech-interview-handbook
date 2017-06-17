@@ -1,6 +1,11 @@
 HTML
 ==
 
+## Glossary
+
+- **ARIA** - Accessible Rich Internet Applications.
+- **Doctype**
+
 ## Script Loading
 
 For classic scripts, if the async attribute is present, then the classic script will be fetched in parallel to parsing and evaluated as soon as it is available (potentially before parsing completes). If the async attribute is not present but the defer attribute is present, then the classic script will be fetched in parallel and evaluated when the page has finished parsing. If neither attribute is present, then the script is fetched and evaluated immediately, blocking parsing until these are both complete.

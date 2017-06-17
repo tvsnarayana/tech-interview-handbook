@@ -33,3 +33,4 @@ Questions to ask at the end of the interview
 - [Business Insider](http://www.businessinsider.sg/impressive-job-interview-questions-2015-3/)
 - [lifehacker](http://lifehacker.com/ask-this-question-to-end-your-job-interview-on-a-good-n-1787624433)
 - [Fastcompany](https://www.fastcompany.com/40406730/7-questions-recruiters-at-amazon-spotify-and-more-want-you-to-ask)
+- [Questions I'm asking in interviews](http://jvns.ca/blog/2013/12/30/questions-im-asking-in-interviews/)

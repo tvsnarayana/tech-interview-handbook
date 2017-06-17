@@ -1,0 +1,6 @@
+Security
+==
+
+## Glossary
+
+- **Cookies**
