@@ -1,7 +1,7 @@
 Design Questions
 ==
 
-## Guides
+### Guides
 
 - https://github.com/donnemartin/system-design-primer
 - https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/

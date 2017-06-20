@@ -1,15 +1,15 @@
-Coding Questions
+Algorithm Questions
 ==
 
 These are questions you can think in your head or clarify with the interviewer. They may lead you to
-discover corner cases you might have missed out or even point you to the optimal approach!
+discover corner cases you might have missed out or even lead you towards the optimal approach!
 
 ### Steps
 
 - Repeat the question back at the interviewer.
   - Make sure you understand exactly what he is asking.
   - If you misunderstood and when you repeat back the question, he'll clarify.
-- Clarify about the question upon hearing it.
+- Clarify about the question upon hearing it (where relevant).
   - How is the dictionary stored?
   - How big is the input?
   - How big is the range of input values?
@@ -21,10 +21,11 @@ discover corner cases you might have missed out or even point you to the optimal
   - Start with a brute force approach, even though it is unlikely the one you will be coding.
   - Only start coding after he has given you the go ahead.
 - Start coding.
-  - Always be explaining what you are doing to the interviewer.
+  - Always be explaining what you are currently writing/typing to the interviewer.
 - Review your code.
   - Come up with small test cases.
-  - Walk through the code (not your algorithm!) with those sample input like a debugger.
+  - Step through the code (not your algorithm!) with those sample input.
+  - You should emulate a debugger when stepping through.
 - Analyze the time/space complexity.
 
 ### General
@@ -38,33 +39,11 @@ discover corner cases you might have missed out or even point you to the optimal
   - Check that concatenation of values are of same type: int/str/list.
   - After finishing your code, use a few example inputs to test your solution.
 
-### Numbers
-
-- If code involves division, remember to check for division by 0 case.
-- Check for and handle overflow/underflow.
-- Handle negative numbers.
-
-### Math
-
-- Sum of 1 to N = (n+1) * n/2
-- Sum of GP = 2^0 + 2^1 + 2^2 + 2^3 + ... 2^n = 2^(n+1) - 1
-- Permutations of N = N! / (N-K)!
-- Combinations of N = N! / (K! * (N-K)!)
-
-### Geometry
-
-- When comparing euclidean distance between two points, just take d_x^2 + d_y^2. It is unnecessary to squareroot the value.
-
-### Binary
-
-- To check if a number is a power of 2, `n & n-1 == 0`.
-- Use the XOR operator `^` to flip bits. Usually combined with `1 << k` to shift the k-th bit: `num ^ (1 << k)`.
-
 ### Arrays
 
 - Corner cases:
-  - Empty array
-  - Array with 2 elements
+  - Empty array.
+  - Array with 1 or 2 elements.
 - Are there duplicate values? Does it affect the answer?
 - Check for array out of bounds.
 - Is the array sorted or partially sorted? If it is, some form of binary search should be possible.
@@ -73,6 +52,36 @@ discover corner cases you might have missed out or even point you to the optimal
 - Sometimes you can traverse from the right rather than from the left.
 - For questions where summation of a subarray is involved, pre-computation using hashing or a prefix/suffix sum might be useful.
 - If question asks for O(1) space, perhaps using the array itself as a hash table might be useful. If array only has positive values from 1 to N, negate the value at that index to indicate presence of that number.
+
+### Binary
+
+- To check if a number is a power of 2, `n & n-1 == 0`.
+- Use the XOR operator `^` to flip bits. Usually combined with `1 << k` to shift the k-th bit: `num ^ (1 << k)`.
+
+### Math
+
+- If code involves division, remember to check for division by 0 case.
+- Check for and handle overflow/underflow.
+- Handle negative numbers.
+- Sum of 1 to N = (n+1) * n/2
+- Sum of GP = 2^0 + 2^1 + 2^2 + 2^3 + ... 2^n = 2^(n+1) - 1
+- Permutations of N = N! / (N-K)!
+- Combinations of N = N! / (K! * (N-K)!)
+
+### Geometry
+
+- When comparing euclidean distance between two points, use dx<sup>2</sup> + dy<sup>2</sup>. It is unnecessary to squareroot the value.
+
+### Linked Lists
+
+- A dummy node at the head and/or tail might help to handle many edge cases. Be sure to remember to remove them at the end.
+- Sometimes linked lists problem can be solved without external storage. Try to borrow ideas from reverse a linked link problem.
+- For deletion in linked lists, you can either modify the node values or change the node pointers. You might need to keep a reference to the previous element.
+- For partitioning linked lists, create two separate linked lists and join them back together.
+- Linked lists problems share similarity with array problems, think about how you would do it for an array and try to apply it to a linked list.
+- Two pointer approaches are common:
+  - One pointer is k nodes ahead of the other to get the kth from last of the list.
+  - One pointer increments twice as much as the other to get the middle of the list.
 
 ### Strings
 
@@ -107,7 +116,7 @@ for c in set(word):
 
 **Palindromes**
 
-- TBD
+- TODO
 
 **Dictionary (List of words)**
 
@@ -124,21 +133,10 @@ for c in set(word):
 - It's possible that your recursive function needs to return two values.
 - If the question involves summation of paths, be sure to check whether nodes can be negative.
 
-### Binary Trees
+**Binary Trees**
 
 - In-order traversal of a binary tree is insufficient to uniquely serialize a tree. Pre-order/post-order traversal is also required.
 
-### Binary Search Trees
+**Binary Search Trees**
 
 - In-order traversal will give you all elements in order.
-
-### Linked Lists
-
-- A dummy node at the head and/or tail might help to handle many edge cases. Be sure to remember to remove them at the end.
-- Sometimes linked lists problem can be solved without external storage. Try to borrow ideas from reverse a linked link problem.
-- For deletion in linked lists, you can either modify the node values or change the node pointers. You might need to keep a reference to the previous element.
-- For partitioning linked lists, create two separate linked lists and join them back together.
-- Linked lists problems share similarity with array problems, think about how you would do it for an array and try to apply it to a linked list.
-- Two pointer approaches are common:
-  - One pointer is k nodes ahead of the other to get the kth from last of the list.
-  - One pointer increments twice as much as the other to get the middle of the list.

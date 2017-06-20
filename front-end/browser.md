@@ -8,14 +8,31 @@ Browser
 - **DOM** - The Document Object Model (DOM) is a cross-platform and language-independent convention for representing and interacting with objects in HTML, XHTML, and XML documents.
 - **Reflow** - When the changes affect document contents or structure, or element position, a reflow (or relayout) happens.
 - **Repaint** - When changing element styles which don't affect the element's position on a page (such as background-color, border-color, visibility), the browser just repaints the element again with the new styles applied (that means a "repaint" or "restyle" is happening).
+- **Composite** -
 
 ## Rendering
 
-1. The DOM (Document Object Model) is formed from the HTML that is received from a server.
-1. Styles are loaded and parsed, forming the CSSOM (CSS Object Model).
-1. On top of DOM and CSSOM, a rendering tree is created, which is a set of objects to be rendered. Render tree reflects the DOM structure except for invisible elements (like the <head> tag or elements that have display:none; set). Each text string is represented in the rendering tree as a separate renderer. Each of the rendering objects contains its corresponding DOM object (or a text block) plus the calculated styles. In other words, the render tree describes the visual representation of a DOM.
-1. For each render tree element, its coordinates are calculated, which is called "layout". Browsers use a flow method which only required one pass to layout all the elements (tables require more than one pass).
-1. Finally, this gets actually displayed in a browser window, a process called "painting".
+High level flow of how browsers render a webpage:
+
+1. DOM
+  - The DOM (Document Object Model) is formed from the HTML that is received from a server.
+  - Characters -> Tokens -> Nodes -> DOM.
+  - DOM construction is incremental.
+  - CSS and JS are requested as the respective `<link>` and `<script>` tags are encountered.
+1. CSSOM
+  - Styles are loaded and parsed, forming the CSSOM (CSS Object Model).
+  - Characters -> Tokens -> Nodes -> CSSOM.
+  - CSSOM construction is not incremental.
+  - Browser blocks page rendering until it receives and processes all the CSS.
+  - CSS is render blocking.
+1. Render Tree
+  - On top of DOM and CSSOM, a rendering tree is created, which is a set of objects to be rendered. Render tree reflects the DOM structure except for invisible elements (like the <head> tag or elements that have display:none; set). Each text string is represented in the rendering tree as a separate renderer. Each of the rendering objects contains its corresponding DOM object (or a text block) plus the calculated styles. In other words, the render tree describes the visual representation of a DOM.
+1. Layout
+  - For each render tree element, its coordinates are calculated, which is called "layout". Browsers use a flow method which only required one pass to layout all the elements (tables require more than one pass).
+1. Painting
+  - Finally, this gets actually displayed in a browser window, a process called "painting".
+
+https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/webkitflow.png
 
 Source:
 

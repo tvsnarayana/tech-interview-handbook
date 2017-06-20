@@ -1,5 +1,7 @@
-Questions to ask at the end of the interview
+Questions to Ask
 ==
+
+Here are some good questions to ask at the end of the interview.
 
 ### General
 
@@ -28,7 +30,7 @@ Questions to ask at the end of the interview
 - What are the engineering challenges that the company/team is facing?
 - How has your role changed since joining the company?
 
-### Sources:
+#### References
 
 - [Business Insider](http://www.businessinsider.sg/impressive-job-interview-questions-2015-3/)
 - [lifehacker](http://lifehacker.com/ask-this-question-to-end-your-job-interview-on-a-good-n-1787624433)

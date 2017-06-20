@@ -1,8 +1,6 @@
 Strings
 ==
 
-### General
-
 ### Airbnb
 
 - Output list of strings representing a page of hostings given a list of CSV strings.

@@ -1,5 +1,7 @@
-Psychological tricks that will help you ace a job interview
+Psychological Tricks
 ==
+
+Here are some psychological tricks that will help you ace a job interview.
 
 - Tailor your answers to the interviewer’s age.
   - Generation Y interviewers (between 20 and 30): Bring along visual samples of your work and highlight your ability to multitask.
@@ -20,4 +22,6 @@ Psychological tricks that will help you ace a job interview
 - Showcase your potential.
   - You might be tempted to tell your interviewer all about your past accomplishments — but research suggests you should focus more on what you could do in the future, if the organization hires you.
 
-Source: [Business Insider](http://www.businessinsider.com/psychological-tricks-to-ace-job-interview-2015-11)
+#### References
+
+- [Business Insider](http://www.businessinsider.com/psychological-tricks-to-ace-job-interview-2015-11)

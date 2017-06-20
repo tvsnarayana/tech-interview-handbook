@@ -21,7 +21,7 @@ Arrays
 - You have a list of people, and a function that return true/false if one person knows the second person. Write a function that finds a VIP, which everybody knows and he doesn't know anybody else.
 - Given an array of integers, find the subarray with the largest sum. Do it in linear time.
 - You a have a vector with the heights of an island (at point 1, point 2 etc) and you want to know how much water would remain on this island (without flowing away).
-- Task schedule: given a sequence of task like A B C(means 3 different tasks), and a coldtime, which means you need to wait for that much time to start next [same] task, output the best task-finishing sequence. eg. input: AAABBB, 2. Output: AB_AB_AB. ( "_" represents do nothing and wait)
+- Task schedule: given a sequence of task like A B C (means 3 different tasks), and a coldtime, which means you need to wait for that much time to start next [same] task, output the best task-finishing sequence. eg. input: AAABBB, 2. Output: AB_AB_AB. ( "_" represents do nothing and wait)
 - You are given a bunch of dominoes. Write a function that determines if any two of those dominoes add up to [6, 6] (e.g. [1,4] + [5, 2]).
 - Given an array a contains all digits 0-9. [1, 4, 2, 1] which represents 1421 Add one to the number and return the array. return [1, 4, 2, 2] which represents 1422.
 
