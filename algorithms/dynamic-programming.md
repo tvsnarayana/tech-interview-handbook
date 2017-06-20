@@ -5,7 +5,6 @@ Dynamic Programming
 
 - Given a flight itinerary consisting of starting city, destination city, and ticket price (2d list) - find the optimal price flight path to get from start to destination. (A variation of Dynamic Programming Shortest Path)
 - Return the coins combination with the minimum number of coins. Time complexity O(MN), where M is the target value and N is the number of distinct coins. Space complexity O(M).
-
 - Given a set of numbers in an array which represent number of consecutive days of AirBnB reservation requested, as a host, pick the sequence which maximizes the number of days of occupancy, at the same time, leaving atleast 1 day gap in between bookings for cleaning. Problem reduces to finding max-sum of non-consecutive array elements.
 
 ~~~

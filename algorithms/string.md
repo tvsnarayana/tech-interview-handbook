@@ -11,12 +11,9 @@ String
 
 ## Facebook
 
-- Longest substring with K unique characters
-  - http://blog.gainlo.co/index.php/2016/04/12/find-the-longest-substring-with-k-unique-characters/
-- Given a set of random strings, write a function that returns a set that groups all the anagrams together.
-  - http://blog.gainlo.co/index.php/2016/05/06/group-anagrams/
-- Given a string, find the longest substring without repeating characters. For example, for string "abccdefgh", the longest substring is "cdefgh".
-  - http://blog.gainlo.co/index.php/2016/10/07/facebook-interview-longest-substring-without-repeating-characters/
+- Longest substring with K unique characters. [Source](http://blog.gainlo.co/index.php/2016/04/12/find-the-longest-substring-with-k-unique-characters/)
+- Given a set of random strings, write a function that returns a set that groups all the anagrams together. [Source](http://blog.gainlo.co/index.php/2016/05/06/group-anagrams/)
+- Given a string, find the longest substring without repeating characters. For example, for string "abccdefgh", the longest substring is "cdefgh". [Source](http://blog.gainlo.co/index.php/2016/10/07/facebook-interview-longest-substring-without-repeating-characters/)
 - Given a string, return the string with duplicate characters removed.
 - How many string representations are there for an int (ex. 12432) where a->1, b->2, ... z->26. 126 can be "az" or "abf".
 - Write a function that receives a regular expression (allowed chars = from 'a' to 'z', '*', '.') and a string containing lower case english alphabet characters and return true of false whether the string matches the regex. Do this recursively. Examples: 1) "ab*a", "abbbbba" -> true, 2) "ab*b.", "aba" -> true, 3) "abc*", "acccc" -> false.
@@ -37,8 +34,6 @@ String
 
 ## Google
 
-- Given a dictionary and a word, find the minimum number of deletions needed on the word in order to make it a valid word.
-  - http://blog.gainlo.co/index.php/2016/04/29/minimum-number-of-deletions-of-a-string/
-- How to check if a string contains an anagram of another string?
-  - http://blog.gainlo.co/index.php/2016/04/08/if-a-string-contains-an-anagram-of-another-string/
+- Given a dictionary and a word, find the minimum number of deletions needed on the word in order to make it a valid word. [Source](http://blog.gainlo.co/index.php/2016/04/29/minimum-number-of-deletions-of-a-string/)
+- How to check if a string contains an anagram of another string? [Source](http://blog.gainlo.co/index.php/2016/04/08/if-a-string-contains-an-anagram-of-another-string/)
 
