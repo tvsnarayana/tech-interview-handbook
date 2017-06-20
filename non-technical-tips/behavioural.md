@@ -81,6 +81,9 @@ Behavioural
 - What have you built?
 - What is the hardest technical problem you have run into?
 - How did you solve it?
+- Where do you see yourself in 5 years?
+- Why do you want to work here?
+- How do you handle disagreements with coworkers?
 
 #### References
 
