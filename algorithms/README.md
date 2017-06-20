@@ -6,20 +6,22 @@ discover corner cases you might have missed out or even lead you towards the opt
 
 ## Contents
 
-- Array
-- Dynamic Programming
-- Geometry
-- Graph
-- Hash Table
-- Interval
-- Linked Lists
-- Matrix
-- Number Theory
-- Permutation
-- Sorting and Searching
-- Stack
-- String
-- Tree
+- [Array](array.md)
+- [Dynamic Programming and Memoization](dynamic-programming.md)
+- [Geometry](geometry.md)
+- [Graph](graph.md)
+- [Hash Table](hash-table.md)
+- [Heap](heap.md)
+- [Interval](interval.md)
+- [Linked List](linked-list.md)
+- [Matrix](matrix.md)
+- [Number Theory](number-theory.md)
+- [Permutation](permutation.md)
+- [Queue](queue.md)
+- [Sorting and Searching](sorting-searching.md)
+- [Stack](stack.md)
+- [String](string.md)
+- [Tree](tree.md)
 
 ## Steps
 
@@ -75,16 +77,6 @@ discover corner cases you might have missed out or even lead you towards the opt
 - To check if a number is a power of 2, `n & n-1 == 0`.
 - Use the XOR operator `^` to flip bits. Usually combined with `1 << k` to shift the k-th bit: `num ^ (1 << k)`.
 
-## Math
-
-- If code involves division, remember to check for division by 0 case.
-- Check for and handle overflow/underflow.
-- Handle negative numbers.
-- Sum of 1 to N = (n+1) * n/2
-- Sum of GP = 2^0 + 2^1 + 2^2 + 2^3 + ... 2^n = 2^(n+1) - 1
-- Permutations of N = N! / (N-K)!
-- Combinations of N = N! / (K! * (N-K)!)
-
 ## Geometry
 
 - When comparing euclidean distance between two points, use dx<sup>2</sup> + dy<sup>2</sup>. It is unnecessary to squareroot the value.
@@ -99,6 +91,16 @@ discover corner cases you might have missed out or even lead you towards the opt
 - Two pointer approaches are common:
   - One pointer is k nodes ahead of the other to get the kth from last of the list.
   - One pointer increments twice as much as the other to get the middle of the list.
+
+## Math
+
+- If code involves division, remember to check for division by 0 case.
+- Check for and handle overflow/underflow.
+- Handle negative numbers.
+- Sum of 1 to N = (n+1) * n/2
+- Sum of GP = 2^0 + 2^1 + 2^2 + 2^3 + ... 2^n = 2^(n+1) - 1
+- Permutations of N = N! / (N-K)!
+- Combinations of N = N! / (K! * (N-K)!)
 
 ## Strings
 

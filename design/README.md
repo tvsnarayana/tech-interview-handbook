@@ -43,26 +43,29 @@ Design Questions
 
 ## Flow
 
-a. Understand the problem and scope:
-- define the use cases, with interviewer's help
-- suggest additional features
-- remove items that interviewer deems out of scope
-- assume high availability is required, add as a use case
+**A. Understand the problem and scope:**
 
-b. Think about constraints:
-- ask how many requests per month
-- ask how many requests per second (they may volunteer it or make you do the math)
-- estimate reads vs. writes percentage
-- keep 80/20 rule in mind when estimating
-- how much data written per second
-- total storage required over 5 years
-- how much data read per second
+- Define the use cases, with interviewer's help
+- Suggest additional features
+- Remove items that interviewer deems out of scope
+- Assume high availability is required, add as a use case
 
-c. Abstract design:
-- layers (service, data, caching)
+**B. Think about constraints:**
+
+- Ask how many requests per month
+- Ask how many requests per second (they may volunteer it or make you do the math)
+- Estimate reads vs. writes percentage
+- Keep 80/20 rule in mind when estimating
+- How much data written per second
+- Total storage required over 5 years
+- How much data reads per second
+
+**C. Abstract design:**
+
+- Layers (service, data, caching)
 - infrastructure: load balancing, messaging
-- rough overview of any key algorithm that drives the service
-- consider bottlenecks and determine solutions
+- Rough overview of any key algorithm that drives the service
+- Consider bottlenecks and determine solutions
 
 Source: https://github.com/jwasham/coding-interview-university#system-design-scalability-data-handling
 
