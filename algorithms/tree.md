@@ -1,7 +1,7 @@
-Trees
+Tree
 ==
 
-### General
+## General
 
 - Find the height of a tree.
 - Find the longest path from the root to leaf in a tree.
@@ -13,7 +13,7 @@ Trees
 - Given a binary tree and two nodes, how to find the common ancestor of the two nodes?
   - http://blog.gainlo.co/index.php/2016/07/06/lowest-common-ancestor/
 
-### Facebook
+## Facebook
 
 - Compute the intersection of two binary search trees.
 - Given a tree, where the parent has any number of nodes and each node has a number, return the average of all the nodes on each level in an array.
@@ -33,7 +33,7 @@ Trees
 - Pretty print JSON object.
 - Convert a binary tree to a doubly circular linked list.
 
-### Uber
+## Uber
 
 - Deepest node in a tree.
   - http://blog.gainlo.co/index.php/2016/04/26/deepest-node-in-a-tree/

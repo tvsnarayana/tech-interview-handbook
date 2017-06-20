@@ -1,12 +1,12 @@
 Design Questions
 ==
 
-### Guides
+## Guides
 
 - https://github.com/donnemartin/system-design-primer
 - https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/
 
-### Specific Topics
+## Specific Topics
 
 - URL Shortener
   - http://stackoverflow.com/questions/742013/how-to-code-a-url-shortener
@@ -41,7 +41,7 @@ Design Questions
 - Hit Counter
   - http://blog.gainlo.co/index.php/2016/09/12/dropbox-interview-design-hit-counter/
 
-### Flow
+## Flow
 
 a. Understand the problem and scope:
 - define the use cases, with interviewer's help
@@ -66,12 +66,12 @@ c. Abstract design:
 
 Source: https://github.com/jwasham/coding-interview-university#system-design-scalability-data-handling
 
-### Airbnb
+## Airbnb
 
 - Design an Internationalization System.
 - Rebuild Twitter from the ground up.
 
-### Facebook
+## Facebook
 
 - Design recommended friends feature.
 - Design the Google search bar that prompts you with suggestions as you type in it. These suggestions are not personalized but based on most popular queries in the past by all Google users. e.g. as you type "Fac" in the search bar the drop down prompts you with "Facebook" or "Facts about Great Britain" and so on based on recent most.

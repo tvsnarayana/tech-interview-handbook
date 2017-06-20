@@ -1,7 +1,7 @@
 Dynamic Programming
 ==
 
-### Airbnb
+## Airbnb
 
 - Given a flight itinerary consisting of starting city, destination city, and ticket price (2d list) - find the optimal price flight path to get from start to destination. (A variation of Dynamic Programming Shortest Path)
 - Return the coins combination with the minimum number of coins. Time complexity O(MN), where M is the target value and N is the number of distinct coins. Space complexity O(M).
@@ -23,7 +23,7 @@ Similarly,
 // [4, 10, 3, 1, 5] => 15
 ~~~
 
-### Facebook
+## Facebook
 
 - How many string representations are there for an int (ex. 12432) where a->1, b->2, ... z->26.
 - Given a list of denominations (e.g., [ 1, 2, 5 ] means you have coins worth $1, $2, and $5) and a number k, find all possible combinations, if any, of coins in the given denominations that add up to k, including repeats.

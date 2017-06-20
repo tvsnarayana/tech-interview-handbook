@@ -1,13 +1,13 @@
 Behavioural
 ==
 
-### General
+## General
 
 - What project are you currently working on?
 - What is the most challenging aspect of your current project?
 - What was the most difficult bug that you fixed in the past 6 months?
 
-### Airbnb
+## Airbnb
 
 - What does it mean to be you belong anywhere?
 - What large problems in the world would you solve today?
@@ -25,7 +25,7 @@ Behavioural
 - Explain a project that you worked on recently.
 - What do you thnk of airbnb?
 
-### Amazon
+## Amazon
 
 - How do you deal with a failed deadline?
 - Use [STAR](https://www.wikiwand.com/en/Situation,_Task,_Action,_Result) format.
@@ -34,7 +34,7 @@ Behavioural
 - In my professional experience have you worked on something without getting approval from your manager?
 - Tell me a situation where you would have done something differently from what you actually did.
 
-### Facebook
+## Facebook
 
 - Why do you want to work at Facebook?
 - Why do you want to work on a front end position?
@@ -50,7 +50,7 @@ Behavioural
 - Tell me about a time in which you had a conflict and needed to influence somebody else.
 - Tell me about a time you had a disagreement with your manager.
 
-### Hired
+## Hired
 
 - Tell me about yourself.
 - What is your biggest strength and area of growth?
@@ -64,11 +64,7 @@ Behavioural
 - Where do you want to be in five years?
 - Tell me about a time you needed information from someone who wasn’t responsive. What did you do?
 
-**Source**
-
-- https://hired.com/blog/candidates/10-top-interview-questions-how-to-answer/
-
-### Slack
+## Slack
 
 - Tell me something about your internship.
 - Why do you want to join Slack?
@@ -80,12 +76,13 @@ Behavioural
 - Did you find any bug in Slack?
 - What is your favorite feature and why?
 
-### Stack Overflow
+## Stack Overflow
 
 - What have you built?
 - What is the hardest technical problem you have run into?
 - How did you solve it?
 
-**Source**
+#### References
 
-- https://stackoverflow.blog/2017/04/27/how-to-talk-about-yourself-in-an-interview/
+- [How to Answer The 10 Most-Asked Interview Questions](https://hired.com/blog/candidates/10-top-interview-questions-how-to-answer/)
+- [How to Talk About Yourself in an Interview](https://stackoverflow.blog/2017/04/27/how-to-talk-about-yourself-in-an-interview/)

@@ -1,7 +1,7 @@
 Arrays
 ==
 
-### Airbnb
+## Airbnb
 
 - In an Arrays of Arrays , e.g. given [[], [1,2,3], [4,5], [], [], [6,7], [8], [9,10], [], []], print : 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, and implement an iterator that supports hasNext(), next() and remove methods,( the essence lies in how you would access the elements).
 - Given a menu (list of items prices), find all possible combinations of items that sum a particular value K.
@@ -9,7 +9,7 @@ Arrays
 - Implement a circular buffer using an array.
 - Given array of arrays, sort them in ascending order.
 
-### Facebook
+## Facebook
 
 - Flatten an array iteratively and recursively.
 - Given an input array and another array that describes a new index for each element, mutate the input array so that each element ends up in their new index. Discuss the runtime of the algorithm and how you can be sure there won't be any infinite loops.
@@ -25,13 +25,11 @@ Arrays
 - You are given a bunch of dominoes. Write a function that determines if any two of those dominoes add up to [6, 6] (e.g. [1,4] + [5, 2]).
 - Given an array a contains all digits 0-9. [1, 4, 2, 1] which represents 1421 Add one to the number and return the array. return [1, 4, 2, 2] which represents 1422.
 
-### Uber
+## Uber
 
 - Given an array of string, find duplicate elements.
   - http://blog.gainlo.co/index.php/2016/05/10/duplicate-elements-of-an-array/
 - Given an array of integers, find a maximum sum of non-adjacent elements. For example, inputs [1, 0, 3, 9, 2] should return 10 (1 + 9).
   - http://blog.gainlo.co/index.php/2016/12/02/uber-interview-question-maximum-sum-non-adjacent-elements/
-- Given an array of integers, modify the array by moving all the zeros to the end (right side). The order of other elements doesn’t matter. For example, `[1, 2, 0, 3, 0, 1, 2]`, the program can output `[1, 2, 3, 1, 2, 0, 0]`.
-  - http://blog.gainlo.co/index.php/2016/11/18/uber-interview-question-move-zeroes/
-- Given an array, return the length of the longest increasing contiguous subarray. For example, if the input is `[1, 3, 2, 3, 4, 8, 7, 9]`, the output should be 4 because the longest increasing array is `[2, 3, 4, 8]`.
-  - http://blog.gainlo.co/index.php/2017/02/02/uber-interview-questions-longest-increasing-subarray/
+- Given an array of integers, modify the array by moving all the zeros to the end (right side). The order of other elements doesn’t matter. For example, `[1, 2, 0, 3, 0, 1, 2]`, the program can output `[1, 2, 3, 1, 2, 0, 0]`. [Source](http://blog.gainlo.co/index.php/2016/11/18/uber-interview-question-move-zeroes/)
+- Given an array, return the length of the longest increasing contiguous subarray. For example, if the input is `[1, 3, 2, 3, 4, 8, 7, 9]`, the output should be 4 because the longest increasing array is `[2, 3, 4, 8]`. [Source](http://blog.gainlo.co/index.php/2017/02/02/uber-interview-questions-longest-increasing-subarray/)

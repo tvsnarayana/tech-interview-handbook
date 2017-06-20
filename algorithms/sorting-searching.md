@@ -1,7 +1,7 @@
 Sorting and Searching
 ==
 
-### Airbnb
+## Airbnb
 
 - Sorting search results on a page given a certain set of criteria.
 - Sort a list of numbers in which each number is at a distance k from its actual position.
@@ -22,7 +22,7 @@ Example Output:
 [[0,4],[11,12],[16,23]]
 ~~~
 
-### Facebook
+## Facebook
 
 - If you have 500 revisions of a program, write a program that will find and return the FIRST bad revision given a `isBad(revision i)` function.
 - Given a list of meeting times, checks if any of them overlaps. The follow-up question is to return the minimum number of rooms required to accommodate all the meetings.
@@ -31,7 +31,7 @@ Example Output:
 - Merge two sorted. lists. Then merge k sorted lists.
 - Given a list of numbers and a function that returns Low, Medium, or High, sort the list by Lows, then Mediums, then Highs.
 
-### Uber
+## Uber
 
 - Write a function that takes a number as input and outputs the biggest number with the same set of digits.
   - http://blog.gainlo.co/index.php/2017/01/20/arrange-given-numbers-to-form-the-biggest-number-possible/

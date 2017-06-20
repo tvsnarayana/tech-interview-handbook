@@ -34,11 +34,6 @@ High level flow of how browsers render a webpage:
 
 https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/webkitflow.png
 
-Source:
-
-- [What Every Frontend Developer Should Know About Webpage Rendering](http://frontendbabel.info/articles/webpage-rendering-101/)
-- [Rendering: repaint, reflow/relayout, restyle](http://www.phpied.com/rendering-repaint-reflowrelayout-restyle/)
-
 ## Repaint
 
 When changing element styles which don't affect the element's position on a page (such as background-color, border-color, visibility), the browser just repaints the element again with the new styles applied (that means a "repaint" or "restyle" is happening).
@@ -53,7 +48,8 @@ When the changes affect document contents or structure, or element position, a r
 - Changing the "class" attribute
 - Browser window manipulation (resizing, scrolling); Pseudo-class activation (:hover)
 
-## References
+#### References
 
 - [How Browsers Work](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/)
 - [What Every Frontend Developer Should Know About Webpage Rendering](http://frontendbabel.info/articles/webpage-rendering-101/)
+- [Rendering: repaint, reflow/relayout, restyle](http://www.phpied.com/rendering-repaint-reflowrelayout-restyle/)

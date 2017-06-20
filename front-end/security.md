@@ -3,6 +3,7 @@ Security
 
 ## Glossary
 
+- **CSRF** -
 - **XSS** - Cross-site scripting (XSS).
 
 ## XSS

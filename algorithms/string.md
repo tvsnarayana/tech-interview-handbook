@@ -1,7 +1,7 @@
-Strings
+String
 ==
 
-### Airbnb
+## Airbnb
 
 - Output list of strings representing a page of hostings given a list of CSV strings.
 - Given a list of words, find the word pairs that when concatenated form a palindrome.
@@ -9,7 +9,7 @@ Strings
 - Implement a simple regex parser which, given a string and a pattern, returns a boolean indicating whether the input matches the pattern. By simple, we mean that the regex can only contain special character: * (star), . (dot), + (plus). The star means what you'd expect, that there will be zero or more of previous character in that place in the pattern. The dot means any character for that position. The plus means one or more of previous character in that place in the pattern.
 - Find all words from a dictionary that are x edit distance away.
 
-### Facebook
+## Facebook
 
 - Longest substring with K unique characters
   - http://blog.gainlo.co/index.php/2016/04/12/find-the-longest-substring-with-k-unique-characters/
@@ -35,7 +35,7 @@ Strings
 - Given a set of strings, return the smallest subset that contains prefixes for every string. If the list is ['foo', 'foog', 'food', 'asdf'] return ['foo', 'asdf'].
 - Write a function that would return all the possible words generated when using a phone (pre-smart phone era) numpad to type.
 
-### Google
+## Google
 
 - Given a dictionary and a word, find the minimum number of deletions needed on the word in order to make it a valid word.
   - http://blog.gainlo.co/index.php/2016/04/29/minimum-number-of-deletions-of-a-string/

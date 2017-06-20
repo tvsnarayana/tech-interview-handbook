@@ -1,7 +1,7 @@
-Intervals
+Interval
 ==
 
-### Facebook
+## Facebook
 
 - Given a list of meeting times, return true if any of them overlap and false if none of them overlap.
 - Given a list of meeting times, which may overlap, return the minimum number of rooms required to accommodate all the meetings.

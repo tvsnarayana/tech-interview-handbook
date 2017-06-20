@@ -3,7 +3,6 @@ HTML
 
 ## Glossary
 
-- **ARIA** - Accessible Rich Internet Applications.
 - **Doctype**
 
 ## Script Loading

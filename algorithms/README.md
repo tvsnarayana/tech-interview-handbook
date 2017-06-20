@@ -4,7 +4,24 @@ Algorithm Questions
 These are questions you can think in your head or clarify with the interviewer. They may lead you to
 discover corner cases you might have missed out or even lead you towards the optimal approach!
 
-### Steps
+## Contents
+
+- Array
+- Dynamic Programming
+- Geometry
+- Graph
+- Hash Table
+- Interval
+- Linked Lists
+- Matrix
+- Number Theory
+- Permutation
+- Sorting and Searching
+- Stack
+- String
+- Tree
+
+## Steps
 
 - Repeat the question back at the interviewer.
   - Make sure you understand exactly what he is asking.
@@ -28,7 +45,7 @@ discover corner cases you might have missed out or even lead you towards the opt
   - You should emulate a debugger when stepping through.
 - Analyze the time/space complexity.
 
-### General
+## General
 
 - Input validation:
   - Always validate input first. Check if the input is empty, positive, etc. Never assume you are given the valid params. Alternatively, ask interviewers for clarification, which can save you from unnecessary checkings.
@@ -39,7 +56,7 @@ discover corner cases you might have missed out or even lead you towards the opt
   - Check that concatenation of values are of same type: int/str/list.
   - After finishing your code, use a few example inputs to test your solution.
 
-### Arrays
+## Arrays
 
 - Corner cases:
   - Empty array.
@@ -53,12 +70,12 @@ discover corner cases you might have missed out or even lead you towards the opt
 - For questions where summation of a subarray is involved, pre-computation using hashing or a prefix/suffix sum might be useful.
 - If question asks for O(1) space, perhaps using the array itself as a hash table might be useful. If array only has positive values from 1 to N, negate the value at that index to indicate presence of that number.
 
-### Binary
+## Binary
 
 - To check if a number is a power of 2, `n & n-1 == 0`.
 - Use the XOR operator `^` to flip bits. Usually combined with `1 << k` to shift the k-th bit: `num ^ (1 << k)`.
 
-### Math
+## Math
 
 - If code involves division, remember to check for division by 0 case.
 - Check for and handle overflow/underflow.
@@ -68,11 +85,11 @@ discover corner cases you might have missed out or even lead you towards the opt
 - Permutations of N = N! / (N-K)!
 - Combinations of N = N! / (K! * (N-K)!)
 
-### Geometry
+## Geometry
 
 - When comparing euclidean distance between two points, use dx<sup>2</sup> + dy<sup>2</sup>. It is unnecessary to squareroot the value.
 
-### Linked Lists
+## Linked Lists
 
 - A dummy node at the head and/or tail might help to handle many edge cases. Be sure to remember to remove them at the end.
 - Sometimes linked lists problem can be solved without external storage. Try to borrow ideas from reverse a linked link problem.
@@ -83,7 +100,7 @@ discover corner cases you might have missed out or even lead you towards the opt
   - One pointer is k nodes ahead of the other to get the kth from last of the list.
   - One pointer increments twice as much as the other to get the middle of the list.
 
-### Strings
+## Strings
 
 - Ask about character set and case sensitivity.
 - Can I use some common data structure that can deal with strings efficiently?
@@ -126,7 +143,7 @@ for c in set(word):
   - Traverse through the word.
 - Having two indices to traverse/compare two string/arrays is quite common. For example, we use the same approach to merging two sorted arrays.
 
-### Trees
+## Trees
 
 - Traverse tree by level -> DFS
 - Recursion is common for trees. When you notice the subtree problem can be used to solve the whole problem, you should try recursion.

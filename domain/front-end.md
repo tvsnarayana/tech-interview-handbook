@@ -1,12 +1,12 @@
 Front End
 ==
 
-### Airbnb
+## Airbnb
 
 - Create an autocomplete widget - Given an input and an endpoint which returns a JSON list, as a result, extend it to autocomplete on change, handle key navigation through the results
 - Star rating widget - Given a star widget embedded in a form write the code to select the stars and submit the correct value through a normal form action. Make reusable for multiple star widgets.
 
-### Facebook
+## Facebook
 
 - Write an emitter class:
   - `emitter = new Emitter();`
@@ -23,6 +23,6 @@ Front End
 - How many times would `addEventListener('scroll', handleScroll);` run as the user looks at their News Feed? And what would be user experience if the `handleScroll` function takes 100ms to execute. How could you implement debouncing? Say you wanted the `handleScroll` function to be called only after 200ms has passed between scroll events.
 - Pretty print JSON object.
 
-### Google
+## Google
 
 - Write a function to find the nearest link on a webpage given the mouse x,y coordinates. If your algorithm just iterates through all the links, give an idea of how to make it faster.

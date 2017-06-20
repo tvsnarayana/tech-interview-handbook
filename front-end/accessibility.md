@@ -4,6 +4,7 @@ Accessibility
 ## Glossary
 
 - **Accessibility** -
+- **ARIA** - Accessible Rich Internet Applications.
 
 ## What is Accessibility?
 

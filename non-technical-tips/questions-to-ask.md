@@ -3,12 +3,12 @@ Questions to Ask
 
 Here are some good questions to ask at the end of the interview.
 
-### General
+## General
 
 - How do your clients and customers define success?
 - What would you change around here if you could?
 
-### Culture
+## Culture
 
 - I was wondering what your best moment so far at (company name here) was?
 - What do you like most about working here?
@@ -17,7 +17,7 @@ Here are some good questions to ask at the end of the interview.
 - How are you improving diversity?
 - What's the best benefit you offer?
 
-### HR
+## HR
 
 - What concerns/reservations do you have about me for this position?
 - What can I help to clarify that would make hiring me an easy decision?
@@ -25,7 +25,7 @@ Here are some good questions to ask at the end of the interview.
 - Who's your ideal candidate and how can I make myself more like them?
 - How does the management team deal with mistakes?
 
-### Engineering Related
+## Engineering Related
 
 - What are the engineering challenges that the company/team is facing?
 - How has your role changed since joining the company?

@@ -1,7 +1,7 @@
 Software Engineering
 ==
 
-### What is the difference between an interface and abstract class?
+## What is the difference between an interface and abstract class?
 
 **Abstract Class**
 
