@@ -142,9 +142,39 @@ It's not really relevant these days. Check out the link below for all the availa
 
 **What are some of the "gotchas" for writing efficient CSS?**
 
+Firstly, understand that browsers match selectors from rightmost (key selector) to left. Browsers filter out elements in the DOM according to the key selector, and traverse up its parent elements to determine matches. The shorter the length of the selector chain, the faster the browser can determine if that element matches the selector. Hence avoid key selectors that are tag and universal selectors. They match a large numbers of elements and browsers will have to do more work in determining if the parents do match.
+
+[BEM (Block Element Modifier)](https://bem.info/) methodology recommends that everything has a single class, and, where you need hierarchy, that gets baked into the name of the class as well, this naturally makes the selector efficient and easy to override.
+
+Be aware of which CSS properties trigger reflow, repaint and compositing. Avoid writing styles that change the layout where possible.
+
+https://developers.google.com/web/fundamentals/performance/rendering/
+
 **What are the advantages/disadvantages of using CSS preprocessors?**
 
+Advantages:
+
+- CSS is made more maintainable.
+- Easy to write nested selectors.
+- Variables for consistent theming. Can share theme files across different projects.
+- Mixins to generate repeated CSS.
+- Splitting your code into multiple files. CSS files can be split up too but doing so will require a HTTP request to download each CSS file.
+
+Disadvantages:
+
+- Requires tools for preprocessing. Re-compilation time can be slow.
+
 **Describe what you like and dislike about the CSS preprocessors you have used.**
+
+Likes:
+
+- Mostly mentioned above.
+- Less is written in JavaScript, which plays well with Node.
+
+Dislikes:
+
+- I use Sass via `node-sass`, which is a binding for LibSass, which is written in C++. Have to frequently recompile it when switching between node versions.
+- In Less, variable names are prefixed with `@`, which can be confused with native CSS keywords like `@media`, `@import` and `@font-face` rule.
 
 **How would you implement a web design comp that uses non-standard fonts?**
 
@@ -165,15 +195,16 @@ The box model has the following rules:
 - The dimensions of a block element are calculated by `width`, `height`, `padding`, `border`s, and `margin`s.
 - If no height is specified, a `block` element will be as high as the content it contains, plus padding (unless there are floats, for which see below).
 - If no width is specified, a non-floated `block` element will expand to fit the width of its parent minus padding.
-- The `height` of an element is calculated by the content's height + vertical `padding`.
-- The `width` of an element is calculated by the content's width + horizontal `padding`.
-- By default, `border`s are not part of the `width` and `height` of an element.
+- The `height` of an element is calculated by the content's height.
+- The `width` of an element is calculated by the content's width.
+- By default, `padding`s and `border`s are not part of the `width` and `height` of an element.
 
 - https://www.smashingmagazine.com/2010/06/the-principles-of-cross-browser-css-coding/#understand-the-css-box-model
 
-**What does * { box-sizing: border-box; } do? What are its advantages?**
+**What does `* { box-sizing: border-box; }` do? What are its advantages?**
 
-- `box-sizing: border-box` changes how the `width` and `height` of elements are being calculated. By default, only the content size and `padding` is being included. With `box-sizing: border-box`, the `border` width is also being included.
+- By default, elements have `box-sizing: content-box` applied, and only the content size is being accounted for.
+- `box-sizing: border-box` changes how the `width` and `height` of elements are being calculated, `border` and `padding` are also being included in the calculation.
 - The `height` of an element is now calculated by the content's height + vertical `padding` + vertical `border` width.
 - The `width` of an element is now calculated by the content's width + horizontal `padding` + horizontal `border` width.
 
@@ -183,7 +214,7 @@ The box model has the following rules:
 
 **What's the difference between `inline` and `inline-block`?**
 
-I shall throw a comparison with `block` for good measure.
+I shall throw in a comparison with `block` for good measure.
 
 |  |`block`|`inline-block`|`inline`|
 |--|--|--|--|
@@ -191,10 +222,10 @@ I shall throw a comparison with `block` for good measure.
 | Positioning | Start on a new line and tolerates no HTML elements next to it (except when you add `float) | Flows along with other content and allows other elements beside. | Flows along with other content and allows other elements beside. |
 | Can specify `width` and `height` | Yes | Yes | No. Will ignore if being set. |
 | Can be aligned with `vertical-align` | No | Yes | Yes |
-| Margins and paddings | All sides respected. | All sides respected. | Only horizontal sides respected. Vertical sides, if specified, do not affect layout. |
+| Margins and paddings | All sides respected. | All sides respected. | Only horizontal sides respected. Vertical sides, if specified, do not affect layout. Vertical space it takes up depends on `line-height`, even though the `border` and `padding` appear visually around the content. |
 | Float | - | - | Becomes like a `block` element where you can set vertical margins and paddings. |
 
-**What's the difference between a relative, fixed, absolute and statically positioned element?**
+**What's the difference between a `relative`, `fixed`, `absolute` and `static`-ally positioned element?**
 
 **The 'C' in CSS stands for Cascading. How is priority determined in assigning styles (a few examples)? How can you use this system to your advantage?**
 
@@ -206,10 +237,16 @@ I shall throw a comparison with `block` for good measure.
 
 **Have you ever worked with retina graphics? If so, when and what techniques did you use?**
 
-**Is there any reason you'd want to use translate() instead of absolute positioning, or vice-versa? And why?**
+**Is there any reason you'd want to use `translate()` instead of `absolute` positioning, or vice-versa? And why?**
 
+`translate()` is a value of CSS `transform`. Changing `transform` or `opacity` does not trigger browser reflow or repaint, only compositions, whereas changing the absolute positioning triggers `reflow`. `transform` causes the browser to create a GPU layer for the element but changing absolute positioning properties uses the CPU. Hence `translate()` is more efficient and will result in shorter paint times for smoother animations.
+
+When using `translate()`, the element still takes up its original space (sort of like `position: relative`), unlike in changing the absolute positioning.
+
+- https://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/
 
 References:
 
 - https://neal.codes/blog/front-end-interview-css-questions
 - http://jgthms.com/css-interview-questions-and-answers.html
+- https://quizlet.com/28293152/front-end-interview-questions-css-flash-cards/
