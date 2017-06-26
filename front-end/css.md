@@ -50,7 +50,7 @@ The `.clearfix` hack uses a clever CSS pseudo selector (:after) to clear floats.
 }
 ```
 
-Alternatively, give `overflow: hidden` property to the parent element which will establish a new block formatting context inside the children and it will expand to contain its children.
+Alternatively, give `overflow: auto` or `overflow: hidden` property to the parent element which will establish a new block formatting context inside the children and it will expand to contain its children.
 
 - https://css-tricks.com/all-about-floats/
 
@@ -68,8 +68,6 @@ Each stacking context is self-contained - after the element's contents are stack
 - https://philipwalton.com/articles/what-no-one-told-you-about-z-index/
 - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
 
-// TODO: Revisit.
-
 **Describe Block Formatting Context (BFC) and how it works.**
 
 A Block Formatting Context (BFC) is part of the visual CSS rendering of a web page in which block boxes are laid out. Floats, absolutely positioned elements, `inline-blocks`, `table-cells`, `table-caption`s, and elements with `overflow` other than `visible` (except when that value has been propagated to the viewport) establish new block formatting contexts.
@@ -85,8 +83,6 @@ In a BFC, each box's left outer edge touches the left edge of the containing blo
 
 Vertical margins between adjacent block-level boxes in a BFC collapse. Read more on [collapsing margins](https://www.sitepoint.com/web-foundations/collapsing-margins/).
 
-// TODO: Revisit.
-
 - https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context
 - https://www.sitepoint.com/understanding-block-formatting-contexts-in-css/
 
@@ -94,7 +90,7 @@ Vertical margins between adjacent block-level boxes in a BFC collapse. Read more
 
 - Empty `div` method - `<div style="clear:both;"></div>`.
 - Clearfix method - Refer to the `.clearfix` class above.
-- `overflow: hidden` method - Parent will establish a new block formatting context and expand to contains its floated children.
+- `overflow: auto` or `overflow: hidden` method - Parent will establish a new block formatting context and expand to contains its floated children.
 
 In large projects, I would write a utility `.clearfix` class and use them in places where I need it. `overflow: hidden` might clip children if the children is taller than the parent and is not very ideal.
 
@@ -126,9 +122,13 @@ It's not really relevant these days. Check out the link below for all the availa
 - Use `autoprefixer` to automatically add vendor prefixes to your code.
 - Use Reset CSS or Normalize.css.
 
-**How do you serve your pages for feature-constrained browsers?**
+**How do you serve your pages for feature-constrained browsers? What techniques/processes do you use?**
 
-**What techniques/processes do you use?**
+- Graceful degradation - The practice of building an application for modern browsers while ensuring it remains functional in older browsers.
+- Progressive enhancement - The practice of building an application for a base level of user experience, but adding functional enhancements when a browser supports it.
+- Use <caniuse.com> to check for feature support.
+- Autoprefixer for automatic vendor prefix insertion.
+- Feature detection using Modernizr.
 
 **What are the different ways to visually hide content (and make it available only for screen readers)?**
 
@@ -141,11 +141,48 @@ I would go with the absolute positioning approach, as it has the least caveats a
 
 **Have you ever used a grid system, and if so, what do you prefer?**
 
-**Have you used or implemented media queries or mobile specific layouts/CSS?**
+I like the `float`-based grid system because it still has the most support among the alternative existing systems (flex, grid).
+
+**Have you used or implemented media queries or mobile-specific layouts/CSS?**
+
+Yes. An example would be transforming a stacked pill navigation into a fixed-bottom tab navigation beyond a certain breakpoint.
 
 **Are you familiar with styling SVG?**
 
+No... Sadly.
+
 **How do you optimize your webpages for print?**
+
+1. Create a stylesheet for print or use media queries.
+
+```html
+<!-- Main stylesheet on top -->
+<link rel="stylesheet" href="/global.css" media="all" />
+<!-- Print only, on bottom -->
+<link rel="stylesheet" href="/print.css" media="print" />
+```
+
+Make sure to put non-print styles inside `@media screen { ... }`.
+
+```css
+@media print {
+  ...
+}
+```
+
+2. Deliberately add page breaks.
+
+```html
+<style>
+.page-break { page-break-before: always; } /* put this class into your main.css file with "display:none;" */
+</style>
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce eu felis. Curabitur sit amet magna. Nullam aliquet. Aliquam ut diam...
+<div class="page-break"></div>
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit....
+```
+
+- https://davidwalsh.name/optimizing-structure-print-css
 
 **What are some of the "gotchas" for writing efficient CSS?**
 
@@ -185,7 +222,7 @@ Dislikes:
 
 **How would you implement a web design comp that uses non-standard fonts?**
 
-// TODO
+Use `@font-face` and define `font-family` for different `font-weight`s.
 
 **Explain how a browser determines what elements match a CSS selector.**
 
@@ -197,7 +234,13 @@ For example with this selector `p span`, browsers firstly find all the `<span>` 
 
 **Describe pseudo-elements and discuss what they are used for.**
 
-// TODO
+A CSS pseudo-element is a keyword added to a selector that lets you style a specific part of the selected element(s). They can be used for decoration (`:first-line`, `:first-letter`) or adding elements to the markup (combined with `content: ...`) without having to modify the markup (`:before`, `:after`).
+
+- `:first-line` and `:first-letter` can be used to decorate text.
+- Used in the `.clearfix` hack as shown above to add a zero-space element with `clear: both`.
+- Triangular arrows in tooltips use `:before` and `:after`. Encourages separation of concerns because the triangle is considered part of styling and not really the DOM, but not really possible to draw a triangle with just CSS styles.
+
+- https://css-tricks.com/almanac/selectors/a/after-and-before/
 
 **Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.**
 
@@ -227,8 +270,7 @@ The box model has the following rules:
 
 **List as many values for the `display` property that you can remember.**
 
-- `none`, `block`, `inline`, `inline-block`, `table-cell`.
-// TODO
+- `none`, `block`, `inline`, `inline-block`, `table`, `table-row`, `table-cell`, `list-item`.
 
 **What's the difference between `inline` and `inline-block`?**
 
@@ -245,7 +287,15 @@ I shall throw in a comparison with `block` for good measure.
 
 **What's the difference between a `relative`, `fixed`, `absolute` and `static`-ally positioned element?**
 
-// TODO
+A positioned element is an element whose computed `position` property is either `relative`, `absolute`, `fixed` or `sticky`.
+
+- `static` - The default position; the element will flow into the page as it normally would. The `top`, `right`, `bottom`, `left` and `z-index` properties do not apply.
+- `relative` - The element's position is adjusted relative to itself, without changing layout (and thus leaving a gap for the element where it would have been had it not been positioned).
+- `absolute` - The element is removed from the flow of the page and positioned at a specified position relative to its closest positioned ancestor if any, or otherwise relative to the initial containing block. Absolutely positioned boxes can have margins, and they do not collapse with any other margins. These elements do not affect the position of other elements.
+- `fixed` - The element is removed from the flow of the page and positioned at a specified position relative to the viewport and doesn't move when scrolled.
+- `sticky` - Sticky positioning is a hybrid of relative and fixed positioning. The element is treated as relative positioned until it crosses a specified threshold, at which point it is treated as fixed positioned.
+
+- https://developer.mozilla.org/en/docs/Web/CSS/position
 
 **The 'C' in CSS stands for Cascading. How is priority determined in assigning styles (a few examples)? How can you use this system to your advantage?**
 
@@ -271,15 +321,33 @@ In the cases of equal specificity: the latest rule is the one that counts. If yo
 
 **Have you played around with the new CSS Flexbox or Grid specs?**
 
-// TODO
+Yes. CSS flex solves many common problems in CSS, such as vertical centering of elements within a container, sticky footer, etc. Bootstrap has an option `$enable-flex` while and Bulma is already based on Flexbox.
+
+Flexbox is meant for 1-dimensional layout while Grid is meant for 2-dimensional layouts.
+
+- https://philipwalton.github.io/solved-by-flexbox/
 
 **How is responsive design different from adaptive design?**
 
-// TODO
+Both responsive and adaptive design attempt to optimize the user experience across different devices, adjusting for different viewport sizes, resolutions, usage contexts, control mechanisms, and so on.
+
+Responsive design works on the principle of flexibility - a single fluid website that can look good on any device. Responsive websites use media queries, flexible grids, and responsive images to create a user experience that flexes and changes based on a multitude of factors. Like a single ball growing or shrinking to fit through several different hoops.
+
+Adaptive design is more like the modern definition of progressive enhancement. Instead of one flexible design, adaptive design detects the device and other features, and then provides the appropriate feature and layout based on a predefined set of viewport sizes and other characteristics. The site detects the type of device used, and delivers the pre-set layout for that device. Instead of a single ball going through several different-sized hoops, you’d have several different balls to use depending on the hoop size.
+
+- https://developer.mozilla.org/en-US/docs/Archive/Apps/Design/UI_layout_basics/Responsive_design_versus_adaptive_design
+- http://mediumwell.com/responsive-adaptive-mobile/
+- https://css-tricks.com/the-difference-between-responsive-and-adaptive-design/
 
 **Have you ever worked with retina graphics? If so, when and what techniques did you use?**
 
-// TODO
+I tend to use higher resolution graphics (twice the display size) to handle retina display. The better way would be to use a media query like `@media only screen and (min-device-pixel-ratio: 2) { ... }` and change the `background-image`.
+
+For icons, I would also opt to use svgs and icon fonts where possible, as they render very crisply regardless of resolution.
+
+Another method would be to use JavaScript to replace the `<img>` `src` attribute with higher resolution versions after checking the `window.devicePixelRatio` value.
+
+- https://www.sitepoint.com/css-techniques-for-retina-displays/
 
 **Is there any reason you'd want to use `translate()` instead of `absolute` positioning, or vice-versa? And why?**
 
