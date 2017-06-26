@@ -121,7 +121,7 @@ It's not really relevant these days. Check out the link below for all the availa
 
 **How would you approach fixing browser-specific styling issues?**
 
-- After identifying the issue and the offending browser, use a separate stylesheet that only loads when that specific browser is being used. This technique requires server side rendering though.
+- After identifying the issue and the offending browser, use a separate style sheet that only loads when that specific browser is being used. This technique requires server side rendering though.
 - Use libraries like Bootstrap that already handles these styling issues for you.
 - Use `autoprefixer` to automatically add vendor prefixes to your code.
 - Use Reset CSS or Normalize.css.
@@ -131,6 +131,13 @@ It's not really relevant these days. Check out the link below for all the availa
 **What techniques/processes do you use?**
 
 **What are the different ways to visually hide content (and make it available only for screen readers)?**
+
+- `visibility: hidden`. However the element is still in the flow of the page, and still takes up space.
+- `width: 0; height: 0`. Make the element not take up any space on the screen at all, resulting in not showing it.
+- `position; absolute; left: -99999px`. Position it off the screen.
+- `text-indent: -9999px`. This only works on text within the `block` elements.
+
+I would go with the absolute positioning approach, as it has the least caveats and works for most elements.
 
 **Have you ever used a grid system, and if so, what do you prefer?**
 
@@ -178,9 +185,19 @@ Dislikes:
 
 **How would you implement a web design comp that uses non-standard fonts?**
 
+// TODO
+
 **Explain how a browser determines what elements match a CSS selector.**
 
+This part is related to the above about writing efficient CSS. Browsers match selectors from rightmost (key selector) to left. Browsers filter out elements in the DOM according to the key selector, and traverse up its parent elements to determine matches. The shorter the length of the selector chain, the faster the browser can determine if that element matches the selector.
+
+For example with this selector `p span`, browsers firstly find all the `<span>` elements, and traverse up its parent all the way up to the root to find the `<p>` element. For a particular `<span>`, as soon as it finds a `<p>`, it knows that the `<span>` matches and can stop its matching.
+
+- https://stackoverflow.com/questions/5797014/why-do-browsers-match-css-selectors-from-right-to-left
+
 **Describe pseudo-elements and discuss what they are used for.**
+
+// TODO
 
 **Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.**
 
@@ -211,6 +228,7 @@ The box model has the following rules:
 **List as many values for the `display` property that you can remember.**
 
 - `none`, `block`, `inline`, `inline-block`, `table-cell`.
+// TODO
 
 **What's the difference between `inline` and `inline-block`?**
 
@@ -227,15 +245,41 @@ I shall throw in a comparison with `block` for good measure.
 
 **What's the difference between a `relative`, `fixed`, `absolute` and `static`-ally positioned element?**
 
+// TODO
+
 **The 'C' in CSS stands for Cascading. How is priority determined in assigning styles (a few examples)? How can you use this system to your advantage?**
+
+Browser determines what styles to show on an element depending on the specificity of CSS rules. We assume that the browser has already determined the rules that match a particular element. Among the matching rules, the specificity, four comma-separate values, `a, b, c, d` are calculated for each rule based on the following:
+
+1. Inline style. If the property declaration is an inline style on the element, `a` is 1, else 0.
+2. `b` is the number of ID selectors.
+3. `c` is the number of classes, attributes and pseudo-classes selectors.
+4. `d` is the number of tags and pseudo-elements selectors.
+
+The resulting specificity is not a score, but a matrix of values that can be compared column by column. When comparing selectors to determine which has the highest specificity, look from left to right, and compare the highest value in each column. So a value in column `b` will override values in columns `c` and `d`, no matter what they might be. As such, specificity of `0,1,0,0` would be greater than one of `0,0,10,10`.
+
+In the cases of equal specificity: the latest rule is the one that counts. If you have written the same rule into your style sheet (regardless of internal or external) twice, then the lower rule in your style sheet is closer to the element to be styled, it is deemed to be more specific and therefore will be applied.
+
+- https://www.smashingmagazine.com/2007/07/css-specificity-things-you-should-know/
+- https://www.sitepoint.com/web-foundations/specificity/
 
 **What existing CSS frameworks have you used locally, or in production? How would you change/improve them?**
 
+- **Bootstrap** - Slow release cycle. Bootstrap 4 has been in alpha for almost 2 years. Add a spinner button component, as it is widely-used.
+- **Semantic UI** - Source code structure makes theme customization is extremely hard to understand. Painful to customize with unconventional theming system. Hardcoded config path within the vendor library. Not well-designed for overriding variables unlike in Bootstrap.
+- **Bulma** - A lot of non-semantic and superfluous classes and markup required. Not backward compatible. Upgrading versions breaks the app in subtle manners.
+
 **Have you played around with the new CSS Flexbox or Grid specs?**
+
+// TODO
 
 **How is responsive design different from adaptive design?**
 
+// TODO
+
 **Have you ever worked with retina graphics? If so, when and what techniques did you use?**
+
+// TODO
 
 **Is there any reason you'd want to use `translate()` instead of `absolute` positioning, or vice-versa? And why?**
 
@@ -245,7 +289,7 @@ When using `translate()`, the element still takes up its original space (sort of
 
 - https://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/
 
-References:
+### Other answers
 
 - https://neal.codes/blog/front-end-interview-css-questions
 - http://jgthms.com/css-interview-questions-and-answers.html
