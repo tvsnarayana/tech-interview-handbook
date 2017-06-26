@@ -50,6 +50,8 @@ The `.clearfix` hack uses a clever CSS pseudo selector (:after) to clear floats.
 }
 ```
 
+Alternatively, give `overflow: hidden` property to the parent element which will establish a new block formatting context inside the children and it will expand to contain its children.
+
 - https://css-tricks.com/all-about-floats/
 
 **Describe `z-index` and how stacking context is formed.**
@@ -66,32 +68,148 @@ Each stacking context is self-contained - after the element's contents are stack
 - https://philipwalton.com/articles/what-no-one-told-you-about-z-index/
 - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
 
-**Describe BFC (Block Formatting Context) and how it works.**
+// TODO: Revisit.
+
+**Describe Block Formatting Context (BFC) and how it works.**
+
+A Block Formatting Context (BFC) is part of the visual CSS rendering of a web page in which block boxes are laid out. Floats, absolutely positioned elements, `inline-blocks`, `table-cells`, `table-caption`s, and elements with `overflow` other than `visible` (except when that value has been propagated to the viewport) establish new block formatting contexts.
+
+A BFC is an HTML box that satisfies at least one of the following conditions:
+
+- The value of `float` is not `none`.
+- The value of `position` is neither `static` nor `relative`.
+- The value of `display` is `table-cell`, `table-caption`, `inline-block`, `flex`, or `inline-flex`.
+- The value of `overflow` is not `visible`.
+
+In a BFC, each box's left outer edge touches the left edge of the containing block (for right-to-left formatting, right edges touch).
+
+Vertical margins between adjacent block-level boxes in a BFC collapse. Read more on [collapsing margins](https://www.sitepoint.com/web-foundations/collapsing-margins/).
+
+// TODO: Revisit.
+
+- https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context
+- https://www.sitepoint.com/understanding-block-formatting-contexts-in-css/
+
 **What are the various clearing techniques and which is appropriate for what context?**
+
+- Empty `div` method - `<div style="clear:both;"></div>`.
+- Clearfix method - Refer to the `.clearfix` class above.
+- `overflow: hidden` method - Parent will establish a new block formatting context and expand to contains its floated children.
+
+In large projects, I would write a utility `.clearfix` class and use them in places where I need it. `overflow: hidden` might clip children if the children is taller than the parent and is not very ideal.
+
 **Explain CSS sprites, and how you would implement them on a page or site.**
+
+CSS sprites combine multiple images into one single larger image. It is commonly used technique for icons (Gmail uses it). How to implement it:
+
+1. Use a sprite generator that packs multiple images into one and generate the appropriate CSS for it.
+1. Each image would have a corresponding CSS class with `background-image`, `background-position` and `background-size` properties defined.
+1. To use that image, add the corresponding class to your element.
+
+Advantages:
+
+- Reduce the number of HTTP requests for multiple images (only one single request is required per spritesheet). But with HTTP2, loading multiple images is no longer much of an issue.
+- Advance downloading of assets that won't be downloaded until needed, such as `:hover` pseudo-states. Blinking wouldn't be seen.
+
 **What are your favorite image replacement techniques and which do you use when?**
+
+CSS image replacement is a technique of replacing a text element (usually a header tag like an <h1>) with an image (often a logo). It has its origins in the time before web fonts and SVG. For years, web developers battled against browser inconsistencies to craft image replacement techniques that struck the right balance between design and accessibility.
+
+It's not really relevant these days. Check out the link below for all the available techniques.
+
+- https://css-tricks.com/the-image-replacement-museum/
+
 **How would you approach fixing browser-specific styling issues?**
+
+- After identifying the issue and the offending browser, use a separate stylesheet that only loads when that specific browser is being used. This technique requires server side rendering though.
+- Use libraries like Bootstrap that already handles these styling issues for you.
+- Use `autoprefixer` to automatically add vendor prefixes to your code.
+- Use Reset CSS or Normalize.css.
+
 **How do you serve your pages for feature-constrained browsers?**
+
 **What techniques/processes do you use?**
+
 **What are the different ways to visually hide content (and make it available only for screen readers)?**
+
 **Have you ever used a grid system, and if so, what do you prefer?**
+
 **Have you used or implemented media queries or mobile specific layouts/CSS?**
+
 **Are you familiar with styling SVG?**
+
 **How do you optimize your webpages for print?**
+
 **What are some of the "gotchas" for writing efficient CSS?**
+
 **What are the advantages/disadvantages of using CSS preprocessors?**
+
 **Describe what you like and dislike about the CSS preprocessors you have used.**
+
 **How would you implement a web design comp that uses non-standard fonts?**
+
 **Explain how a browser determines what elements match a CSS selector.**
+
 **Describe pseudo-elements and discuss what they are used for.**
+
 **Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.**
+
+The CSS box model is responsible for calculating:
+
+- How much space a block-level element takes up.
+- Whether or not borders and/or margins overlap, or collapse.
+- A box’s dimensions.
+
+The box model has the following rules:
+
+- The dimensions of a block element are calculated by `width`, `height`, `padding`, `border`s, and `margin`s.
+- If no height is specified, a `block` element will be as high as the content it contains, plus padding (unless there are floats, for which see below).
+- If no width is specified, a non-floated `block` element will expand to fit the width of its parent minus padding.
+- The `height` of an element is calculated by the content's height + vertical `padding`.
+- The `width` of an element is calculated by the content's width + horizontal `padding`.
+- By default, `border`s are not part of the `width` and `height` of an element.
+
+- https://www.smashingmagazine.com/2010/06/the-principles-of-cross-browser-css-coding/#understand-the-css-box-model
+
 **What does * { box-sizing: border-box; } do? What are its advantages?**
-**List as many values for the display property that you can remember.**
-**What's the difference between inline and inline-block?**
+
+- `box-sizing: border-box` changes how the `width` and `height` of elements are being calculated. By default, only the content size and `padding` is being included. With `box-sizing: border-box`, the `border` width is also being included.
+- The `height` of an element is now calculated by the content's height + vertical `padding` + vertical `border` width.
+- The `width` of an element is now calculated by the content's width + horizontal `padding` + horizontal `border` width.
+
+**List as many values for the `display` property that you can remember.**
+
+- `none`, `block`, `inline`, `inline-block`, `table-cell`.
+
+**What's the difference between `inline` and `inline-block`?**
+
+I shall throw a comparison with `block` for good measure.
+
+|  |`block`|`inline-block`|`inline`|
+|--|--|--|--|
+| Size | Fills up the width of its parent container. | Depends on content. | Depends on content. |
+| Positioning | Start on a new line and tolerates no HTML elements next to it (except when you add `float) | Flows along with other content and allows other elements beside. | Flows along with other content and allows other elements beside. |
+| Can specify `width` and `height` | Yes | Yes | No. Will ignore if being set. |
+| Can be aligned with `vertical-align` | No | Yes | Yes |
+| Margins and paddings | All sides respected. | All sides respected. | Only horizontal sides respected. Vertical sides, if specified, do not affect layout. |
+| Float | - | - | Becomes like a `block` element where you can set vertical margins and paddings. |
+
 **What's the difference between a relative, fixed, absolute and statically positioned element?**
+
 **The 'C' in CSS stands for Cascading. How is priority determined in assigning styles (a few examples)? How can you use this system to your advantage?**
+
 **What existing CSS frameworks have you used locally, or in production? How would you change/improve them?**
+
 **Have you played around with the new CSS Flexbox or Grid specs?**
+
 **How is responsive design different from adaptive design?**
+
 **Have you ever worked with retina graphics? If so, when and what techniques did you use?**
+
 **Is there any reason you'd want to use translate() instead of absolute positioning, or vice-versa? And why?**
+
+
+References:
+
+- https://neal.codes/blog/front-end-interview-css-questions
+- http://jgthms.com/css-interview-questions-and-answers.html
