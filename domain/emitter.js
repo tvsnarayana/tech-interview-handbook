@@ -14,7 +14,7 @@ sub2 = emitter.subscribe('event_name', callback2);
 ```
 
 Emitting events:
-This particular example should lead to the `callback` above being invoked with `foo` and `bar` as parameters
+This particular example should lead to the `callback` above being invoked with `foo` and `bar` as parameters.
 ```
 emitter.emit('event_name', foo, bar);
 ```
@@ -39,7 +39,7 @@ Emitter.prototype.subscribe = function (eventName, callback) {
     this.nextSubscriptionId++;
     this.events[eventName][subscriptionId] = callback;
     const events = this.events;
-    return {
+    const subscriber = {
         release: function () {
             delete events[eventName][subscriptionId];
             // No more subscriptions for that event. Delete that eventName from events.
@@ -48,35 +48,36 @@ Emitter.prototype.subscribe = function (eventName, callback) {
             }
         },
     };
+    return subscriber;
 };
 
 Emitter.prototype.emit = function (eventName) {
     if (!this.events.hasOwnProperty(eventName)) {
-        // No such event being subscribed to. Nothing should happen.
+        // No such event being subscribed to. Terminate.
         return;
     }
     const callbackArgs = Array.prototype.slice.apply(arguments).slice(1);
     const callbacks = Object.values(this.events[eventName]);
-    callbacks.forEach(callback => {
+    callbacks.forEach(function (callback) {
         callback.apply(null, callbackArgs);
     });
 };
 
 // Testing code.
-let emitter = new Emitter();
-let sub = emitter.subscribe('add', (a, b) => {
+const emitter = new Emitter();
+const sub = emitter.subscribe('add', (a, b) => {
     console.log('add', a, b, a + b);
 });
-let sub2 = emitter.subscribe('add', (a, b) => {
+const sub2 = emitter.subscribe('add', (a, b) => {
     console.log('add double', a * 2, b * 2, a * b * 2);
 });
 emitter.emit('add', 1, 2);
 sub2.release();
-let sub3 = emitter.subscribe('add', (a, b) => {
+const sub3 = emitter.subscribe('add', (a, b) => {
     console.log('add triple', a * 3, b * 3, a * b * 3);
 });
 emitter.emit('add', 1, 2);
-let sub4 = emitter.subscribe('mul', (a, b) => {
+const sub4 = emitter.subscribe('mul', (a, b) => {
     console.log('mul', a, b, a * b);
 })
 emitter.emit('mul', 2, 3);
