@@ -18,23 +18,23 @@ If you are a total beginner to CSS, Codecademy's [HTML & CSS course](https://www
 
 ## Questions
 
-**What is the difference between classes and IDs in CSS?**
+#### What is the difference between classes and IDs in CSS?
 
 - **IDs** - Meant to be unique within the document. Can be used to identify an element when linking using a fragment identifier. Elements can only have one `id` attribute.
 - **Classes** - Can be reused on multiple elements within the document. Mainly for styling and targeting elements.
 
-**What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?**
+#### What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
 
 - **Resetting** - Resetting is meant to strip all default browser styling on elements. For e.g. `margin`s, `padding`s, `font-size`s of all elements are reset to be the same. You will have to redeclare styling for common typographic elements.
 - **Normalizing** - Normalizing preserves useful default styles rather than "unstyling" everything. It also corrects bugs for common browser dependencies.
 
 I would choose resetting when I have very a customized or unconventional site design such that I need to do a lot of my own styling do not need any default styling to be preserved.
 
-**References**
+###### References
 
 - https://stackoverflow.com/questions/6887336/what-is-the-difference-between-normalize-css-and-reset-css
 
-**Describe `float`s and how they work.**
+#### Describe `float`s and how they work.
 
 Float is a CSS positioning property. Floated elements remain a part of the flow of the page, and will affect the positioning of other elements (e.g. text will flow around floated elements), unlike `position: absolute` elements, which are removed from the flow of the page.
 
@@ -56,11 +56,11 @@ The `.clearfix` hack uses a clever CSS pseudo selector (:after) to clear floats.
 
 Alternatively, give `overflow: auto` or `overflow: hidden` property to the parent element which will establish a new block formatting context inside the children and it will expand to contain its children.
 
-**References**
+###### References
 
 - https://css-tricks.com/all-about-floats/
 
-**Describe `z-index` and how stacking context is formed.**
+#### Describe `z-index` and how stacking context is formed.
 
 The `z-index` property in CSS controls the vertical stacking order of elements that overlap. `z-index` only effects elements that have a `position` value which is not `static`.
 
@@ -70,7 +70,7 @@ A stacking context is an element that contains a set of layers. Within a local s
 
 Each stacking context is self-contained - after the element's contents are stacked, the whole element is considered in the stacking order of the parent stacking context. A handful of CSS properties trigger a new stacking context, such as `opacity` less than 1, `filter` that is not `none`, and `transform that is not `none`.
 
-**References**
+###### References
 
 - https://css-tricks.com/almanac/properties/z/z-index/
 - https://philipwalton.com/articles/what-no-one-told-you-about-z-index/
@@ -91,12 +91,12 @@ In a BFC, each box's left outer edge touches the left edge of the containing blo
 
 Vertical margins between adjacent block-level boxes in a BFC collapse. Read more on [collapsing margins](https://www.sitepoint.com/web-foundations/collapsing-margins/).
 
-**References**
+###### References
 
 - https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context
 - https://www.sitepoint.com/understanding-block-formatting-contexts-in-css/
 
-**What are the various clearing techniques and which is appropriate for what context?**
+#### What are the various clearing techniques and which is appropriate for what context?
 
 - Empty `div` method - `<div style="clear:both;"></div>`.
 - Clearfix method - Refer to the `.clearfix` class above.
@@ -104,7 +104,7 @@ Vertical margins between adjacent block-level boxes in a BFC collapse. Read more
 
 In large projects, I would write a utility `.clearfix` class and use them in places where I need it. `overflow: hidden` might clip children if the children is taller than the parent and is not very ideal.
 
-**Explain CSS sprites, and how you would implement them on a page or site.**
+#### Explain CSS sprites, and how you would implement them on a page or site.
 
 CSS sprites combine multiple images into one single larger image. It is commonly used technique for icons (Gmail uses it). How to implement it:
 
@@ -112,7 +112,7 @@ CSS sprites combine multiple images into one single larger image. It is commonly
 1. Each image would have a corresponding CSS class with `background-image`, `background-position` and `background-size` properties defined.
 1. To use that image, add the corresponding class to your element.
 
-Advantages:
+**Advantages:**
 
 - Reduce the number of HTTP requests for multiple images (only one single request is required per spritesheet). But with HTTP2, loading multiple images is no longer much of an issue.
 - Advance downloading of assets that won't be downloaded until needed, such as `:hover` pseudo-states. Blinking wouldn't be seen.
@@ -123,18 +123,18 @@ CSS image replacement is a technique of replacing a text element (usually a head
 
 It's not really relevant these days. Check out the link below for all the available techniques.
 
-**References**
+###### References
 
 - https://css-tricks.com/the-image-replacement-museum/
 
-**How would you approach fixing browser-specific styling issues?**
+#### How would you approach fixing browser-specific styling issue
 
 - After identifying the issue and the offending browser, use a separate style sheet that only loads when that specific browser is being used. This technique requires server side rendering though.
 - Use libraries like Bootstrap that already handles these styling issues for you.
 - Use `autoprefixer` to automatically add vendor prefixes to your code.
 - Use Reset CSS or Normalize.css.
 
-**How do you serve your pages for feature-constrained browsers? What techniques/processes do you use?**
+#### How do you serve your pages for feature-constrained browsers? What techniques/processes do you use?
 
 - Graceful degradation - The practice of building an application for modern browsers while ensuring it remains functional in older browsers.
 - Progressive enhancement - The practice of building an application for a base level of user experience, but adding functional enhancements when a browser supports it.
@@ -142,7 +142,7 @@ It's not really relevant these days. Check out the link below for all the availa
 - Autoprefixer for automatic vendor prefix insertion.
 - Feature detection using Modernizr.
 
-**What are the different ways to visually hide content (and make it available only for screen readers)?**
+#### What are the different ways to visually hide content (and make it available only for screen readers)?
 
 - `visibility: hidden`. However the element is still in the flow of the page, and still takes up space.
 - `width: 0; height: 0`. Make the element not take up any space on the screen at all, resulting in not showing it.
@@ -151,19 +151,19 @@ It's not really relevant these days. Check out the link below for all the availa
 
 I would go with the absolute positioning approach, as it has the least caveats and works for most elements.
 
-**Have you ever used a grid system, and if so, what do you prefer?**
+#### Have you ever used a grid system, and if so, what do you prefer?
 
 I like the `float`-based grid system because it still has the most support among the alternative existing systems (flex, grid).
 
-**Have you used or implemented media queries or mobile-specific layouts/CSS?**
+#### Have you used or implemented media queries or mobile-specific layouts/CSS?
 
 Yes. An example would be transforming a stacked pill navigation into a fixed-bottom tab navigation beyond a certain breakpoint.
 
-**Are you familiar with styling SVG?**
+#### Are you familiar with styling SVG?
 
 No... Sadly.
 
-**How do you optimize your webpages for print?**
+#### How do you optimize your webpages for print?
 
 1. Create a stylesheet for print or use media queries.
 
@@ -194,11 +194,11 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce eu felis. Curabi
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit....
 ```
 
-**References**
+###### References
 
 - https://davidwalsh.name/optimizing-structure-print-css
 
-**What are some of the "gotchas" for writing efficient CSS?**
+#### What are some of the "gotchas" for writing efficient CSS?
 
 Firstly, understand that browsers match selectors from rightmost (key selector) to left. Browsers filter out elements in the DOM according to the key selector, and traverse up its parent elements to determine matches. The shorter the length of the selector chain, the faster the browser can determine if that element matches the selector. Hence avoid key selectors that are tag and universal selectors. They match a large numbers of elements and browsers will have to do more work in determining if the parents do match.
 
@@ -206,13 +206,13 @@ Firstly, understand that browsers match selectors from rightmost (key selector) 
 
 Be aware of which CSS properties trigger reflow, repaint and compositing. Avoid writing styles that change the layout where possible.
 
-**References**
+###### References
 
 https://developers.google.com/web/fundamentals/performance/rendering/
 
-**What are the advantages/disadvantages of using CSS preprocessors?**
+#### What are the advantages/disadvantages of using CSS preprocessors?
 
-Advantages:
+**Advantages:**
 
 - CSS is made more maintainable.
 - Easy to write nested selectors.
@@ -220,37 +220,37 @@ Advantages:
 - Mixins to generate repeated CSS.
 - Splitting your code into multiple files. CSS files can be split up too but doing so will require a HTTP request to download each CSS file.
 
-Disadvantages:
+**Disadvantages:**
 
 - Requires tools for preprocessing. Re-compilation time can be slow.
 
-**Describe what you like and dislike about the CSS preprocessors you have used.**
+#### Describe what you like and dislike about the CSS preprocessors you have used.
 
-Likes:
+**Likes:**
 
-- Mostly mentioned above.
+- Mostly the advantages mentioned above.
 - Less is written in JavaScript, which plays well with Node.
 
-Dislikes:
+**Dislikes:**
 
 - I use Sass via `node-sass`, which is a binding for LibSass, which is written in C++. Have to frequently recompile it when switching between node versions.
 - In Less, variable names are prefixed with `@`, which can be confused with native CSS keywords like `@media`, `@import` and `@font-face` rule.
 
-**How would you implement a web design comp that uses non-standard fonts?**
+#### How would you implement a web design comp that uses non-standard fonts?
 
 Use `@font-face` and define `font-family` for different `font-weight`s.
 
-**Explain how a browser determines what elements match a CSS selector.**
+#### Explain how a browser determines what elements match a CSS selector.
 
 This part is related to the above about writing efficient CSS. Browsers match selectors from rightmost (key selector) to left. Browsers filter out elements in the DOM according to the key selector, and traverse up its parent elements to determine matches. The shorter the length of the selector chain, the faster the browser can determine if that element matches the selector.
 
 For example with this selector `p span`, browsers firstly find all the `<span>` elements, and traverse up its parent all the way up to the root to find the `<p>` element. For a particular `<span>`, as soon as it finds a `<p>`, it knows that the `<span>` matches and can stop its matching.
 
-**References**
+###### References
 
 - https://stackoverflow.com/questions/5797014/why-do-browsers-match-css-selectors-from-right-to-left
 
-**Describe pseudo-elements and discuss what they are used for.**
+#### Describe pseudo-elements and discuss what they are used for.
 
 A CSS pseudo-element is a keyword added to a selector that lets you style a specific part of the selected element(s). They can be used for decoration (`:first-line`, `:first-letter`) or adding elements to the markup (combined with `content: ...`) without having to modify the markup (`:before`, `:after`).
 
@@ -258,11 +258,11 @@ A CSS pseudo-element is a keyword added to a selector that lets you style a spec
 - Used in the `.clearfix` hack as shown above to add a zero-space element with `clear: both`.
 - Triangular arrows in tooltips use `:before` and `:after`. Encourages separation of concerns because the triangle is considered part of styling and not really the DOM, but not really possible to draw a triangle with just CSS styles.
 
-**References**
+###### References
 
 - https://css-tricks.com/almanac/selectors/a/after-and-before/
 
-**Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.**
+#### Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.
 
 The CSS box model is responsible for calculating:
 
@@ -279,22 +279,22 @@ The box model has the following rules:
 - The `width` of an element is calculated by the content's width.
 - By default, `padding`s and `border`s are not part of the `width` and `height` of an element.
 
-**References**
+###### References
 
 - https://www.smashingmagazine.com/2010/06/the-principles-of-cross-browser-css-coding/#understand-the-css-box-model
 
-**What does `* { box-sizing: border-box; }` do? What are its advantages?**
+#### What does `* { box-sizing: border-box; }` do? What are its advantages?
 
 - By default, elements have `box-sizing: content-box` applied, and only the content size is being accounted for.
 - `box-sizing: border-box` changes how the `width` and `height` of elements are being calculated, `border` and `padding` are also being included in the calculation.
 - The `height` of an element is now calculated by the content's height + vertical `padding` + vertical `border` width.
 - The `width` of an element is now calculated by the content's width + horizontal `padding` + horizontal `border` width.
 
-**List as many values for the `display` property that you can remember.**
+#### List as many values for the `display` property that you can remember.
 
 - `none`, `block`, `inline`, `inline-block`, `table`, `table-row`, `table-cell`, `list-item`.
 
-**What's the difference between `inline` and `inline-block`?**
+#### What's the difference between `inline` and `inline-block`?
 
 I shall throw in a comparison with `block` for good measure.
 
@@ -317,11 +317,11 @@ A positioned element is an element whose computed `position` property is either 
 - `fixed` - The element is removed from the flow of the page and positioned at a specified position relative to the viewport and doesn't move when scrolled.
 - `sticky` - Sticky positioning is a hybrid of relative and fixed positioning. The element is treated as relative positioned until it crosses a specified threshold, at which point it is treated as fixed positioned.
 
-**References**
+###### References
 
 - https://developer.mozilla.org/en/docs/Web/CSS/position
 
-**The 'C' in CSS stands for Cascading. How is priority determined in assigning styles (a few examples)? How can you use this system to your advantage?**
+#### The 'C' in CSS stands for Cascading. How is priority determined in assigning styles (a few examples)? How can you use this system to youadvantage?**
 
 Browser determines what styles to show on an element depending on the specificity of CSS rules. We assume that the browser has already determined the rules that match a particular element. Among the matching rules, the specificity, four comma-separate values, `a, b, c, d` are calculated for each rule based on the following:
 
@@ -334,28 +334,28 @@ The resulting specificity is not a score, but a matrix of values that can be com
 
 In the cases of equal specificity: the latest rule is the one that counts. If you have written the same rule into your style sheet (regardless of internal or external) twice, then the lower rule in your style sheet is closer to the element to be styled, it is deemed to be more specific and therefore will be applied.
 
-**References**
+###### References
 
 - https://www.smashingmagazine.com/2007/07/css-specificity-things-you-should-know/
 - https://www.sitepoint.com/web-foundations/specificity/
 
-**What existing CSS frameworks have you used locally, or in production? How would you change/improve them?**
+#### What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
 
 - **Bootstrap** - Slow release cycle. Bootstrap 4 has been in alpha for almost 2 years. Add a spinner button component, as it is widely-used.
 - **Semantic UI** - Source code structure makes theme customization is extremely hard to understand. Painful to customize with unconventional theming system. Hardcoded config path within the vendor library. Not well-designed for overriding variables unlike in Bootstrap.
 - **Bulma** - A lot of non-semantic and superfluous classes and markup required. Not backward compatible. Upgrading versions breaks the app in subtle manners.
 
-**Have you played around with the new CSS Flexbox or Grid specs?**
+#### Have you played around with the new CSS Flexbox or Grid specs?
 
 Yes. CSS flex solves many common problems in CSS, such as vertical centering of elements within a container, sticky footer, etc. Bootstrap has an option `$enable-flex` while and Bulma is already based on Flexbox.
 
 Flexbox is meant for 1-dimensional layout while Grid is meant for 2-dimensional layouts.
 
-**References**
+###### References
 
 - https://philipwalton.github.io/solved-by-flexbox/
 
-**How is responsive design different from adaptive design?**
+#### How is responsive design different from adaptive design?
 
 Both responsive and adaptive design attempt to optimize the user experience across different devices, adjusting for different viewport sizes, resolutions, usage contexts, control mechanisms, and so on.
 
@@ -363,13 +363,13 @@ Responsive design works on the principle of flexibility - a single fluid website
 
 Adaptive design is more like the modern definition of progressive enhancement. Instead of one flexible design, adaptive design detects the device and other features, and then provides the appropriate feature and layout based on a predefined set of viewport sizes and other characteristics. The site detects the type of device used, and delivers the pre-set layout for that device. Instead of a single ball going through several different-sized hoops, you’d have several different balls to use depending on the hoop size.
 
-**References**
+###### References
 
 - https://developer.mozilla.org/en-US/docs/Archive/Apps/Design/UI_layout_basics/Responsive_design_versus_adaptive_design
 - http://mediumwell.com/responsive-adaptive-mobile/
 - https://css-tricks.com/the-difference-between-responsive-and-adaptive-design/
 
-**Have you ever worked with retina graphics? If so, when and what techniques did you use?**
+#### Have you ever worked with retina graphics? If so, when and what techniques did you use?
 
 I tend to use higher resolution graphics (twice the display size) to handle retina display. The better way would be to use a media query like `@media only screen and (min-device-pixel-ratio: 2) { ... }` and change the `background-image`.
 
@@ -377,17 +377,17 @@ For icons, I would also opt to use svgs and icon fonts where possible, as they r
 
 Another method would be to use JavaScript to replace the `<img>` `src` attribute with higher resolution versions after checking the `window.devicePixelRatio` value.
 
-**References**
+###### References
 
 - https://www.sitepoint.com/css-techniques-for-retina-displays/
 
-**Is there any reason you'd want to use `translate()` instead of `absolute` positioning, or vice-versa? And why?**
+#### Is there any reason you'd want to use `translate()` instead of `absolute` positioning, or vice-versa? And why?
 
 `translate()` is a value of CSS `transform`. Changing `transform` or `opacity` does not trigger browser reflow or repaint, only compositions, whereas changing the absolute positioning triggers `reflow`. `transform` causes the browser to create a GPU layer for the element but changing absolute positioning properties uses the CPU. Hence `translate()` is more efficient and will result in shorter paint times for smoother animations.
 
 When using `translate()`, the element still takes up its original space (sort of like `position: relative`), unlike in changing the absolute positioning.
 
-**References**
+###### References
 
 - https://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/
 
