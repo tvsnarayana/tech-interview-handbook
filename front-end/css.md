@@ -16,7 +16,9 @@ If you are a total beginner to CSS, Codecademy's [HTML & CSS course](https://www
 - **Positioning** - TBD
 - **Floats** - TBD
 
-## Questions
+## Interview Questions
+
+Answers to [Front-end Job Interview Questions - CSS Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions#css-questions). Pull requests for suggestions and corrections are welcome!
 
 #### What is the difference between classes and IDs in CSS?
 
