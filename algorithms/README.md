@@ -66,7 +66,7 @@ discover corner cases you might have missed out or even lead you towards the opt
 - Are there duplicate values? Does it affect the answer?
 - Check for array out of bounds.
 - Is the array sorted or partially sorted? If it is, some form of binary search should be possible.
-- Having two indices to traverse/compare two string/arrays is quite common. For example, we use the same approach to merging two sorted arrays.
+- Having two indices to traverse/compare two strings/arrays is quite common. For example, we use the same approach to merging two sorted arrays.
 - Sorting the array first may significantly simplify the problem.
 - Sometimes you can traverse from the right rather than from the left.
 - For questions where summation of a subarray is involved, pre-computation using hashing or a prefix/suffix sum might be useful.
@@ -101,6 +101,7 @@ discover corner cases you might have missed out or even lead you towards the opt
 - Sum of GP = 2^0 + 2^1 + 2^2 + 2^3 + ... 2^n = 2^(n+1) - 1
 - Permutations of N = N! / (N-K)!
 - Combinations of N = N! / (K! * (N-K)!)
+- When a question involves "a multiple of a number", perhaps modulo might be useful.
 
 ## Strings
 

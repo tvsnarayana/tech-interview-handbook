@@ -6,12 +6,12 @@ This handbook is pretty new and help in contributing content would be very much 
 
 ## Motivations
 
-While there are many awesome books like Cracking the Coding Interview and repositories on Github that contain a lot of algorithm questions, for more domain-specific and non-software engineering roles, there seems to be a lack in resources. This handbook aims to cover questions beyond the algorithm coding questions.
+While there are many awesome books like Cracking the Coding Interview and repositories on Github that contain a lot of algorithm questions, for more domain-specific and non-software engineering questions, there seems to be a lack in resources. This handbook aims to cover questions beyond the algorithm coding questions.
 
 ## Contents
 
 - [Algorithms Questions](algorithms)
-  - Questions categorized by topic and company. Currently contains Airbnb and Facebook. I would like help in adding Google, Dropbox, Amazon and Microsoft questions! **HELP WANTED**
+  - Questions categorized by topic and company. Currently contains Airbnb and Facebook.  **HELP WANTED** - I would like help in adding Google, Dropbox, Amazon and Microsoft questions!
 - [Design Questions](design)
 - [Domain-specific Questions](domain)
 - [Front End Study Notes](front-end)
@@ -27,4 +27,4 @@ While there are many awesome books like Cracking the Coding Interview and reposi
 
 ## Contributing
 
-There are no hard contributing guidelines at the moment as things are still in flux, but we will figure out as we go along! Just contribute whatever that you think will help others. If you would like to contribute content for different domains, feel free to create an issue or submit a pull request and we can discuss further.
+There are no hard contributing guidelines at the moment as things are still in flux, might find a better approach to structure content, but we will figure out as we go along! Just contribute whatever that you think will help others. If you would like to contribute content for different domains, feel free to create an issue or submit a pull request and we can discuss further.

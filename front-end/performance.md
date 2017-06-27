@@ -4,6 +4,7 @@ Performance
 ## Glossary
 
 - **Critical Rendering Path** -
+- `requestAnimationFrame`
 
 ## General Strategies
 
@@ -32,3 +33,23 @@ Performance
     - Scripts that don't modify the DOM or CSSOM can use the `async` attribute to tell the browser not to block DOM and does not need to wait for the CSSOM to be ready.
   - Defer JavaScript execution:
     - There is also a `defer` attribute available. The difference is that with `defer`, the script waits to execute until after the document has been parsed, whereas `async` lets the script run in the background while the document is being parsed.
+  - Use web workers for long running operations to move into a web worker thread.
+  - Use `requestAnimationFrame`
+
+## Measuring
+
+- [Navigation Timing API](https://developer.mozilla.org/en/docs/Web/API/Navigation_timing_API) is a JavaScript API for accurately measuring performance on the web. The API provides a simple way to get accurate and detailed timing statistics—natively—for page navigation and load events.
+  - `performance.timing`: An object with the timestamps of the various events on the page. Some uses:
+    - Network latency: `responseEnd` - `fetchStart`.
+    - The time taken for page load once the page is received from the server: `loadEventEnd` - `responseEnd`.
+    - The whole process of navigation and page load: `loadEventEnd` - `navigationStart`.
+
+## Tools
+
+- Yahoo YSlow
+- Google PageSpeed Insights
+- WebPageTest
+- Sitespeed.io
+- Google Lighthouse
+
+https://www.html5rocks.com/en/tutorials/webperformance/basics/

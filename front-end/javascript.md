@@ -15,6 +15,7 @@ JavaScript
 - Closure
 - Prototypes
 - Promise
+- **Event Loop** - The event loop is a single-threaded loop that monitors the call stack and checks if there is any work to be done in the message queue. If the call stack is empty and there are callback functions in the message queue, a message is dequeued and pushed onto the call stack to be executed.
 
 ## Core Language
 
@@ -47,9 +48,14 @@ JavaScript
 - Reference: https://github.com/getify/You-Dont-Know-JS/blob/master/async%20&%20performance/README.md#you-dont-know-js-async--performance
 - `setTimeout` and `setInterval`
 - Event Loop
+  -
 - Debounce and Throttle
 - Callbacks
 - Promises
+
+**Reference**
+
+- https://www.vikingcodeschool.com/falling-in-love-with-javascript/the-javascript-event-loop
 
 ## Design Patterns
 

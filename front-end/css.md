@@ -401,7 +401,7 @@ When using `translate()`, the element still takes up its original space (sort of
 
 - https://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/
 
-### Other answers
+### Other Answers
 
 - https://neal.codes/blog/front-end-interview-css-questions
 - http://jgthms.com/css-interview-questions-and-answers.html

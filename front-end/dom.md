@@ -65,6 +65,15 @@ Listing out the essential and more common APIs. It is important to know how to t
 
 - `document.getElementById(id)` - An Element object, or null if an element with the specified ID is not in the document.
 
+## Window/Document Events
+
+- `document.addEventListener('DOMContentLoaded', callback)`
+  - The `DOMContentLoaded` event is fired when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading. Similar to `jQuery.ready()` but different because `$.ready` will execute immediately if the `DOMContentLoaded` event has already fired.
+  - This corresponds to `document.readyState === 'interactive'`.
+- `window.onload = function() {}`
+  -  `window`'s `load` event is only fired after the DOM and all assets have loaded.
+  - This corresponds to `document.readyState === 'complete'`.
+
 ## Questions
 
 **What's the difference between `Node.children` and `Node.childNodes`?**
