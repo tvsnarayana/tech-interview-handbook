@@ -10,12 +10,12 @@ JavaScript
 
 ## Glossary
 
-- Hoisting
-- `this`
-- Closure
-- Prototypes
-- Promise
+- **Closure** - TBD
 - **Event Loop** - The event loop is a single-threaded loop that monitors the call stack and checks if there is any work to be done in the message queue. If the call stack is empty and there are callback functions in the message queue, a message is dequeued and pushed onto the call stack to be executed.
+- **Hoisting** - TBD
+- **Promise** - TBD
+- **Prototype** - TBD
+- **This** - The `this` keyword does not refer to the function in which it is used or it’s scope. It refers to the object on which a function is being executed and depends entirely on the call-site of the function.
 
 ## Core Language
 
@@ -41,6 +41,7 @@ JavaScript
 - Prototype chain
 - `this` keyword
   - https://rainsoft.io/gentle-explanation-of-this-in-javascript/
+  - https://hackernoon.com/understanding-javascript-the-this-keyword-4de325d77f68
 - Classes
 
 ### Async
@@ -77,11 +78,13 @@ JavaScript
 - Forbids setting properties on primitive values in ES6. Without strict mode, setting properties is simply ignored (no-op), with strict mode, however, a TypeError is thrown.
 
 **Simplifying Variable Uses**
+
 - Prohibits `with`.
 - `eval` of strict mode code does not introduce new variables into the surrounding scope.
 - Forbids deleting plain variables. `delete` name in strict mode is a syntax error: `var x; delete x; // !!! syntax error`.
 
 **Paving the way for future ECMAScript versions**
+
 - Future ECMAScript versions will likely introduce new syntax, and strict mode in ECMAScript 5 applies some restrictions to ease the transition. It will be easier to make some changes if the foundations of those changes are prohibited in strict mode.
 - First, in strict mode a short list of identifiers become reserved keywords. These words are `implements`, `interface`, `let`, `package`, `private`, `protected`, `public`, `static`, and `yield`. In strict mode, then, you can't name or use variables or arguments with these names.
 - Second, strict mode prohibits function statements not at the top level of a script or function.

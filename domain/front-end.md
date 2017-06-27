@@ -12,7 +12,7 @@ Front End
   - `emitter = new Emitter();`
   - Support subscribing to events: `sub = emitter.subscribe('event_name', callback); sub2 = emitter.subscribe('event_name', callback2);`
   - Support emitting events. This particular example should lead to the `callback` above being invoked with `foo` and `bar` as parameters: `emitter.emit('event_name', foo, bar);`
-  - Support unsubscribing existing subscriptions by releasing them: `sub.release();`. `sub` is the reference returned by `subscribe` above
+  - Support unsubscribing existing subscriptions by releasing them: `sub.release();`. `sub` is the reference returned by `subscribe` above.
 - Given 2 identical DOM trees (but not equal) and one element of the first DOM tree, how would you find this element in the second DOM tree?
   - https://kuzzmi.com/blog/searching-for-a-symmetric-node
 - Come up with HTML and CSS code given a picture.
@@ -20,7 +20,7 @@ Front End
   - How would you ensure clicking on this picture would go to a specific link?
   - How would you ensure the child is positioned in the top right of the parent picture?
 - If you were building a search tool and wanted search results to pop up as you typed but the server call was taxing, write a function that gets called on every key down but calls the server when the user stops typing for 400ms.
-- How many times would `addEventListener('scroll', handleScroll);` run as the user looks at their News Feed? And what would be user experience if the `handleScroll` function takes 100ms to execute. How could you implement debouncing? Say you wanted the `handleScroll` function to be called only after 200ms has passed between scroll events.
+- How many times would `document.addEventListener('scroll', handleScroll);` run as the user looks at their News Feed? And what would be user experience if the `handleScroll` function takes 100ms to execute. How could you implement debouncing? Say you wanted the `handleScroll` function to be called only after 200ms has passed between scroll events.
 - Pretty print JSON object.
 
 ## Google
