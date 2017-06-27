@@ -78,7 +78,7 @@ Each stacking context is self-contained - after the element's contents are stack
 - https://philipwalton.com/articles/what-no-one-told-you-about-z-index/
 - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
 
-**Describe Block Formatting Context (BFC) and how it works.**
+#### Describe Block Formatting Context (BFC) and how it works.
 
 A Block Formatting Context (BFC) is part of the visual CSS rendering of a web page in which block boxes are laid out. Floats, absolutely positioned elements, `inline-blocks`, `table-cells`, `table-caption`s, and elements with `overflow` other than `visible` (except when that value has been propagated to the viewport) establish new block formatting contexts.
 
@@ -117,9 +117,9 @@ CSS sprites combine multiple images into one single larger image. It is commonly
 **Advantages:**
 
 - Reduce the number of HTTP requests for multiple images (only one single request is required per spritesheet). But with HTTP2, loading multiple images is no longer much of an issue.
-- Advance downloading of assets that won't be downloaded until needed, such as `:hover` pseudo-states. Blinking wouldn't be seen.
+- Advance downloading of assets that won't be downloaded until needed, such as images that only appear upon `:hover` pseudo-states. Blinking wouldn't be seen.
 
-**What are your favorite image replacement techniques and which do you use when?**
+#### What are your favorite image replacement techniques and which do you use when?
 
 CSS image replacement is a technique of replacing a text element (usually a header tag like an `<h1>`) with an image (often a logo). It has its origins in the time before web fonts and SVG. For years, web developers battled against browser inconsistencies to craft image replacement techniques that struck the right balance between design and accessibility.
 
@@ -129,9 +129,9 @@ It's not really relevant these days. Check out the link below for all the availa
 
 - https://css-tricks.com/the-image-replacement-museum/
 
-#### How would you approach fixing browser-specific styling issue
+#### How would you approach fixing browser-specific styling issues?
 
-- After identifying the issue and the offending browser, use a separate style sheet that only loads when that specific browser is being used. This technique requires server side rendering though.
+- After identifying the issue and the offending browser, use a separate style sheet that only loads when that specific browser is being used. This technique requires server-side rendering though.
 - Use libraries like Bootstrap that already handles these styling issues for you.
 - Use `autoprefixer` to automatically add vendor prefixes to your code.
 - Use Reset CSS or Normalize.css.
@@ -140,22 +140,24 @@ It's not really relevant these days. Check out the link below for all the availa
 
 - Graceful degradation - The practice of building an application for modern browsers while ensuring it remains functional in older browsers.
 - Progressive enhancement - The practice of building an application for a base level of user experience, but adding functional enhancements when a browser supports it.
-- Use <caniuse.com> to check for feature support.
+- Use [caniuse.com](https://caniuse.com/) to check for feature support.
 - Autoprefixer for automatic vendor prefix insertion.
-- Feature detection using Modernizr.
+- Feature detection using [Modernizr](https://modernizr.com/).
 
 #### What are the different ways to visually hide content (and make it available only for screen readers)?
 
+These techniques are related to accessibility (a11y).
+
 - `visibility: hidden`. However the element is still in the flow of the page, and still takes up space.
 - `width: 0; height: 0`. Make the element not take up any space on the screen at all, resulting in not showing it.
-- `position; absolute; left: -99999px`. Position it off the screen.
+- `position; absolute; left: -99999px`. Position it outside of the screen.
 - `text-indent: -9999px`. This only works on text within the `block` elements.
 
-I would go with the absolute positioning approach, as it has the least caveats and works for most elements.
+I would go with the `absolute` positioning approach, as it has the least caveats and works for most elements.
 
 #### Have you ever used a grid system, and if so, what do you prefer?
 
-I like the `float`-based grid system because it still has the most support among the alternative existing systems (flex, grid).
+I like the `float`-based grid system because it still has the most browser support among the alternative existing systems (flex, grid). It has been used in for Bootstrap for years and has been proven to work.
 
 #### Have you used or implemented media queries or mobile-specific layouts/CSS?
 
@@ -167,7 +169,7 @@ No... Sadly.
 
 #### How do you optimize your webpages for print?
 
-1. Create a stylesheet for print or use media queries.
+- Create a stylesheet for print or use media queries.
 
 ```html
 <!-- Main stylesheet on top -->
@@ -184,11 +186,14 @@ Make sure to put non-print styles inside `@media screen { ... }`.
 }
 ```
 
-2. Deliberately add page breaks.
+- Deliberately add page breaks.
 
 ```html
 <style>
-.page-break { page-break-before: always; } /* put this class into your main.css file with "display:none;" */
+.page-break {
+  display: none;
+  page-break-before: always;
+}
 </style>
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce eu felis. Curabitur sit amet magna. Nullam aliquet. Aliquam ut diam...
@@ -206,11 +211,12 @@ Firstly, understand that browsers match selectors from rightmost (key selector) 
 
 [BEM (Block Element Modifier)](https://bem.info/) methodology recommends that everything has a single class, and, where you need hierarchy, that gets baked into the name of the class as well, this naturally makes the selector efficient and easy to override.
 
-Be aware of which CSS properties trigger reflow, repaint and compositing. Avoid writing styles that change the layout where possible.
+Be aware of which CSS properties trigger reflow, repaint and compositing. Avoid writing styles that change the layout (trigger reflow) where possible.
 
 ###### References
 
-https://developers.google.com/web/fundamentals/performance/rendering/
+- https://developers.google.com/web/fundamentals/performance/rendering/
+- https://csstriggers.com/
 
 #### What are the advantages/disadvantages of using CSS preprocessors?
 
@@ -303,7 +309,7 @@ I shall throw in a comparison with `block` for good measure.
 |  |`block`|`inline-block`|`inline`|
 |--|--|--|--|
 | Size | Fills up the width of its parent container. | Depends on content. | Depends on content. |
-| Positioning | Start on a new line and tolerates no HTML elements next to it (except when you add `float) | Flows along with other content and allows other elements beside. | Flows along with other content and allows other elements beside. |
+| Positioning | Start on a new line and tolerates no HTML elements next to it (except when you add `float`) | Flows along with other content and allows other elements beside. | Flows along with other content and allows other elements beside. |
 | Can specify `width` and `height` | Yes | Yes | No. Will ignore if being set. |
 | Can be aligned with `vertical-align` | No | Yes | Yes |
 | Margins and paddings | All sides respected. | All sides respected. | Only horizontal sides respected. Vertical sides, if specified, do not affect layout. Vertical space it takes up depends on `line-height`, even though the `border` and `padding` appear visually around the content. |
@@ -336,6 +342,8 @@ The resulting specificity is not a score, but a matrix of values that can be com
 
 In the cases of equal specificity: the latest rule is the one that counts. If you have written the same rule into your style sheet (regardless of internal or external) twice, then the lower rule in your style sheet is closer to the element to be styled, it is deemed to be more specific and therefore will be applied.
 
+I would write CSS rules with low specificity so that they can be easily overridden if necessary. When writing CSS UI component library code, it is important that they have low specificities so that users of the library can override them without using too complicated CSS rules just for the sake of increasing specificity or resorting to `!important`.
+
 ###### References
 
 - https://www.smashingmagazine.com/2007/07/css-specificity-things-you-should-know/
@@ -351,7 +359,7 @@ In the cases of equal specificity: the latest rule is the one that counts. If yo
 
 Yes. CSS flex solves many common problems in CSS, such as vertical centering of elements within a container, sticky footer, etc. Bootstrap has an option `$enable-flex` while and Bulma is already based on Flexbox.
 
-Flexbox is meant for 1-dimensional layout while Grid is meant for 2-dimensional layouts.
+Flexbox is meant for 1-dimensional layout while Grid is meant for 2-dimensional layouts. Grid is by far the most intuitive approach for creating grid-based layouts (it better be!) but browser support is not wide at the moment.
 
 ###### References
 
