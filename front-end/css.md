@@ -1,18 +1,20 @@
 CSS
 ==
 
+CSS (Cascading Style Sheets) are rules to describe how your HTML elements look. Writing good CSS is hard. It usually takes many years of experience and frustration of shooting yourself in the foot before one is able to write maintainable and scalable CSS. CSS, having a global namespace, is fundamentally designed for web documents, and not really for web apps that favor a components architecture. Hence, experienced front end developers have designed methodologies to guide people on how to write organized CSS for complex projects, such as using [SMACSS](https://smacss.com/), [BEM](http://getbem.com/), [SUIT CSS](http://suitcss.github.io/), etc.
+
+However, the encapsulation of styles that these methodologies bring about are artificially enforced by conventions and guidelines. They break the moment developers do not follow them.
+
+As you might have realized by now, the front end ecosystem is saturated with tools, and unsurprisingly, tools have been invented to [partially solve some of the problems](https://speakerdeck.com/vjeux/react-css-in-js) with writing CSS at scale. "At scale" means that many developers are working on the same large project and touching the same stylesheets. There is no community-agreed approach on writing [CSS in JS](https://github.com/MicheleBertoli/css-in-js) at the moment, and we are hoping that one day a winner would emerge, just like Redux did, among all the Flux implementations. For now, I would recommend [CSS Modules](https://github.com/css-modules/css-modules). CSS modules is an improvement over existing CSS that aims to fix the problem of global namespace in CSS; it enables you to write styles that are local by default and encapsulated to your component. This feature is achieved via tooling. With CSS modules, large teams can write modular and reusable CSS without fear of conflict or overriding other parts of the app. However, at the end of the day, CSS modules are still being compiled into normal globally-namespaced CSS that browsers recognize, and it is still important to learn and understand how raw CSS works.
+
+If you are a total beginner to CSS, Codecademy's [HTML & CSS course](https://www.codecademy.com/learn/learn-html-css) will be a good introduction to you. Next, read up on the [Sass preprocessor](http://sass-lang.com/), an extension of the CSS language which adds syntactic improvements and encourages style reusability. Study the CSS methodologies mentioned above, and lastly, CSS modules.
+
 ## Glossary
 
-- **Box Model** -
-- **Specificity** -
-
-## Specificity
-
-## Box Model
-
-## Positioning
-
-## Floats
+- **Box Model** - TBD
+- **Specificity** - TBD
+- **Positioning** - TBD
+- **Floats** - TBD
 
 ## Questions
 
@@ -27,6 +29,8 @@ CSS
 - **Normalizing** - Normalizing preserves useful default styles rather than "unstyling" everything. It also corrects bugs for common browser dependencies.
 
 I would choose resetting when I have very a customized or unconventional site design such that I need to do a lot of my own styling do not need any default styling to be preserved.
+
+**References**
 
 - https://stackoverflow.com/questions/6887336/what-is-the-difference-between-normalize-css-and-reset-css
 
@@ -52,6 +56,8 @@ The `.clearfix` hack uses a clever CSS pseudo selector (:after) to clear floats.
 
 Alternatively, give `overflow: auto` or `overflow: hidden` property to the parent element which will establish a new block formatting context inside the children and it will expand to contain its children.
 
+**References**
+
 - https://css-tricks.com/all-about-floats/
 
 **Describe `z-index` and how stacking context is formed.**
@@ -63,6 +69,8 @@ Without any `z-index` value, elements stack in the order that they appear in the
 A stacking context is an element that contains a set of layers. Within a local stacking context, the `z-index` values of its children are set relative to that element rather than to the document root. Layers outside of that context — i.e. sibling elements of a local stacking context — can't sit between layers within it. If an element B sits on top of element A, a child element of element A, element C, can never be higher than element B even if element C has a higher `z-index` than element B.
 
 Each stacking context is self-contained - after the element's contents are stacked, the whole element is considered in the stacking order of the parent stacking context. A handful of CSS properties trigger a new stacking context, such as `opacity` less than 1, `filter` that is not `none`, and `transform that is not `none`.
+
+**References**
 
 - https://css-tricks.com/almanac/properties/z/z-index/
 - https://philipwalton.com/articles/what-no-one-told-you-about-z-index/
@@ -82,6 +90,8 @@ A BFC is an HTML box that satisfies at least one of the following conditions:
 In a BFC, each box's left outer edge touches the left edge of the containing block (for right-to-left formatting, right edges touch).
 
 Vertical margins between adjacent block-level boxes in a BFC collapse. Read more on [collapsing margins](https://www.sitepoint.com/web-foundations/collapsing-margins/).
+
+**References**
 
 - https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context
 - https://www.sitepoint.com/understanding-block-formatting-contexts-in-css/
@@ -109,9 +119,11 @@ Advantages:
 
 **What are your favorite image replacement techniques and which do you use when?**
 
-CSS image replacement is a technique of replacing a text element (usually a header tag like an <h1>) with an image (often a logo). It has its origins in the time before web fonts and SVG. For years, web developers battled against browser inconsistencies to craft image replacement techniques that struck the right balance between design and accessibility.
+CSS image replacement is a technique of replacing a text element (usually a header tag like an `<h1>`) with an image (often a logo). It has its origins in the time before web fonts and SVG. For years, web developers battled against browser inconsistencies to craft image replacement techniques that struck the right balance between design and accessibility.
 
 It's not really relevant these days. Check out the link below for all the available techniques.
+
+**References**
 
 - https://css-tricks.com/the-image-replacement-museum/
 
@@ -182,6 +194,8 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce eu felis. Curabi
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit....
 ```
 
+**References**
+
 - https://davidwalsh.name/optimizing-structure-print-css
 
 **What are some of the "gotchas" for writing efficient CSS?**
@@ -191,6 +205,8 @@ Firstly, understand that browsers match selectors from rightmost (key selector) 
 [BEM (Block Element Modifier)](https://bem.info/) methodology recommends that everything has a single class, and, where you need hierarchy, that gets baked into the name of the class as well, this naturally makes the selector efficient and easy to override.
 
 Be aware of which CSS properties trigger reflow, repaint and compositing. Avoid writing styles that change the layout where possible.
+
+**References**
 
 https://developers.google.com/web/fundamentals/performance/rendering/
 
@@ -230,6 +246,8 @@ This part is related to the above about writing efficient CSS. Browsers match se
 
 For example with this selector `p span`, browsers firstly find all the `<span>` elements, and traverse up its parent all the way up to the root to find the `<p>` element. For a particular `<span>`, as soon as it finds a `<p>`, it knows that the `<span>` matches and can stop its matching.
 
+**References**
+
 - https://stackoverflow.com/questions/5797014/why-do-browsers-match-css-selectors-from-right-to-left
 
 **Describe pseudo-elements and discuss what they are used for.**
@@ -239,6 +257,8 @@ A CSS pseudo-element is a keyword added to a selector that lets you style a spec
 - `:first-line` and `:first-letter` can be used to decorate text.
 - Used in the `.clearfix` hack as shown above to add a zero-space element with `clear: both`.
 - Triangular arrows in tooltips use `:before` and `:after`. Encourages separation of concerns because the triangle is considered part of styling and not really the DOM, but not really possible to draw a triangle with just CSS styles.
+
+**References**
 
 - https://css-tricks.com/almanac/selectors/a/after-and-before/
 
@@ -258,6 +278,8 @@ The box model has the following rules:
 - The `height` of an element is calculated by the content's height.
 - The `width` of an element is calculated by the content's width.
 - By default, `padding`s and `border`s are not part of the `width` and `height` of an element.
+
+**References**
 
 - https://www.smashingmagazine.com/2010/06/the-principles-of-cross-browser-css-coding/#understand-the-css-box-model
 
@@ -295,13 +317,15 @@ A positioned element is an element whose computed `position` property is either 
 - `fixed` - The element is removed from the flow of the page and positioned at a specified position relative to the viewport and doesn't move when scrolled.
 - `sticky` - Sticky positioning is a hybrid of relative and fixed positioning. The element is treated as relative positioned until it crosses a specified threshold, at which point it is treated as fixed positioned.
 
+**References**
+
 - https://developer.mozilla.org/en/docs/Web/CSS/position
 
 **The 'C' in CSS stands for Cascading. How is priority determined in assigning styles (a few examples)? How can you use this system to your advantage?**
 
 Browser determines what styles to show on an element depending on the specificity of CSS rules. We assume that the browser has already determined the rules that match a particular element. Among the matching rules, the specificity, four comma-separate values, `a, b, c, d` are calculated for each rule based on the following:
 
-1. Inline style. If the property declaration is an inline style on the element, `a` is 1, else 0.
+1. `a` is whether inline styles are being used. If the property declaration is an inline style on the element, `a` is 1, else 0.
 2. `b` is the number of ID selectors.
 3. `c` is the number of classes, attributes and pseudo-classes selectors.
 4. `d` is the number of tags and pseudo-elements selectors.
@@ -309,6 +333,8 @@ Browser determines what styles to show on an element depending on the specificit
 The resulting specificity is not a score, but a matrix of values that can be compared column by column. When comparing selectors to determine which has the highest specificity, look from left to right, and compare the highest value in each column. So a value in column `b` will override values in columns `c` and `d`, no matter what they might be. As such, specificity of `0,1,0,0` would be greater than one of `0,0,10,10`.
 
 In the cases of equal specificity: the latest rule is the one that counts. If you have written the same rule into your style sheet (regardless of internal or external) twice, then the lower rule in your style sheet is closer to the element to be styled, it is deemed to be more specific and therefore will be applied.
+
+**References**
 
 - https://www.smashingmagazine.com/2007/07/css-specificity-things-you-should-know/
 - https://www.sitepoint.com/web-foundations/specificity/
@@ -325,6 +351,8 @@ Yes. CSS flex solves many common problems in CSS, such as vertical centering of 
 
 Flexbox is meant for 1-dimensional layout while Grid is meant for 2-dimensional layouts.
 
+**References**
+
 - https://philipwalton.github.io/solved-by-flexbox/
 
 **How is responsive design different from adaptive design?**
@@ -334,6 +362,8 @@ Both responsive and adaptive design attempt to optimize the user experience acro
 Responsive design works on the principle of flexibility - a single fluid website that can look good on any device. Responsive websites use media queries, flexible grids, and responsive images to create a user experience that flexes and changes based on a multitude of factors. Like a single ball growing or shrinking to fit through several different hoops.
 
 Adaptive design is more like the modern definition of progressive enhancement. Instead of one flexible design, adaptive design detects the device and other features, and then provides the appropriate feature and layout based on a predefined set of viewport sizes and other characteristics. The site detects the type of device used, and delivers the pre-set layout for that device. Instead of a single ball going through several different-sized hoops, you’d have several different balls to use depending on the hoop size.
+
+**References**
 
 - https://developer.mozilla.org/en-US/docs/Archive/Apps/Design/UI_layout_basics/Responsive_design_versus_adaptive_design
 - http://mediumwell.com/responsive-adaptive-mobile/
@@ -347,6 +377,8 @@ For icons, I would also opt to use svgs and icon fonts where possible, as they r
 
 Another method would be to use JavaScript to replace the `<img>` `src` attribute with higher resolution versions after checking the `window.devicePixelRatio` value.
 
+**References**
+
 - https://www.sitepoint.com/css-techniques-for-retina-displays/
 
 **Is there any reason you'd want to use `translate()` instead of `absolute` positioning, or vice-versa? And why?**
@@ -354,6 +386,8 @@ Another method would be to use JavaScript to replace the `<img>` `src` attribute
 `translate()` is a value of CSS `transform`. Changing `transform` or `opacity` does not trigger browser reflow or repaint, only compositions, whereas changing the absolute positioning triggers `reflow`. `transform` causes the browser to create a GPU layer for the element but changing absolute positioning properties uses the CPU. Hence `translate()` is more efficient and will result in shorter paint times for smoother animations.
 
 When using `translate()`, the element still takes up its original space (sort of like `position: relative`), unlike in changing the absolute positioning.
+
+**References**
 
 - https://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/
 
