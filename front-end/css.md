@@ -321,7 +321,7 @@ A positioned element is an element whose computed `position` property is either 
 
 - https://developer.mozilla.org/en/docs/Web/CSS/position
 
-#### The 'C' in CSS stands for Cascading. How is priority determined in assigning styles (a few examples)? How can you use this system to youadvantage?**
+#### The 'C' in CSS stands for Cascading. How is priority determined in assigning styles (a few examples)? How can you use this system to your advantage?
 
 Browser determines what styles to show on an element depending on the specificity of CSS rules. We assume that the browser has already determined the rules that match a particular element. Among the matching rules, the specificity, four comma-separate values, `a, b, c, d` are calculated for each rule based on the following:
 
