@@ -45,7 +45,9 @@ discover corner cases you might have missed out or even lead you towards the opt
   - Come up with small test cases.
   - Step through the code (not your algorithm!) with those sample input.
   - You should emulate a debugger when stepping through.
-- Analyze the time/space complexity.
+- Analyze your code.
+  - Give the time/space complexity.
+  - Explain trade-offs made in the code possibly in terms of time/space.
 
 ## General
 
