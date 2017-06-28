@@ -71,7 +71,7 @@ discover corner cases you might have missed out or even lead you towards the opt
 - Having two indices to traverse/compare two strings/arrays is quite common. For example, we use the same approach to merging two sorted arrays.
 - Sorting the array first may significantly simplify the problem.
 - Sometimes you can traverse from the right rather than from the left.
-- For questions where summation of a subarray is involved, pre-computation using hashing or a prefix/suffix sum might be useful.
+- For questions where summation or multiplication of a subarray is involved, pre-computation using hashing or a prefix/suffix sum/product might be useful.
 - If question asks for O(1) space, perhaps using the array itself as a hash table might be useful. If array only has positive values from 1 to N, negate the value at that index to indicate presence of that number.
 
 ## Binary
@@ -81,12 +81,12 @@ discover corner cases you might have missed out or even lead you towards the opt
 
 ## Geometry
 
-- When comparing euclidean distance between two points, use dx<sup>2</sup> + dy<sup>2</sup>. It is unnecessary to squareroot the value.
+- When comparing euclidean distance between two points, use dx<sup>2</sup> + dy<sup>2</sup>. It is unnecessary to square root the value.
 
 ## Linked Lists
 
 - A dummy node at the head and/or tail might help to handle many edge cases. Be sure to remember to remove them at the end.
-- Sometimes linked lists problem can be solved without external storage. Try to borrow ideas from reverse a linked link problem.
+- Sometimes linked lists problem can be solved without external storage. Try to borrow ideas from reverse a linked list problem.
 - For deletion in linked lists, you can either modify the node values or change the node pointers. You might need to keep a reference to the previous element.
 - For partitioning linked lists, create two separate linked lists and join them back together.
 - Linked lists problems share similarity with array problems, think about how you would do it for an array and try to apply it to a linked list.
@@ -138,7 +138,9 @@ for c in set(word):
 
 **Palindromes**
 
-- TODO
+- Determine if a string is a palindrome:
+  - Reverse the string and it should be the same as itself.
+  - Have two pointers that start at start and end of the string, move inwards till they meet. All the characters should be the same.
 
 **Dictionary (List of words)**
 
@@ -150,8 +152,9 @@ for c in set(word):
 
 ## Trees
 
-- Traverse tree by level -> DFS
+- Traverse tree by level - Depth-first search.
 - Recursion is common for trees. When you notice the subtree problem can be used to solve the whole problem, you should try recursion.
+- When using recursion, always remember to check for base case, usually where the node is `null`.
 - It's possible that your recursive function needs to return two values.
 - If the question involves summation of paths, be sure to check whether nodes can be negative.
 
