@@ -11,6 +11,113 @@ There are some resources to help front end developers in preparing for interview
   1. [CSS Questions](#css-questions)
   1. [JS Questions](#js-questions) TODO
 
+## HTML Questions
+
+Answers to [Front-end Job Interview Questions - HTML Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions#html-questions). Pull requests for suggestions and corrections are welcome!
+
+#### What does a `doctype` do?
+
+`doctype` is an abbreviation for document type. It is a declaration used in HTML5 to distinguish between a standards-compliant parsing mode and a quirks parsing mode; i.e. its presence tells the browser to parse and render the webpage in standard mode. Moral of the story, just add `<!DOCTYPE html>` to the start of your page.
+
+###### References
+
+- https://stackoverflow.com/questions/7695044/what-does-doctype-html-do
+- https://www.w3.org/QA/Tips/Doctype
+
+#### What's the difference between full standards mode, almost standards mode and quirks mode?
+
+- **Quirks mode** - Layout emulates non-standard behavior in Netscape Navigator 4 and Internet Explorer 5. This is essential in order to support websites that were built before the widespread adoption of web standards. The list of quirks can be found [here](https://developer.mozilla.org/en-US/docs/Mozilla/Mozilla_quirks_mode_behavior).
+- **Full standards mode** - The layout behavior is the one described by the HTML and CSS specifications.
+- **Almost standards mode** - There are only a very small number of quirks implemented. Differences can be found [here](https://developer.mozilla.org/en-US/docs/Gecko's_Almost_Standards_Mode).
+
+###### References
+
+- https://developer.mozilla.org/en-US/docs/Quirks_Mode_and_Standards_Mode
+
+#### What's the difference between HTML and XHTML?
+
+XHTML belongs to the family of XML markups languages and is different from HTML. Some of differences are as follows:
+
+- XHTML documents have to be well-formed, unlike HTML, which is more forgiving.
+- XHTML is case-sensitive for element and attribute names, while HTML is not.
+- Raw `<` and `&` characters are not allowed except inside of `CDATA` Sections (`<![CDATA[ ... ]]>`). JavaScript typically contains characters which can not exist in XHTML outside of CDATA Sections, such as the `<` operator. Hence it is tricky to use inline `styles` or `script` tags in XHTML and should be avoided.
+- A fatal parse error in XML (such as an incorrect tag structure) causes document processing to be aborted.
+
+Full list of differences can be found on [Wikipedia](https://en.wikipedia.org/wiki/XHTML#Relationship_to_HTML).
+
+###### References
+
+- https://developer.mozilla.org/en-US/docs/Archive/Web/Properly_Using_CSS_and_JavaScript_in_XHTML_Documents_
+- https://en.wikipedia.org/wiki/XHTML
+
+#### Are there any problems with serving pages as `application/xhtml+xml`?
+
+Basically the problems lie in the differences between parsing HTML and XML as mentioned above.
+
+- Serving your pages as `application/xhtml+xml` will cause Internet Explorer 8 to show a download dialog box for an unknown format instead of displaying your page, as the first version of Internet Explorer with support for XHTML is Internet Explorer 9.
+- XHTML syntax is less forgiving and if your page isn't fully XML-compliant, there will be parsing errors and users get unreadable content.
+
+###### References
+
+- https://developer.mozilla.org/en-US/docs/Quirks_Mode_and_Standards_Mode#XHTML
+
+#### How do you serve a page with content in multiple languages?
+
+// TODO
+
+###### References
+
+#### What kind of things must you be wary of when design or developing for multilingual sites?
+
+// TODO
+
+###### References
+
+#### What are `data-` attributes good for?
+
+// TODO
+
+###### References
+
+In the jQuery days, front end developers used `data-` attributes to store model data within the DOM itself. These days, it is not encouraged. The data model is better stored within JavaScript itself and updated with the DOM via data binding. // TODO
+
+#### Consider HTML5 as an open web platform. What are the building blocks of HTML5?
+
+// TODO
+
+###### References
+
+#### Describe the difference between a `cookie`, `sessionStorage` and `localStorage`.
+
+// TODO
+
+###### References
+
+#### Describe the difference between `<script>`, `<script async>` and `<script defer>`.
+
+// TODO
+
+###### References
+
+#### Why is it generally a good idea to position CSS `<link>`s between `<head></head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
+
+// TODO
+
+###### References
+
+#### What is progressive rendering?
+
+// TODO
+
+###### References
+
+#### Have you used different HTML templating languages before?
+
+// TODO
+
+###### References
+
+
 ## CSS Questions
 
 Answers to [Front-end Job Interview Questions - CSS Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions#css-questions). Pull requests for suggestions and corrections are welcome!
