@@ -16,6 +16,7 @@ While there are many awesome books like Cracking the Coding Interview and reposi
 - [Domain-specific Questions](domain)
 - [Front End Study Notes](front-end)
   - Summarized notes on the various aspects of front end.
+  - [Front End Job Interview Questions and Answers](front-end/interview-questions.md) ⭐
 - [Non-Technical Tips](non-technical-tips)
   - Random non-technical tips that cover behavioural and psychological aspects, interview formats and "Do you have any questions for me?".
   - [Behavioural Questions](non-technical-tips/behavioural.md)
