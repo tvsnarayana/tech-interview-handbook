@@ -1,11 +1,17 @@
-Interview Questions
+Front End Job Interview Questions
 ==
 
 Unlike typical software engineer job interviews, front end job interviews have less emphasis on algorithms and have more questions on intricate knowledge and expertise about the domain — HTML, CSS, JavaScript, just to name aspects.
 
 There are some resources to help front end developers in preparing for interviews, and one of the de facto question banks is [Front End Job Interview Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions). Unfortunately, I couldn’t find complete and satisfactory answers for these questions online, hence here is my attempt at answering them. I intend to answer all the questions in that repository soon.
 
-## CSS
+## Table of Contents
+
+  1. [HTML Questions](#html-questions) TODO
+  1. [CSS Questions](#css-questions)
+  1. [JS Questions](#js-questions) TODO
+
+## CSS Questions
 
 Answers to [Front-end Job Interview Questions - CSS Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions#css-questions). Pull requests for suggestions and corrections are welcome!
 
