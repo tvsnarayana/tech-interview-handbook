@@ -1,7 +1,7 @@
 Algorithm Questions
 ==
 
-These are questions you can think in your head or clarify with the interviewer. They may lead you to
+Here are some tips and questions you can think in your head or clarify with the interviewer. They may lead you to
 discover corner cases you might have missed out or even lead you towards the optimal approach!
 
 ## Contents
@@ -46,6 +46,8 @@ discover corner cases you might have missed out or even lead you towards the opt
   - Come up with small test cases.
   - Step through the code (not your algorithm!) with those sample input.
   - You should emulate a debugger when stepping through.
+  - Is there duplicated code? Perhaps you can refactor them.
+  - Is there repeated work done? Can the time complexity be improved by reusing previously computed values?
 - Analyze your code.
   - Give the time/space complexity.
   - Explain trade-offs made in the code possibly in terms of time/space.
@@ -53,13 +55,20 @@ discover corner cases you might have missed out or even lead you towards the opt
 ## General
 
 - Input validation:
-  - Always validate input first. Check if the input is empty, positive, etc. Never assume you are given the valid params. Alternatively, ask interviewers for clarification, which can save you from unnecessary checkings.
+  - Always validate input first. Check if the input is empty, positive, etc. Never assume you are given the valid parameters. Alternatively, ask interviewers for clarification, which can save you time from writing code that does input validation.
 - Can the input be preprocessed to reduce lookup time?
 - Are there any time/space complexity requirements/constraints?
 - Check corner cases:
   - Check for off-by-1 errors.
-  - Check that concatenation of values are of same type: int/str/list.
+  - In languages where there are no automatic type coercion, check that concatenation of values are of same type: `int`/`str`/`list`.
   - After finishing your code, use a few example inputs to test your solution.
+- Use a mix of functional and imperative programming paradigms:
+  - Write pure functions as much as possible.
+  - Pure functions are easy to reason about and can help to reduce bugs in your implementation.
+  - Avoid mutating the parameters passed into your function, especially if they are passed by reference.
+  - However, functional programming is usually expensive in terms of space complexity because of non-mutation. On the other hand, imperative code is faster because of mutation. Hence you will need to achieve a balance between accuracy vs efficiency, by using the right amount of functional and imperative code.
+  - Avoid relying and mutating global variables.
+  - If you have to rely on global variables, make sure that you do not accidentally mutate it.
 
 ## Array
 
@@ -72,6 +81,7 @@ discover corner cases you might have missed out or even lead you towards the opt
 - Having two indices to traverse/compare two strings/arrays is quite common. For example, we use the same approach to merging two sorted arrays.
 - Sorting the array first may significantly simplify the problem. Be sure that the order of elements do not matter or else sorting will mess up the order.
 - Sometimes you can traverse from the right rather than from the left.
+- Be mindful about slicing or concatenating arrays in your code. Typically, slicing and concatenating sequences require O(n) time. Use start and end indices to demarcate a subarray where possible.
 - Sliding window is a common technique used for sequence-based data, such as arrays and strings.
   - TODO: Explain what a sliding window is.
 - For questions where summation or multiplication of a subarray is involved, pre-computation using hashing or a prefix/suffix sum/product might be useful.
@@ -137,6 +147,7 @@ TODO
 - When you need to compare strings where the order isn't important (like anagram), you may consider using a hash map as a counter.
 - If you need to keep a counter of characters, a common mistake to make is to say that the space complexity required for the counter is O(n). The space required for a counter is O(1) not O(n), because the upper bound is the range of characters, which is usually a fixed constant.
 - Sliding window is a common technique used for strings, as it is also a sequence-based data type.
+- Be mindful about slicing strings in your code. Typically, slicing and concatenating sequences require O(n) time. Use start and end indices to demarcate a substring where possible.
 - Can I use some common data structure that can look up strings efficiently?
   - [Trie / Prefix Tree](https://www.wikiwand.com/en/Trie)
   - [Suffix Tree](https://www.wikiwand.com/en/Suffix_tree)
@@ -144,7 +155,7 @@ TODO
   - [KMP](https://www.wikiwand.com/en/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm) for efficient searching of substring. Quite complicated.
   - [Rabin Karp](https://www.wikiwand.com/en/Rabin%E2%80%93Karp_algorithm) for efficient searching of substring using a rolling hash.
 
-**Non-repeating Characters**
+#### Non-repeating Characters
 
 - Use a 26-bit bitmask to indicate which lower case latin characters are inside the string.
 
@@ -156,7 +167,7 @@ for c in set(word):
 
 - To determine if two strings have common characters, perform `&` on the two bitmasks and if the result is non-zero, the two strings do have common characters. `mask_a & mask_b > 0`
 
-**Anagram**
+#### Anagram
 
 - Determine if two strings are anagrams:
   - Sorting both strings should produce the same resulting string.
@@ -164,17 +175,17 @@ for c in set(word):
   - Frequency counting of characters will help to determine if two strings are anagrams.
 - When the question is about anagrams, you can usually use a hash map as the order does not matter.
 
-**Palindrome**
+#### Palindrome
 
 - The order within the string matters, so hash maps are usually not helpful.
-- Determine if a string is a palindrome:
-  - Reverse the string and it should be the same as itself.
+- Ways to determine if a string is a palindrome:
+  - Reverse the string and it should be equal to itself.
   - Have two pointers at the start and end of the string, move inwards till they meet. All the characters should be the same.
-- When a question asks to count the number of palindromes, a common trick is to have two pointer that move outwards, away from the middle. Note that palindromes can be even/odd length, and that for each middle character, you would need to check twice, once including the character, and once without.
+- When a question is about counting the number of palindromes, a common trick is to have two pointer that move outwards, away from the middle. Note that palindromes can be even/odd length, and that for each middle pivot character, you would need to check twice, once including the character, and once without.
   - For substrings, you can terminate early once there is no match.
   - For subsequences, use dynamic programming as there are overlapping subproblems. Check out [here](https://leetcode.com/problems/longest-palindromic-subsequence/).
 
-**Dictionary (List of words)**
+#### Dictionary (List of words)
 
 - Preprocess into a trie.
 - Two typical ways:
@@ -184,11 +195,17 @@ for c in set(word):
 
 ## Tree
 
-- Traverse tree by level - Depth-first search.
+- Corner cases:
+  - Empty tree.
+  - Single node.
+  - Two nodes.
+  - Very skewed tree (like a linked list).
 - Recursion is a common approach for trees. When you notice the subtree problem can be used to solve the whole problem, you should try recursion.
 - When using recursion, always remember to check for the base case, usually where the node is `null`.
+- When you are asked to traverse a tree by level, use depth-first search.
 - Sometimes it is possible that your recursive function needs to return two values.
 - If the question involves summation of nodes along the way, be sure to check whether nodes can be negative.
+- You should be very familiar with writing pre-order, in-order and post-order traversal recursively. As an extension, challenge yourself by writing them iteratively. Sometimes interviews do ask candidates for the iterative approach, especially if they finish writing the recursive approach too fast. 😂
 
 **Binary Tree**
 
