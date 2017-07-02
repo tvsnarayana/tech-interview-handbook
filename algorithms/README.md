@@ -23,7 +23,7 @@ discover corner cases you might have missed out or even lead you towards the opt
 - [String](string.md)
 - [Tree](tree.md)
 
-## Steps
+## Algorithm Coding Steps
 
 - Repeat the question back at the interviewer.
   - Make sure you understand exactly what he is asking.
@@ -38,9 +38,10 @@ discover corner cases you might have missed out or even lead you towards the opt
 - Explain your high level approach to the interviewer.
   - Consider various approaches and explain out loud why it will/will not work.
   - Start with a brute force approach, even though it is unlikely the one you will be coding.
-  - Only start coding after he has given you the go ahead.
+  - Only start coding after the interviewer has given you the green light.
 - Start coding.
   - Always be explaining what you are currently writing/typing to the interviewer.
+  - Use clear variable names, avoid single letter names unless they are for iteration.
 - Review your code.
   - Come up with small test cases.
   - Step through the code (not your algorithm!) with those sample input.
@@ -60,7 +61,7 @@ discover corner cases you might have missed out or even lead you towards the opt
   - Check that concatenation of values are of same type: int/str/list.
   - After finishing your code, use a few example inputs to test your solution.
 
-## Arrays
+## Array
 
 - Corner cases:
   - Empty array.
@@ -69,8 +70,10 @@ discover corner cases you might have missed out or even lead you towards the opt
 - Check for array out of bounds.
 - Is the array sorted or partially sorted? If it is, some form of binary search should be possible.
 - Having two indices to traverse/compare two strings/arrays is quite common. For example, we use the same approach to merging two sorted arrays.
-- Sorting the array first may significantly simplify the problem.
+- Sorting the array first may significantly simplify the problem. Be sure that the order of elements do not matter or else sorting will mess up the order.
 - Sometimes you can traverse from the right rather than from the left.
+- Sliding window is a common technique used for sequence-based data, such as arrays and strings.
+  - TODO: Explain what a sliding window is.
 - For questions where summation or multiplication of a subarray is involved, pre-computation using hashing or a prefix/suffix sum/product might be useful.
 - If question asks for O(1) space, perhaps using the array itself as a hash table might be useful. If array only has positive values from 1 to N, negate the value at that index to indicate presence of that number.
 
@@ -79,45 +82,71 @@ discover corner cases you might have missed out or even lead you towards the opt
 - To check if a number is a power of 2, `n & n-1 == 0`.
 - Use the XOR operator `^` to flip bits. Usually combined with `1 << k` to shift the k-th bit: `num ^ (1 << k)`.
 
+## Dynamic Programming
+
+TODO
+
 ## Geometry
 
 - When comparing euclidean distance between two points, use dx<sup>2</sup> + dy<sup>2</sup>. It is unnecessary to square root the value.
+- To find out if two circles overlap, check that the distance between the two centers of the circles is less than the sum of their radii.
 
-## Linked Lists
+## Graph
 
-- A dummy node at the head and/or tail might help to handle many edge cases. Be sure to remember to remove them at the end.
+TODO
+
+## Linked List
+
+- Corner cases:
+  - Single node.
+  - Two nodes.
+  - Cycle in linked list - Clarify where there can be a cycle in the list? Usually the answer is no.
+- Adding a dummy node at the head and/or tail might help to handle many edge cases where operations have to be performed at the head or the tail. The presence of dummy nodes essentially ensures that operations will never have be done on the head or the tail, thereby removing a lot of headache in dealing with corner cases. Be sure to remember to remove them at the end of your code.
 - Sometimes linked lists problem can be solved without external storage. Try to borrow ideas from reverse a linked list problem.
 - For deletion in linked lists, you can either modify the node values or change the node pointers. You might need to keep a reference to the previous element.
 - For partitioning linked lists, create two separate linked lists and join them back together.
 - Linked lists problems share similarity with array problems, think about how you would do it for an array and try to apply it to a linked list.
 - Two pointer approaches are common:
-  - One pointer is k nodes ahead of the other to get the kth from last of the list.
-  - One pointer increments twice as much as the other to get the middle of the list.
+  - Getting the k<sup>th</sup> from last node - Have two pointers, where one is k nodes ahead of the other. When the node ahead reaches the end, the other node is k nodes behind.
+  - Detecting cycles - Have two pointers, where one pointer increments twice as much as the other, if the two pointers meet, means that there is a cycle.
+  - Getting the middle node - Have two pointers, where one pointer increments twice as much as the other. When the faster node reaches the end of the list, the slower node will be at the middle.
 
 ## Math
 
 - If code involves division, remember to check for division by 0 case.
 - Check for and handle overflow/underflow.
-- Handle negative numbers.
+- Do account for negative numbers and floating point numbers. This may sound obvious, but under interview pressure, many obvious cases go unnoticed.
 - Sum of 1 to N = (n+1) * n/2
 - Sum of GP = 2^0 + 2^1 + 2^2 + 2^3 + ... 2^n = 2^(n+1) - 1
 - Permutations of N = N! / (N-K)!
 - Combinations of N = N! / (K! * (N-K)!)
 - When a question involves "a multiple of a number", perhaps modulo might be useful.
 
-## Strings
+## Matrix
 
-- Ask about character set and case sensitivity.
-- Can I use some common data structure that can deal with strings efficiently?
+- A matrix is a 2-dimensional array.
+- When recursively traversing the matrix, always ensure that your next position is within the boundary of the matrix.
+
+## String
+
+- Corner cases:
+  - Empty string.
+  - String with one or two characters.
+  - Strings with only one distinct character.
+- Ask about input character set and case sensitivity. Usually the characters are limited to lower case latin characters, i.e. a-z.
+- When you need to compare strings where the order isn't important (like anagram), you may consider using a hash map as a counter.
+- If you need to keep a counter of characters, a common mistake to make is to say that the space complexity required for the counter is O(n). The space required for a counter is O(1) not O(n), because the upper bound is the range of characters, which is usually a fixed constant.
+- Sliding window is a common technique used for strings, as it is also a sequence-based data type.
+- Can I use some common data structure that can look up strings efficiently?
   - [Trie / Prefix Tree](https://www.wikiwand.com/en/Trie)
   - [Suffix Tree](https://www.wikiwand.com/en/Suffix_tree)
 - Common string algorithms:
-  - [KMP](https://www.wikiwand.com/en/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm) for efficient searching of substring
-  - [Rabin Karp](https://www.wikiwand.com/en/Rabin%E2%80%93Karp_algorithm) rolling hash
+  - [KMP](https://www.wikiwand.com/en/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm) for efficient searching of substring. Quite complicated.
+  - [Rabin Karp](https://www.wikiwand.com/en/Rabin%E2%80%93Karp_algorithm) for efficient searching of substring using a rolling hash.
 
-**Non-repeating Chars**
+**Non-repeating Characters**
 
-- Use a 26-bit bitmask to indicate which lowercase latin characters are inside the string.
+- Use a 26-bit bitmask to indicate which lower case latin characters are inside the string.
 
 ~~~
 mask = 0
@@ -125,22 +154,25 @@ for c in set(word):
   mask |= (1 << (ord(c) - ord('a')))
 ~~~
 
-- To determine if two strings have common characters, perform & and the two bitmasks and if the result is non-zero, the two strings do have common characters. `mask_a & mask_b > 0`
+- To determine if two strings have common characters, perform `&` on the two bitmasks and if the result is non-zero, the two strings do have common characters. `mask_a & mask_b > 0`
 
-**Anagrams**
+**Anagram**
 
 - Determine if two strings are anagrams:
   - Sorting both strings should produce the same resulting string.
   - If we map each character to a prime number and the whole string is mapped to the multiples of all the prime numbers of its characters, anagrams should have the same multiple.
   - Frequency counting of characters will help to determine if two strings are anagrams.
-- When question is about anagrams, usually can use hash map.
-- When you need to compare things regardless of order (like anagram), you may consider hash, hash map.
+- When the question is about anagrams, you can usually use a hash map as the order does not matter.
 
-**Palindromes**
+**Palindrome**
 
+- The order within the string matters, so hash maps are usually not helpful.
 - Determine if a string is a palindrome:
   - Reverse the string and it should be the same as itself.
-  - Have two pointers that start at start and end of the string, move inwards till they meet. All the characters should be the same.
+  - Have two pointers at the start and end of the string, move inwards till they meet. All the characters should be the same.
+- When a question asks to count the number of palindromes, a common trick is to have two pointer that move outwards, away from the middle. Note that palindromes can be even/odd length, and that for each middle character, you would need to check twice, once including the character, and once without.
+  - For substrings, you can terminate early once there is no match.
+  - For subsequences, use dynamic programming as there are overlapping subproblems. Check out [here](https://leetcode.com/problems/longest-palindromic-subsequence/).
 
 **Dictionary (List of words)**
 
@@ -150,18 +182,18 @@ for c in set(word):
   - Traverse through the word.
 - Having two indices to traverse/compare two string/arrays is quite common. For example, we use the same approach to merging two sorted arrays.
 
-## Trees
+## Tree
 
 - Traverse tree by level - Depth-first search.
-- Recursion is common for trees. When you notice the subtree problem can be used to solve the whole problem, you should try recursion.
-- When using recursion, always remember to check for base case, usually where the node is `null`.
-- It's possible that your recursive function needs to return two values.
-- If the question involves summation of paths, be sure to check whether nodes can be negative.
+- Recursion is a common approach for trees. When you notice the subtree problem can be used to solve the whole problem, you should try recursion.
+- When using recursion, always remember to check for the base case, usually where the node is `null`.
+- Sometimes it is possible that your recursive function needs to return two values.
+- If the question involves summation of nodes along the way, be sure to check whether nodes can be negative.
 
-**Binary Trees**
+**Binary Tree**
 
 - In-order traversal of a binary tree is insufficient to uniquely serialize a tree. Pre-order/post-order traversal is also required.
 
-**Binary Search Trees**
+**Binary Search Tree**
 
 - In-order traversal will give you all elements in order.
