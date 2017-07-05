@@ -767,7 +767,7 @@ There are some answers online that explain `document.write()` is being used in a
 ###### References
 
 - https://www.quirksmode.org/blog/archives/2005/06/three_javascrip_1.html
-- https://github.com/paulirish/html5-boilerplate/wiki/Script-Loading-Techniques#documentwrite-script-tag
+- https://github.com/h5bp/html5-boilerplate/wiki/Script-Loading-Techniques#documentwrite-script-tag
 
 #### What's the difference between feature detection, feature inference, and using the UA string?
 TODO
