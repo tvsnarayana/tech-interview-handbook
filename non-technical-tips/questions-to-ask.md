@@ -41,6 +41,7 @@ Here are some good questions to ask at the end of the interview, extracted from 
 - How would you describe your engineering culture?
 - **What has been the worst technical blunder that has happened in the recent past? How did you guys deal with it? What changes were implemented afterwards to make sure it didn't happen again?**
 - **What is the most costly technical decision made early on that the company is living with now?**
+- How does the engineering team balance resources between feature requests and engineering maintenance?
 
 ## Attrition
 
