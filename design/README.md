@@ -5,6 +5,42 @@ Design Questions
 
 - https://github.com/donnemartin/system-design-primer
 - https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/
+- http://blog.gainlo.co/index.php/2017/04/13/system-design-interviews-part-ii-complete-guide-google-interview-preparation/
+
+## Flow
+
+#### A. Understand the problem and scope
+
+- Define the use cases, with interviewer's help.
+- Suggest additional features.
+- Remove items that interviewer deems out of scope.
+- Assume high availability is required, add as a use case.
+
+#### B. Think about constraints
+
+- Ask how many requests per month.
+- Ask how many requests per second (they may volunteer it or make you do the math).
+- Estimate reads vs. writes percentage.
+- Keep 80/20 rule in mind when estimating.
+- How much data written per second.
+- Total storage required over 5 years.
+- How much data reads per second.
+
+#### C. Abstract design
+
+- Layers (service, data, caching).
+- Infrastructure: load balancing, messaging.
+- Rough overview of any key algorithm that drives the service.
+- Consider bottlenecks and determine solutions.
+
+Source: https://github.com/jwasham/coding-interview-university#system-design-scalability-data-handling
+
+## Grading Rubrics
+
+- Problem Solving - How systematic is your approach to solving the problem step-by-step? Break down a problem into its core components.
+- Communication - How well do you explain your idea and communicate it with others?
+- Evaluation - How do you evaluate your system? Are you aware of the trade-offs made? How can you optimize it?
+- Estimation - How fast does your system need to be? How much space does it need? How much load will it experience?
 
 ## Specific Topics
 
@@ -35,39 +71,12 @@ Design Questions
   - http://blog.gainlo.co/index.php/2016/08/28/design-ecommerce-website-part-ii/
 - Web Crawler
   - http://blog.gainlo.co/index.php/2016/06/29/build-web-crawler/
+  - http://www.makeuseof.com/tag/how-do-search-engines-work-makeuseof-explains/
 - YouTube
   - http://blog.gainlo.co/index.php/2016/10/22/design-youtube-part/
   - http://blog.gainlo.co/index.php/2016/11/04/design-youtube-part-ii/
 - Hit Counter
   - http://blog.gainlo.co/index.php/2016/09/12/dropbox-interview-design-hit-counter/
-
-## Flow
-
-**A. Understand the problem and scope:**
-
-- Define the use cases, with interviewer's help
-- Suggest additional features
-- Remove items that interviewer deems out of scope
-- Assume high availability is required, add as a use case
-
-**B. Think about constraints:**
-
-- Ask how many requests per month
-- Ask how many requests per second (they may volunteer it or make you do the math)
-- Estimate reads vs. writes percentage
-- Keep 80/20 rule in mind when estimating
-- How much data written per second
-- Total storage required over 5 years
-- How much data reads per second
-
-**C. Abstract design:**
-
-- Layers (service, data, caching)
-- infrastructure: load balancing, messaging
-- Rough overview of any key algorithm that drives the service
-- Consider bottlenecks and determine solutions
-
-Source: https://github.com/jwasham/coding-interview-university#system-design-scalability-data-handling
 
 ## Airbnb
 
