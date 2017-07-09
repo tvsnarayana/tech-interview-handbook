@@ -19,7 +19,10 @@ Interval
 
 - Interval ranges:
   - Given 2 interval ranges, create a function to tell me if these ranges intersect. Both start and end are inclusive: `[start, end]`
+    - E.g. `[1, 4]` and `[5, 6]` => `false`
+    - E.g. `[1, 4]` and `[3, 6]` => `true`
   - Given 2 interval ranges that intersect, now create a function to merge the 2 ranges into a single continuous range.
+    - E.g. `[1, 4]` and `[3, 6]` => `[1, 6]`
   - Now create a function that takes a group of unsorted, unorganized intervals, merge any intervals that intersect and sort them. The result should be a group of sorted, non-intersecting intervals.
   - Now create a function to merge a new interval into a group of sorted, non-intersecting intervals. After the merge, all intervals should remain
   non-intersecting.

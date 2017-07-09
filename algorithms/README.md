@@ -69,6 +69,8 @@ discover corner cases you might have missed out or even lead you towards the opt
   - However, functional programming is usually expensive in terms of space complexity because of non-mutation. On the other hand, imperative code is faster because of mutation. Hence you will need to achieve a balance between accuracy vs efficiency, by using the right amount of functional and imperative code.
   - Avoid relying and mutating global variables.
   - If you have to rely on global variables, make sure that you do not accidentally mutate it.
+- Generally, to improve the speed, we can either choose a better data structure/algorithm or use more memory.
+
 
 ## Array
 
@@ -147,6 +149,7 @@ TODO
 - When you need to compare strings where the order isn't important (like anagram), you may consider using a hash map as a counter.
 - If you need to keep a counter of characters, a common mistake to make is to say that the space complexity required for the counter is O(n). The space required for a counter is O(1) not O(n), because the upper bound is the range of characters, which is usually a fixed constant.
 - Sliding window is a common technique used for strings, as it is also a sequence-based data type.
+  - Sliding window template can be found [here](https://discuss.leetcode.com/topic/30941/here-is-a-10-line-template-that-can-solve-most-substring-problems).
 - Be mindful about slicing strings in your code. Typically, slicing and concatenating sequences require O(n) time. Use start and end indices to demarcate a substring where possible.
 - Can I use some common data structure that can look up strings efficiently?
   - [Trie / Prefix Tree](https://www.wikiwand.com/en/Trie)
@@ -192,6 +195,14 @@ for c in set(word):
   - Traverse through the whole dictionary.
   - Traverse through the word.
 - Having two indices to traverse/compare two string/arrays is quite common. For example, we use the same approach to merging two sorted arrays.
+
+## Recursion
+
+- Always must define a base case.
+- Useful for permutation and tree questions.
+- Recursions implicitly use a stack. Hence all recursive approaches can be rewritten by using a stack.
+- Beware of cases where the recursion level goes too deep (in Python the default limit is 1000).
+- Recursion will never be O(1) space complexity because a stack is involved. [Tail-call optimization](https://stackoverflow.com/questions/310974/what-is-tail-call-optimization) can be used to save on the space needed.
 
 ## Tree
 
