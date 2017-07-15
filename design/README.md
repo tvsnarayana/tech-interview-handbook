@@ -4,6 +4,10 @@ Design Questions
 ## Guides
 
 - https://github.com/donnemartin/system-design-primer
+- https://github.com/checkcheckzz/system-design-interview
+- https://github.com/shashank88/system_design
+- https://gist.github.com/vasanthk/485d1c25737e8e72759f
+- http://www.puncsky.com/blog/2016/02/14/crack-the-system-design-interview/
 - https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/
 - http://blog.gainlo.co/index.php/2017/04/13/system-design-interviews-part-ii-complete-guide-google-interview-preparation/
 

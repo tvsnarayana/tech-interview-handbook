@@ -10,7 +10,7 @@ News Feed
 
 ## Requirements Gathering
 
-- What platform is this news feed targeted at?
+- What is the intended platform?
   - Mobile (mobile web or native)? Web? Desktop?
 - What features are required?
   - CRUD posts.
@@ -48,7 +48,8 @@ TODO
 
 ## Data modeling
 
-- What kind of database to use? SQL? NoSQL?
+- What kind of database to use?
+  - Data is quite structured. Would go with SQL.
 - Design the necessary tables, its columns and its relations.
   - `users`
   - `posts`
@@ -57,15 +58,15 @@ TODO
   - `comments`
 
 > There are two basic objects: user and feed. For user object, we can store userID, name, registration date and so on so forth. And for feed object, there are feedId, feedType, content, metadata etc., which should support images and videos as well.
-
+>
 > If we are using a relational database, we also need to model two relations: user-feed relation and friend relation. The former is pretty straightforward. We can create a user-feed table that stores userID and corresponding feedID. For a single user, it can contain multiple entries if he has published many feeds.
-
+>
 > For friend relation, adjacency list is one of the most common approaches. If we see all the users as nodes in a giant graph, edges that connect nodes denote friend relation. We can use a friend table that contains two userIDs in each entry to model the edge (friend relation). By doing this, most operations are quite convenient like fetch all friends of a user, check if two people are friends.
-
+>
 > The system will first get all userIDs of friends from friend table. Then it fetches all feedIDs for each friend from user-feed table. Finally, feed content is fetched based on feedID from feed table. You can see that we need to perform 3 joins, which can affect performance.
-
+>
 > A common optimization is to store feed content together with feedID in user-feed table so that we don’t need to join the feed table any more. This approach is called denormalization, which means by adding redundant data, we can optimize the read performance (reducing the number of joins).
-
+>
 > The disadvantages are obvious:
 > - Data redundancy. We are storing redundant data, which occupies storage space (classic time-space trade-off).
 > - Data consistency. Whenever we update a feed, we need to update both feed table and user-feed table. Otherwise, there is data inconsistency. This increases the complexity of the system.
