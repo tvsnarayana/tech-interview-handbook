@@ -696,16 +696,55 @@ As a personal habit, I never leave my variables undeclared or unassigned. I will
 - https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/undefined
 
 #### What is a closure, and how/why would you use one?
+
 TODO
 
 #### What's a typical use case for anonymous functions?
-TODO
+
+They can be used in IIFEs to encapsulate some code within a local scope so that variables declared in it do not leak to the global scope.
+
+```
+(function() {
+  // Some code here.
+})();
+```
+
+As a callback that is used once and does not need to be used anywhere else. The code will seem more self-contained and readable when handlers are defined right inside the code calling them, rather than having to search elsewhere to find the function body.
+
+```
+setTimeout(function () {
+  console.log('Hello world!');
+}, 1000);
+```
+
+Arguments to functional programming constructs or Lodash (similar to callbacks).
+
+```
+const arr = [1, 2, 3];
+const double = arr.map(function (el) {
+  return el * 2;
+});
+console.log(double); // [2, 4, 6]
+```
+
+###### References
+
+- https://www.quora.com/What-is-a-typical-usecase-for-anonymous-functions
+- https://stackoverflow.com/questions/10273185/what-are-the-benefits-to-using-anonymous-functions-instead-of-named-functions-fo
 
 #### How do you organize your code? (module pattern, classical inheritance?)
+
 TODO
 
 #### What's the difference between host objects and native objects?
-TODO
+
+Native objects are objects that are part of the JavaScript language defined by the ECMAScript specification, such as `String`, `Math`, `RegExp`, `Object`, `Function`, etc.
+
+Host objects are provided by the runtime environment (browser or Node), such as `window`, `XMLHTTPRequest`, etc.
+
+###### References
+
+- https://stackoverflow.com/questions/7614317/what-is-the-difference-between-native-objects-and-host-objects
 
 #### Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
 
@@ -770,15 +809,19 @@ There are some answers online that explain `document.write()` is being used in a
 - https://github.com/h5bp/html5-boilerplate/wiki/Script-Loading-Techniques#documentwrite-script-tag
 
 #### What's the difference between feature detection, feature inference, and using the UA string?
+
 TODO
 
 #### Explain Ajax in as much detail as possible.
+
 TODO
 
 #### What are the advantages and disadvantages of using Ajax?
+
 TODO
 
 #### Explain how JSONP works (and how it's not really Ajax).
+
 TODO
 
 #### Have you ever used JavaScript templating? If so, what libraries have you used?
@@ -792,19 +835,86 @@ const template = `<div>My name is: ${name}</div>`;
 However, do beware of a potential XSS in the above approach as the contents are not escaped for you, unlike in templating libraries.
 
 #### Explain "hoisting".
-TODO
+
+Hoisting is a term used to explain the behavior of variable declarations in your code. Variables declared or initialized with the `var` keyword will have their declaration "hoisted" up to the top of the current scope. However, only the declaration is hoisted, the assignment (if there is one), will stay where it is. Let's explain with a few examples.
+
+```
+// var declarations are hoisted.
+console.log(foo); // undefined
+var foo = 1;
+console.log(foo); // 1
+
+// let/const declarations are NOT hoisted.
+console.log(bar); // ReferenceError: bar is not defined
+let bar = 2;
+console.log(bar); // 2
+```
+
+Function declarations have the body hoisted while the function expressions (written in the form of variable declarations) only has the variable declaration hoisted.
+
+```
+// Function Declaration
+console.log(foo); // [Function: foo]
+foo(); // 'FOOOOO'
+function foo() {
+  console.log('FOOOOO');
+}
+console.log(foo); // [Function: foo]
+
+// Function Expression
+console.log(bar); // undefined
+bar(); // Uncaught TypeError: bar is not a function
+var bar = function() {
+  console.log('BARRRR');
+}
+console.log(bar); // [Function: bar]
+```
 
 #### Describe event bubbling.
-TODO
+
+When an event triggers on a DOM element, it will attempt to handle the event if there is a listener attached, then the event is bubbled up to its parent and the same thing happens. This bubbling occurs up the element's ancestors all the way to the `document`. Event bubbling is the mechanism behind event delegation.
 
 #### What's the difference between an "attribute" and a "property"?
-TODO
+
+Attributes are defined on the HTML markup but properties are defined on the DOM. To illustrate the difference, imagine we have this text field in our HTML: `<input type="text" value="Hello">`.
+
+```
+const input = document.querySelector('input');
+console.log(input.getAttribute('value')); // Hello
+console.log(input.value); // Hello
+```
+
+But after you change the value of the text field by adding "World!" to it, this becomes:
+
+```
+console.log(input.getAttribute('value')); // Hello
+console.log(input.value); // Hello World!
+```
+
+###### References
+
+- https://stackoverflow.com/questions/6003819/properties-and-attributes-in-html
 
 #### Why is extending built-in JavaScript objects not a good idea?
-TODO
+
+Extending a built-in/native JavaScript object means adding properties/functions to its `prototype`. While this may seem like a good idea at first, it is dangerous in practice. Imagine your code uses a few libraries that both extend the `Array.prototype` by adding the same `contains` method, the implementations will overwrite each other and your code will break if the behavior of these two methods are not the same.
+
+The only time you may want to extend a native object is when you want to create a polyfill, essentially providing your own implementation for a method that is part of the JavaScript specification but might not exist in the user's browser due to it being an older browser.
+
+###### References
+
+- http://lucybain.com/blog/2014/js-extending-built-in-objects/
 
 #### Difference between document load event and document DOMContentLoaded event?
-TODO
+
+The `DOMContentLoaded` event is fired when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
+
+`window`'s `load` event is only fired after the DOM and all dependent resources and assets have loaded.
+
+###### References
+
+- https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded
+- https://developer.mozilla.org/en-US/docs/Web/Events/load
 
 #### What is the difference between `==` and `===`?
 
@@ -832,6 +942,7 @@ console.log(a == undefined); // true
 - https://stackoverflow.com/questions/359494/which-equals-operator-vs-should-be-used-in-javascript-comparisons
 
 #### Explain the same-origin policy with regards to JavaScript.
+
 TODO
 
 #### Make this work:
@@ -901,9 +1012,11 @@ I would not advise you to write the above during interviews though. Just stick w
 - https://gist.github.com/jaysonrowe/1592432
 
 #### Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
-TODO
+
+Every script has access to the global scope, and if everyone is using the global namespace to define their own variables, there will bound to be collisions. Use the module pattern (IIFEs) to encapsulate your variables within a local namespace.
 
 #### Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
+
 TODO
 
 #### Explain what a single page app is and how to make one SEO-friendly.
@@ -934,9 +1047,11 @@ The downsides:
 - https://medium.freecodecamp.com/heres-why-client-side-rendering-won-46a349fadb52
 
 #### What is the extent of your experience with Promises and/or their polyfills?
+
 TODO
 
 #### What are the pros and cons of using Promises instead of callbacks?
+
 TODO
 
 #### What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
@@ -957,6 +1072,7 @@ Disadvantages:
 - Smaller community (depends on the language), which means resources, tutorials, libraries and tooling would be harder to find.
 - IDE/editor support might be lacking.
 - These languages will always be behind the latest JavaScript standard.
+- Developers should be cognizant of what their code is being compiled to — because that is what would actually be running, and that is what matters in the end.
 
 Practically, ES2015 has vastly improved JavaScript and made it much nicer to write. I don't really see the need for CoffeeScript these days.
 
@@ -965,10 +1081,23 @@ Practically, ES2015 has vastly improved JavaScript and made it much nicer to wri
 - https://softwareengineering.stackexchange.com/questions/72569/what-are-the-pros-and-cons-of-coffeescript
 
 #### What tools and techniques do you use debugging JavaScript code?
+
 TODO
 
 #### What language constructions do you use for iterating over object properties and array items?
-TODO
+
+For objects:
+
+- `for` loops - `for (var property in obj) { console.log(property); }`. However, this will also iterate through its inherited properties, and you will add an `obj.hasOwnProperty(property)` check before using it.
+- `Object.keys()` - `Object.keys(obj).forEach(function (property) { ... })`. `Object.keys()` is a static method that will lists all enumerable properties of the object that you pass it.
+
+For arrays:
+
+- `for` loops - `for (var i = 0; i < arr.length; i++)`. The common pitfall here is that `var` is in the function scope and not the block scope and most of the time you would want block scoped iterator variable. ES2015 introduces `let` which has block scope and it is recommended to use that instead. So this becomes: `for (let i = 0; i < arr.length; i++)`.
+- `forEach` - `arr.forEach(function (el, index) { ... })`. This construct can be more convenient at times because you do not have to use the `index` if all you need is the array elements. There are also the `every` and `some` methods which will allow you to terminate the iteration early.
+
+Most of the time, I would prefer the `.forEach` method, but it really depends on what you are trying to do. `for` loops allow more flexibility, such as prematurely terminate the loop using `break` or incrementing the iterator more than once per loop.
+
 
 #### Explain the difference between mutable and immutable objects.
 
@@ -979,6 +1108,7 @@ TODO
 TODO
 
 #### Explain the difference between synchronous and asynchronous functions.
+
 TODO
 
 #### What is event loop? What is the difference between call stack and task queue?
@@ -994,7 +1124,7 @@ If you haven't already checked out Philip Robert's [talk on the Event Loop](http
 
 #### Explain the differences on the usage of `foo` between `function foo() {}` and `var foo = function() {}`
 
-The former is a function declaration while the latter is a function expression. The key difference is that function expressions are not hoisted (they have the same hoisting behaviour as variables). For more explanation on hoisting, refer to the question above on hoisting. If you try to invoke a function expression before it is defined, you will get an `Uncaught TypeError: XXX is not a function` error.
+The former is a function declaration while the latter is a function expression. The key difference is that function declarations have its body hoisted but the bodies of function expressions are not (they have the same hoisting behaviour as variables). For more explanation on hoisting, refer to the question above on hoisting. If you try to invoke a function expression before it is defined, you will get an `Uncaught TypeError: XXX is not a function` error.
 
 **Function Declaration**
 
