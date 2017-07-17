@@ -25,6 +25,7 @@ discover corner cases you might have missed out or even lead you towards the opt
 
 ## Algorithm Coding Steps
 
+- For phone screens/remote interviews, prepare paper and pen to jot down and visualize stuff.
 - Repeat the question back at the interviewer.
   - Make sure you understand exactly what he is asking.
   - If you misunderstood and when you repeat back the question, he'll clarify.
@@ -70,7 +71,6 @@ discover corner cases you might have missed out or even lead you towards the opt
   - Avoid relying and mutating global variables.
   - If you have to rely on global variables, make sure that you do not accidentally mutate it.
 - Generally, to improve the speed, we can either choose a better data structure/algorithm or use more memory.
-
 
 ## Array
 
@@ -138,6 +138,7 @@ TODO
 
 - A matrix is a 2-dimensional array.
 - When recursively traversing the matrix, always ensure that your next position is within the boundary of the matrix.
+- https://leetcode.com/problems/pacific-atlantic-water-flow/#/solutions
 
 ## String
 
