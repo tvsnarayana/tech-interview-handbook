@@ -1,0 +1,40 @@
+<!doctype html>
+<head>
+  <style>
+    body {
+      font-family: 'Helvetica', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <label for="search">Search</label>
+  <input class="js-search-box" name="search" type="text">
+  <script>
+    (() => {
+      const IDLE_DURATION = 400;
+      const DOM = {
+        $searchBox: document.querySelector('.js-search-box'),
+      };
+
+      const state = {
+        searchTimerId: null,
+      };
+
+      function init() {
+        DOM.$searchBox.addEventListener('input', function () {
+          if (state.searchTimerId) {
+            window.clearTimeout(state.searchTimerId);
+          }
+          state.searchTimerId = window.setTimeout(() => {
+            window.clearTimeout(state.searchTimerId);
+            console.log('Search for', this.value);
+          }, IDLE_DURATION);
+        });
+        DOM.$searchBox.focus();
+      }
+
+      document.addEventListener('DOMContentLoaded', init);
+    })();
+  </script>
+</body>
+</html>

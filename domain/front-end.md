@@ -1,14 +1,19 @@
 Front End
 ==
 
+## General
+
+- You have an endpoint that returns a list of endpoints where you then have to fetch data from those endpoints and render to the page only after all of these requests have returned. Write a function to do it in sequence and in parallel.
+  - Source: https://developers.google.com/web/fundamentals/getting-started/primers/promises#promisifying_xmlhttprequest
+
 ## Airbnb
 
-- Create an autocomplete widget - Given an input and an endpoint which returns a JSON list, as a result, extend it to autocomplete on change, handle key navigation through the results
+- Create an autocomplete widget - Given an input and an endpoint which returns a JSON list, as a result, extend it to autocomplete on change, handle key navigation through the results.
 - Star rating widget - Given a star widget embedded in a form write the code to select the stars and submit the correct value through a normal form action. Make reusable for multiple star widgets.
 
 ## Facebook
 
-- Write an emitter class:
+- Write an `Emitter` class:
   - `emitter = new Emitter();`
   - Support subscribing to events: `sub = emitter.subscribe('event_name', callback); sub2 = emitter.subscribe('event_name', callback2);`
   - Support emitting events. This particular example should lead to the `callback` above being invoked with `foo` and `bar` as parameters: `emitter.emit('event_name', foo, bar);`
