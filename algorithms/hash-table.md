@@ -1,6 +1,10 @@
 Hash Table
 ==
 
+## Palantir
+
+- A question involving an API's integration with hash map where the buckets of hash map are made up of linked lists.
+
 ## Uber
 
 - Implement data structure `Map` storing pairs of integers (key, value) and define following member functions in O(1) runtime: `void insert(key, value)`, `void delete(key)`, `int get(key)`, `int getRandomKey()`.

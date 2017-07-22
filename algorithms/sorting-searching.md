@@ -17,6 +17,11 @@ Sorting and Searching
 - Merge two sorted lists together.
 - Given a list of numbers and a function that returns Low, Medium, or High, sort the list by Lows, then Mediums, then Highs.
 
+## Palantir
+
+- Give 3 distinct algorithms to find the K largest values in a list of N items.
+- Find the minimum element in a sorted rotated array in faster than O(n) time.
+
 ## Uber
 
 - Write a function that takes a number as input and outputs the biggest number with the same set of digits.

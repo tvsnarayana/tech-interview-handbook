@@ -1,4 +1,4 @@
-Number Theory
+Math
 ==
 
 ## Facebook
@@ -11,6 +11,11 @@ Number Theory
 - Compute the square root of `N` without using any existing functions.
 - Given numbers represented as binary strings, and return the string containing their sum.
   - E.g. `add('10010', '101')` returns `'10111'`.
+
+## Palantir
+
+- Take in an integer and return its english word-format.
+  - E.g. 1 -> "one", -10,203 -> "negative ten thousand two hundred and three".
 
 ## Uber
 

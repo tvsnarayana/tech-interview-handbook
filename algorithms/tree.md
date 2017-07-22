@@ -33,6 +33,12 @@ Tree
 - Pretty print a JSON object.
 - Convert a binary tree to a doubly circular linked list.
 
+## Palantir
+
+- Convert a tree to a linked list.
+- Given two trees, write code to find out if tree A is a subtree of tree B.
+- Write a function to determine if a binary tree is a binary search tree.
+
 ## Uber
 
 - Deepest node in a tree.

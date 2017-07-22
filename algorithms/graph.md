@@ -15,3 +15,8 @@ Graph
 ## Google
 
 - You are a thief trying to sneak across a rectangular field. There are alarms placed on the fields and they each have a circular sensing radius which will trigger if anyone steps into it. Each alarm may not have the same radius. Determine if you can get from one end of the field to the other end.
+
+## Palantir
+
+- Given a graph and two nodes, determine if there exists a path between them.
+- Determine if a cycle exists in the graph.

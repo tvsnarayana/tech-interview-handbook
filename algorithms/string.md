@@ -53,3 +53,8 @@ String
 - How to check if a string contains an anagram of another string?
   - [Source](http://blog.gainlo.co/index.php/2016/04/08/if-a-string-contains-an-anagram-of-another-string/)
 
+## Palantir
+
+- Given a string of open and close parentheses, find the minimum number of edits needed to balance a string of parentheses.
+- Run length encoding - Write a string compress function that returns `'R2G1B1'` given `'RRGB'`.
+- Write a function that finds all the different ways you can split up a word into a concatenation of two other words.

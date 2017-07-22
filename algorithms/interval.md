@@ -27,3 +27,8 @@ Interval
   - Now create a function to merge a new interval into a group of sorted, non-intersecting intervals. After the merge, all intervals should remain
   non-intersecting.
 - Given a list of meeting times, checks if any of them overlap. The follow-up question is to return the minimum number of rooms required to accommodate all the meetings. [Source](http://blog.gainlo.co/index.php/2016/07/12/meeting-room-scheduling-problem/)
+
+## Palantir
+
+- If you have a list of intervals, how would you merge them?
+  - E.g. `[1, 3], [8, 11], [2, 6]` => `[1, 6], [8-11]`

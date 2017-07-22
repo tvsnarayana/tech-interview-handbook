@@ -31,6 +31,18 @@ Arrays
 - Given an array containing only digits `0-9`, add one to the number and return the array.
   - E.g. Given `[1, 4, 2, 1]` which represents `1421`, return `[1, 4, 2, 2]` which represents `1422`.
 
+## Palantir
+
+- Given an array of numbers list out all triplets that sum to 0. Do so with a running time of less than O(n^3).
+- Given an array of numbers list out all quadruplets that sum to 0. Do so with a running time of less than O(n^4).
+- Given an array, find the longest arithmetic progression.
+- Rotate an array by an offset of k.
+- Remove duplicates in an unsorted array where the duplicates are at a distance of k or less from each other.
+- Given an unsorted list of integers, return true if the list contains any duplicates within k indices of each element. Do it faster than O(n^2).
+- Given an unsorted list of integers, return true if the list contains any fuzzy duplicates within k indices of each element. A fuzzy duplicate is another integer within d of the original integer. Do it faster than O(n^2).
+  - E.g. If d = 4, then 6 is a fuzzy duplicate of 3 but 8 is not.
+- Say you have an unordered list of numbers ranging from 1 to n, and one of the numbers is removed, how do you find that number? What if two numbers are removed?
+
 ## Uber
 
 - Given an array of string, find the duplicated elements.
