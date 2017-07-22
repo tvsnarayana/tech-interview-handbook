@@ -53,6 +53,10 @@ discover corner cases you might have missed out or even lead you towards the opt
   - Give the time/space complexity.
   - Explain trade-offs made in the code possibly in terms of time/space.
 
+## Must Do
+
+- http://www.geeksforgeeks.org/must-do-coding-questions-for-companies-like-amazon-microsoft-adobe/
+
 ## General
 
 - Input validation:
@@ -71,6 +75,7 @@ discover corner cases you might have missed out or even lead you towards the opt
   - Avoid relying and mutating global variables.
   - If you have to rely on global variables, make sure that you do not accidentally mutate it.
 - Generally, to improve the speed, we can either choose a better data structure/algorithm or use more memory.
+- When you copy and paste code, firstly consider whether it is necessary. Sometimes it is, sometimes it is not. If you find yourself copying and pasting multiple lines, it's probably better to refactor it into a function. But if it is just a single line, usually it is fine. But remember to change the respective variables. It's a common source of bugs!
 
 ## Array
 
@@ -138,6 +143,7 @@ TODO
 
 - A matrix is a 2-dimensional array.
 - When recursively traversing the matrix, always ensure that your next position is within the boundary of the matrix.
+- Many grid-based games can be modeled as a matrix, such as Tic-Tac-Toe, Sudoku, Crossword, Connect 4, Battleship, etc. It is not uncommon to be asked to verify the winning condition of the game. For games like Tic-Tac-Toe, Connect 4 and Crosswords, where verification has to be done vertically and horizontally, one trick is to write code to verify the matrix for the horizontal cells, and transpose the matrix and reuse the logic for verifying horizontally to verify originally vertical cells.
 - https://leetcode.com/problems/pacific-atlantic-water-flow/#/solutions
 
 ## String
@@ -226,3 +232,8 @@ for c in set(word):
 **Binary Search Tree**
 
 - In-order traversal will give you all elements in order.
+
+###### References
+
+- http://blog.triplebyte.com/how-to-pass-a-programming-interview
+- https://quip.com/q41AA3OmoZbC
