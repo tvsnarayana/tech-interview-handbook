@@ -31,3 +31,7 @@ Front End
 ## Google
 
 - Write a function to find the nearest link on a webpage given the mouse x,y coordinates. If your algorithm just iterates through all the links, give an idea of how to make it faster.
+
+## Palantir
+
+- A question involving an API's integration with hash map where the buckets of hash map are made up of linked lists.
