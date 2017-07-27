@@ -17,11 +17,12 @@ Here are some good questions to ask at the end of the interview, extracted from 
 - **How will the work I will be doing contribute to the organization's mission?**
 - How are you improving diversity?
 - When you were last interviewing, what were some of your other options, and what made you choose this company?
-- **What is the most fulfilling/exciting/technically complex project that you've worked on here so far?**
 - What is something you wish were different about your job?
 - How often have you moved teams? What made you join the team you’re on right now? If you wanted to move teams, what would need to happen?
 - (If the company is a startup) When's the last time you interacted with a founder? What was it regarding? Generally how involved are the founders in the day-to-day?
 - Does the company culture encourage entrepreneurship? Could you give me any specific examples?
+- What was something you wish someone would have told you before you joined?
+- What is unique about working at this company that you have not experienced elsewhere?
 
 ## HR
 
@@ -42,11 +43,15 @@ Here are some good questions to ask at the end of the interview, extracted from 
 - **What has been the worst technical blunder that has happened in the recent past? How did you guys deal with it? What changes were implemented afterwards to make sure it didn't happen again?**
 - **What is the most costly technical decision made early on that the company is living with now?**
 - How does the engineering team balance resources between feature requests and engineering maintenance?
+- **What is the most fulfilling/exciting/technically complex project that you've worked on here so far?**
+- Was there a time where you messed up and how was it handled?
+- How would you see yourself growing at this company in the next few years?
 
 ## Attrition
 
 - How long does the average engineer stay at the company?
 - Why have the last few people left?
+- Have you ever thought about leaving? If you were to leave, where would you go?
 
 #### References
 
@@ -55,3 +60,4 @@ Here are some good questions to ask at the end of the interview, extracted from 
 - [Fastcompany](https://www.fastcompany.com/40406730/7-questions-recruiters-at-amazon-spotify-and-more-want-you-to-ask)
 - [Questions I'm asking in interviews](http://jvns.ca/blog/2013/12/30/questions-im-asking-in-interviews/)
 - [How to interview your interviewers](http://blog.alinelerner.com/how-to-interview-your-interviewers/)
+- [](https://haseebq.com/how-to-break-into-tech-job-hunting-and-interviews/)

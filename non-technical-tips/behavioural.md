@@ -24,6 +24,11 @@ Behavioural
 - Tell me about a time you were uncomfortable and how you dealt with it.
 - Explain a project that you worked on recently.
 - What do you think of Airbnb?
+- Tell me something about yourself and why you'd be a good fit for the position.
+- Name a situation where you were impressed by a company's customer service.
+- How did you work with senior management on large projects as well as multiple internal teams?
+- Tell me about a time you had to give someone terrible news.
+- If you were a gerbil, which gerbil would you be?
 
 ## Amazon
 
@@ -63,6 +68,24 @@ Behavioural
 - Tell me about a challenge you faced recently in your role. How did you tackle it? What was the outcome?
 - Where do you want to be in five years?
 - Tell me about a time you needed information from someone who wasn’t responsive. What did you do?
+
+## Palantir
+
+- How do you deal with difficult coworkers? Think about specific instances where you resolved conflicts.
+- How did you win over the difficult employees?
+- Tell me about an analytical problem that you have worked on in the past.
+- What are your three strengths and three weaknesses?
+- If you were in charge of picking projects for Palantir, what problem would you try to solve?
+- **What is something 90% of people disagree with you about?**
+- What are some of the best and worse things about your current company?
+- **What is broken around you?**
+- What would your manager say about you?
+- Describe Palantir to your grandmother.
+- Teach me something you've learned?
+- Tell me a time when you predicted something?
+- If your supervisors were to rate you on a scale of 1-10 what would they rate you?
+- What was the most fun thing you did recently?
+- Tell me the story of how you became who you are today and what made you apply to Palantir.
 
 ## Slack
 
