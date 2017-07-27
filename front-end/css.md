@@ -15,3 +15,11 @@ If you are a total beginner to CSS, Codecademy's [HTML & CSS course](https://www
 - **Specificity** - TBD
 - **Positioning** - TBD
 - **Floats** - TBD
+
+## Writing CSS without Side Effects
+
+TODO
+
+###### References
+
+- https://philipwalton.com/articles/side-effects-in-css/

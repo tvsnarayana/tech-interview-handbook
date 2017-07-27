@@ -93,7 +93,7 @@ In the back end, the HTML markup will contain `i18n` placeholders and content fo
 
 Before JavaScript frameworks became popular, front end developers used `data-` attributes to store extra data within the DOM itself, without other hacks such as non-standard attributes, extra properties on the DOM. It is intended to store custom data private to the page or application, for which there are no more appropriate attributes or elements.
 
-These days, using `data-` attributes is not encouraged. For one thing, users can modify the data attribute easily by using inspect element in the browser. The data model is better stored within JavaScript itself and stay updated with the DOM via data binding possibly through a library or a framework.
+These days, using `data-` attributes is not encouraged. One reason is that users can modify the data attribute easily by using inspect element in the browser. The data model is better stored within JavaScript itself and stay updated with the DOM via data binding possibly through a library or a framework.
 
 ###### References
 
@@ -217,11 +217,11 @@ The CSS `clear` property can be used to be positioned below `left`/`right`/`both
 
 If a parent element contains nothing but floated elements, its height will be collapsed to nothing. It can be fixed by clearing the float after the floated elements in the container but before the close of the container.
 
-The `.clearfix` hack uses a clever CSS pseudo selector (:after) to clear floats. Rather than setting the overflow on the parent, you apply an additional class like `clearfix` to it. Then apply this CSS:
+The `.clearfix` hack uses a clever CSS pseudo selector (`:after`) to clear floats. Rather than setting the overflow on the parent, you apply an additional class `clearfix` to it. Then apply this CSS:
 
 ```css
 .clearfix:after {
-  content: '.';
+  content: ' ';
   visibility: hidden;
   display: block;
   height: 0;
@@ -330,7 +330,7 @@ I would go with the `absolute` positioning approach, as it has the least caveats
 
 #### Have you ever used a grid system, and if so, what do you prefer?
 
-I like the `float`-based grid system because it still has the most browser support among the alternative existing systems (flex, grid). It has been used in for Bootstrap for years and has been proven to work.
+I like the `float`-based grid system because it still has the most browser support among the alternative existing systems (flex, grid). It has been used in Bootstrap for years and has been proven to work.
 
 #### Have you used or implemented media queries or mobile-specific layouts/CSS?
 
@@ -414,7 +414,7 @@ Be aware of which CSS properties trigger reflow, repaint and compositing. Avoid 
 
 **Dislikes:**
 
-- I use Sass via `node-sass`, which is a binding for LibSass, which is written in C++. Have to frequently recompile it when switching between node versions.
+- I use Sass via `node-sass`, which is a binding for LibSass written in C++. I have to frequently recompile it when switching between node versions.
 - In Less, variable names are prefixed with `@`, which can be confused with native CSS keywords like `@media`, `@import` and `@font-face` rule.
 
 #### How would you implement a web design comp that uses non-standard fonts?
@@ -437,7 +437,7 @@ A CSS pseudo-element is a keyword added to a selector that lets you style a spec
 
 - `:first-line` and `:first-letter` can be used to decorate text.
 - Used in the `.clearfix` hack as shown above to add a zero-space element with `clear: both`.
-- Triangular arrows in tooltips use `:before` and `:after`. Encourages separation of concerns because the triangle is considered part of styling and not really the DOM, but not really possible to draw a triangle with just CSS styles.
+- Triangular arrows in tooltips use `:before` and `:after`. Encourages separation of concerns because the triangle is considered part of styling and not really the DOM. It's not really possible to draw a triangle with just CSS styles without using an additional HTML element.
 
 ###### References
 
@@ -445,21 +445,21 @@ A CSS pseudo-element is a keyword added to a selector that lets you style a spec
 
 #### Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.
 
-The CSS box model describes the rectangular boxes that are generated for elements in the document tree and laid out according to the visual formatting model. Each box has a content area (e.g. text, an image, etc.) and optional surrounding padding, border, and margin areas.
+The CSS box model describes the rectangular boxes that are generated for elements in the document tree and laid out according to the visual formatting model. Each box has a content area (e.g. text, an image, etc.) and optional surrounding `padding`, `border`, and `margin` areas.
 
 The CSS box model is responsible for calculating:
 
-- How much space a block-level element takes up.
+- How much space a block element takes up.
 - Whether or not borders and/or margins overlap, or collapse.
 - A box's dimensions.
 
 The box model has the following rules:
 
 - The dimensions of a block element are calculated by `width`, `height`, `padding`, `border`s, and `margin`s.
-- If no height is specified, a `block` element will be as high as the content it contains, plus padding (unless there are floats, for which see below).
-- If no width is specified, a non-floated `block` element will expand to fit the width of its parent minus padding.
-- The `height` of an element is calculated by the content's height.
-- The `width` of an element is calculated by the content's width.
+- If no `height` is specified, a block element will be as high as the content it contains, plus `padding` (unless there are floats, for which see below).
+- If no `width` is specified, a non-floated block element will expand to fit the width of its parent minus `padding`.
+- The `height` of an element is calculated by the content's `height`.
+- The `width` of an element is calculated by the content's `width`.
 - By default, `padding`s and `border`s are not part of the `width` and `height` of an element.
 
 ###### References
@@ -470,8 +470,8 @@ The box model has the following rules:
 
 - By default, elements have `box-sizing: content-box` applied, and only the content size is being accounted for.
 - `box-sizing: border-box` changes how the `width` and `height` of elements are being calculated, `border` and `padding` are also being included in the calculation.
-- The `height` of an element is now calculated by the content's height + vertical `padding` + vertical `border` width.
-- The `width` of an element is now calculated by the content's width + horizontal `padding` + horizontal `border` width.
+- The `height` of an element is now calculated by the content's `height` + vertical `padding` + vertical `border` width.
+- The `width` of an element is now calculated by the content's `width` + horizontal `padding` + horizontal `border` width.
 
 #### List as many values for the `display` property that you can remember.
 
@@ -498,7 +498,7 @@ A positioned element is an element whose computed `position` property is either 
 - `relative` - The element's position is adjusted relative to itself, without changing layout (and thus leaving a gap for the element where it would have been had it not been positioned).
 - `absolute` - The element is removed from the flow of the page and positioned at a specified position relative to its closest positioned ancestor if any, or otherwise relative to the initial containing block. Absolutely positioned boxes can have margins, and they do not collapse with any other margins. These elements do not affect the position of other elements.
 - `fixed` - The element is removed from the flow of the page and positioned at a specified position relative to the viewport and doesn't move when scrolled.
-- `sticky` - Sticky positioning is a hybrid of relative and fixed positioning. The element is treated as relative positioned until it crosses a specified threshold, at which point it is treated as fixed positioned.
+- `sticky` - Sticky positioning is a hybrid of relative and fixed positioning. The element is treated as `relative` positioned until it crosses a specified threshold, at which point it is treated as `fixed` positioned.
 
 ###### References
 

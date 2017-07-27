@@ -27,14 +27,18 @@ Performance
     - https://developers.google.com/web/fundamentals/design-and-ui/responsive/#css-media-queries
   - Use Simpler selectors.
 - JavaScript
-  - JS blocks parsing. If the script is external, it will have to be downloaded first. This incurs network latency.
+  - JS blocks HTML parsing. If the script is external, it will have to be downloaded first. This incurs latency in network and execution.
   - Shift `<script>` tags to the bottom.
   - Async:
-    - Scripts that don't modify the DOM or CSSOM can use the `async` attribute to tell the browser not to block DOM and does not need to wait for the CSSOM to be ready.
+    - Scripts that don't modify the DOM or CSSOM can use the `async` attribute to tell the browser not to block DOM parsing and does not need to wait for the CSSOM to be ready.
   - Defer JavaScript execution:
     - There is also a `defer` attribute available. The difference is that with `defer`, the script waits to execute until after the document has been parsed, whereas `async` lets the script run in the background while the document is being parsed.
   - Use web workers for long running operations to move into a web worker thread.
   - Use `requestAnimationFrame`
+
+###### References
+
+- https://bitsofco.de/understanding-the-critical-rendering-path/
 
 ## Measuring
 
@@ -52,4 +56,9 @@ Performance
 - Sitespeed.io
 - Google Lighthouse
 
-https://www.html5rocks.com/en/tutorials/webperformance/basics/
+## Web Performance Rules
+
+- https://www.html5rocks.com/en/tutorials/webperformance/basics/
+- http://stevesouders.com/hpws/rules.php
+- https://developer.yahoo.com/performance/rules.html
+- https://browserdiet.com/en/

@@ -41,8 +41,10 @@ JavaScript
 - Prototype chain
 - `this` keyword
   - https://rainsoft.io/gentle-explanation-of-this-in-javascript/
-  - https://hackernoon.com/understanding-javascript-the-this-keyword-4de325d77f68
+  - https://codeburst.io/the-simple-rules-to-this-in-javascript-35d97f31bde3
 - Classes
+  - Methods
+    - Use non-arrow functions for methods that will be called using the `object.method()` syntax because you need the value of `this` to point to the instance itself.
 
 ### Async
 
@@ -51,6 +53,9 @@ JavaScript
 - Event Loop
   -
 - Debounce and Throttle
+  - Throttling enforces a maximum number of times a function can be called over time.
+  - Debouncing enforces that a function not be called again until a certain amount of time has passed without it being called.
+  - https://css-tricks.com/debouncing-throttling-explained-examples/
 - Callbacks
 - Promises
 
@@ -75,7 +80,7 @@ JavaScript
 - Makes attempts to delete undeletable properties throw errors.
 - Requires that all properties named in an object literal be unique. Duplicate property names are a syntax error in strict mode.
 - Requires that function parameter names be unique. In normal code the last duplicated argument hides previous identically-named arguments.
-- Forbids setting properties on primitive values in ES6. Without strict mode, setting properties is simply ignored (no-op), with strict mode, however, a TypeError is thrown.
+- Forbids setting properties on primitive values in ES6. Without strict mode, setting properties is simply ignored (no-op), with strict mode, however, a `TypeError` is thrown.
 
 **Simplifying Variable Uses**
 

@@ -6,3 +6,4 @@ Networking
 - **JSON**
 - **RPC**
 - **HTTP**
+- **HTTP/2**
