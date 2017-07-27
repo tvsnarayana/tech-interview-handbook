@@ -28,6 +28,15 @@
   <div class="js-board"></div>
   <button class="js-reset">Reset</button>
   <script>
+    // We will spend the next 45 minutes building a single-page web app that implements a Tic-Tac-Toe game. jQuery has been included for you. We'll implement the following features in order:
+
+    // 1. Render a 3x3 board. You can hardcode some X and O values within the cell for starters.
+    // 2. Implement the add symbol functionality that adds a X or O into a cell whenever the player clicks on it.
+    // 3. Rotate between the players whenever a move is made. Update the current player display.
+    // 4. Check for end game conditions after each move and display the winner if any.
+    // horizontally, vertically, diagonally
+    // 5. After a winner has been determined, disable further moves on the board.
+    // 6. Add a button to reset the game state.
     (() => {
       function init () {
         const DOM = {
