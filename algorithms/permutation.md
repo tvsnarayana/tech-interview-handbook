@@ -5,6 +5,10 @@ Permutation
 
 - Give all possible letter combinations from a phone number.
 
+## Lyft
+
+- Generate all subsets of a string.
+
 ## Uber
 
 - Print all possible `N` pairs of balanced parentheses.

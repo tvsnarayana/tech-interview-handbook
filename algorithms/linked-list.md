@@ -11,6 +11,11 @@ Linked List
 - Reverse a singly linked list. Implement it recursively and iteratively.
 - Convert a binary tree to a doubly circular linked list.
 
+## Lyft
+
+- Implement a LRU cache with O(1) runtime for all its operations.
+- Check distance between values in linked list.
+
 ## Palantir
 
 - A question involving an API's integration with hash map where the buckets of hash map are made up of linked lists.

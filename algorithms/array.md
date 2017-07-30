@@ -42,6 +42,10 @@ Arrays
 - Given an array containing only digits `0-9`, add one to the number and return the array.
   - E.g. Given `[1, 4, 2, 1]` which represents `1421`, return `[1, 4, 2, 2]` which represents `1422`.
 
+## Lyft
+
+- Find the second maximum value in an array.
+
 ## Palantir
 
 - Given an array of numbers list out all triplets that sum to 0. Do so with a running time of less than O(n^3).

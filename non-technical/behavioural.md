@@ -69,6 +69,11 @@ Behavioural
 - Where do you want to be in five years?
 - Tell me about a time you needed information from someone who wasn’t responsive. What did you do?
 
+## Lyft
+
+- Tell me about your most interesting/challenging project to date.
+- Why Lyft? What are you looking for in the next role?
+
 ## Palantir
 
 - How do you deal with difficult coworkers? Think about specific instances where you resolved conflicts.

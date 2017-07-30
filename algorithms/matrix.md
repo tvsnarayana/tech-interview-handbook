@@ -12,6 +12,10 @@ Matrix
 - Given an N x N matrix filled randomly with different colors (no limit on what the colors are), find the total number of groups of each color - a group consists of adjacent cells of the same color touching each other.
 - You have a 4 x 4 board with characters. You need to write a function that finds if a certain word exists in the board. You can only jump to neighboring characters (including diagonally adjacent).
 
+## Lyft
+
+- Count the number of islands in a binary matrix of 0's and 1's.
+
 ## Palantir
 
 - Check a 6 x 7 Connect 4 board for a winning condition.
