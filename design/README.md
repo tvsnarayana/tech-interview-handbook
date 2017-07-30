@@ -51,6 +51,7 @@ Source: https://github.com/jwasham/coding-interview-university#system-design-sca
 - URL Shortener
   - http://stackoverflow.com/questions/742013/how-to-code-a-url-shortener
   - http://blog.gainlo.co/index.php/2016/03/08/system-design-interview-question-create-tinyurl-system/
+  - https://www.interviewcake.com/question/python/url-shortener
 - Collaborative Editor
   - http://blog.gainlo.co/index.php/2016/03/22/system-design-interview-question-how-to-design-google-docs/
 - Photo Sharing App
@@ -76,6 +77,7 @@ Source: https://github.com/jwasham/coding-interview-university#system-design-sca
 - Web Crawler
   - http://blog.gainlo.co/index.php/2016/06/29/build-web-crawler/
   - http://www.makeuseof.com/tag/how-do-search-engines-work-makeuseof-explains/
+  - https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch/answer/Chris-Heller
 - YouTube
   - http://blog.gainlo.co/index.php/2016/10/22/design-youtube-part/
   - http://blog.gainlo.co/index.php/2016/11/04/design-youtube-part-ii/
@@ -96,3 +98,22 @@ Source: https://github.com/jwasham/coding-interview-university#system-design-sca
 - Design a self-driving car with artificial intelligence.
 - Design a chat architecture.
 - How would you design a url-shortening service?
+
+## Lyft
+
+- Design [Lyft Line](https://www.lyft.com/line).
+- Design a promo code system (with same promo code, randomly generated promo code, and promo code with conditions).
+- Design and implement a way to check to see if the driver took an 8 hour break after 12 hours of driving. If not, disable driver mode.
+
+## Palantir
+
+Palantir calls their design interviews the Decomposition problem.
+
+- Model a university.
+- How would you implement Pacman?
+- Sketch out an implementation of Asteroids.
+- Design make (i.e. given a list of dependencies determine the order to compile).
+- Implement a spell checker.
+- Design the rubik cube.
+- Design a high-level interface to be used for card games (e.g. poker, blackjack etc).
+- Describe how you would build a generic job scheduler for our company?
