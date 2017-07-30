@@ -1,6 +1,12 @@
 Math
 ==
 
+## Dropbox
+
+- Create a square root function.
+- Given a string such as "123" or "67", write a function to output the number represented by the string without using casting.
+- Make a program that can print out the text form of numbers from 1 - 1000 (ex. 20 is "twenty", 105 is "one hundred and five").
+
 ## Facebook
 
 - Write a function that parses Roman numerals.

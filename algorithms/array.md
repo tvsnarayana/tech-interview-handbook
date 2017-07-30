@@ -21,6 +21,12 @@ Arrays
 ******
 ```
 
+## Dropbox
+
+- Given 2 separate arrays, write a method to find the values that exist in both arrays and return them.
+- Given an array of integers find whether there is a sub-sequence that sums to 0 and return it.
+  - E.g. `[1, 2, -3, 1]` => `[1, 2, -3]` or `[2, -3, 1]`.
+
 ## Facebook
 
 - Flatten an array iteratively and recursively.

@@ -13,6 +13,12 @@ Tree
 - Given a binary tree and two nodes, how to find the common ancestor of the two nodes?
   - [Source](http://blog.gainlo.co/index.php/2016/07/06/lowest-common-ancestor/)
 
+## Dropbox
+
+- Print the nodes in an n-ary tree level by level, one printed line per level.
+- Given a directory of files and folders (and relevant functions), how would you parse through it to find equivalent files?
+- Write a basic file system and implement the commands ls, pwd, mkdir, create, rm, cd, cat, mv.
+
 ## Facebook
 
 - Compute the intersection of two binary search trees.

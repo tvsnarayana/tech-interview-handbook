@@ -15,6 +15,10 @@ Interval
   [[0,4], [11,12], [16,23]]
   ```
 
+## Dropbox
+
+- You have a number of meetings (with their start and end times). You need to schedule them using the minimum number of rooms. Return the list of meetings in every room.
+
 ## Facebook
 
 - Interval ranges:

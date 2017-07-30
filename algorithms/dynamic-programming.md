@@ -25,6 +25,10 @@ Dynamic Programming
     // [4, 10, 3, 1, 5] => 15
     ~~~
 
+## Dropbox
+
+- A variation of this question - Given a set of possible change, such as {1, 5, 10, 25}, and an amount such as 13, return all possible ways you can give change back to someone.
+
 ## Facebook
 
 - How many string representations are there for an integer where `a->1, b->2, ... z->26`.

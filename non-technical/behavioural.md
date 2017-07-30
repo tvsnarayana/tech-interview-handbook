@@ -39,6 +39,12 @@ Behavioural
 - In my professional experience have you worked on something without getting approval from your manager?
 - Tell me a situation where you would have done something differently from what you actually did.
 
+## Dropbox
+
+- Talk about your favorite project.
+- If you were hired here what would you do?
+- State an experience about how you solved a technical problem. Be specific about the diagnosis and process.
+
 ## Facebook
 
 - Why do you want to work at Facebook?

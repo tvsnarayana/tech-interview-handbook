@@ -101,7 +101,8 @@ discover corner cases you might have missed out or even lead you towards the opt
 
 ## Dynamic Programming
 
-TODO
+- Usually used to solve optimization problems.
+- Sometimes you do not need to store the whole DP table in memory. Perhaps the last two values or the last two rows of the matrix will suffice.
 
 ## Geometry
 

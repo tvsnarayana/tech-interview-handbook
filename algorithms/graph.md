@@ -6,6 +6,10 @@ Graph
 - Given a list of sorted words from an alien dictionary, find the order of the alphabet.
   - Alien Dictionary Topological Sort question.
 
+## Dropbox
+
+- Find if a given string matches any path in a labeled graph. A path may contain cycles.
+
 ## Facebook
 
 - Given a friendship graph (an undirected graph where nodes represent people and edges means two people know each other), find all your 2nd degree connections (friends’ friends). Output these 2nd degree connections ranked by number of common friends (i.e 1st degree connections) with you, (example: if 2nd degree connection A has 10 common friends (1st degree connections) with you but 2nd degree connection B has 8 common friends (1st degree connections) with you, then A should be ranked first).
