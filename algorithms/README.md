@@ -103,44 +103,59 @@ I have used interviewing.io both as an interviewer and an interviewee and found 
 
 Another platform that allows you to practice coding interviews is [Pramp](https://pramp.com/). Where interviewing.io matches potential job seekers with seasoned technical interviewers, Pramp differs takes a different approach. Pramp pairs you up with another peer who is also a job seeker and both of you take turns to play the role of interviewer and interviewee. Pramp also prepares questions for you, along with suggested solutions and hints. Personally, I do not really like Pramp's approach because if I were to interview someone, I would rather choose a question I am familiar with. Also, many users of the platform do not have the experience of being interviewers and that can result in a horrible interview experience. There was once where my matched peer, as the interviewer, did not have the right understanding of the question and attempted to lead me down the wrong path of solving the question.
 
-The next section dives deep into practical tips for certain topics of each type of algorithmic coding questions. Many algorithm questions involve techniques that can be applied to questions of similar nature. The more techniques you have in your arsenal, the higher the chances of succeeding in your interview.
+The next section dives deep into practical tips for specific topics of algorithms and data structures which appear frequently in coding questions. Many algorithm questions involve techniques that can be applied to questions of similar nature. The more techniques you have in your arsenal, the higher the chances of succeeding in your interview.
 
-## General
+## General Tips
 
 - Input validation:
-  - Always validate input first. Check if the input is empty, positive, etc. Never assume you are given the valid parameters. Alternatively, ask interviewers for clarification, which can save you time from writing code that does input validation.
+  - Always validate input first. Check for invalid/empty/negative/different type input. Never assume you are given the valid parameters. Alternatively, clarify with the interviewer whether you can assume valid input (usually yes), which can save you time from writing code that does input validation.
 - Can the input be preprocessed to reduce lookup time?
 - Are there any time/space complexity requirements/constraints?
 - Check corner cases:
   - Check for off-by-1 errors.
-  - In languages where there are no automatic type coercion, check that concatenation of values are of same type: `int`/`str`/`list`.
+  - In languages where there are no automatic type coercion, check that concatenation of values are of the same type: `int`/`str`/`list`.
   - After finishing your code, use a few example inputs to test your solution.
 - Use a mix of functional and imperative programming paradigms:
   - Write pure functions as much as possible.
   - Pure functions are easy to reason about and can help to reduce bugs in your implementation.
-  - Avoid mutating the parameters passed into your function, especially if they are passed by reference.
-  - However, functional programming is usually expensive in terms of space complexity because of non-mutation. On the other hand, imperative code is faster because of mutation. Hence you will need to achieve a balance between accuracy vs efficiency, by using the right amount of functional and imperative code.
-  - Avoid relying and mutating global variables.
-  - If you have to rely on global variables, make sure that you do not accidentally mutate it.
+  - Avoid mutating the parameters passed into your function, especially if they are passed by reference, unless you know what you are doing.
+  - However, functional programming is usually expensive in terms of space complexity because of non-mutation and the repeated allocation of new objects. On the other hand, imperative code is faster you operate on existing objects. Hence you will need to achieve a balance between accuracy vs efficiency, by using the right amount of functional and imperative code.
+  - Avoid relying on and mutating global variables.
+  - If you have to rely on global variables, make sure that you do not mutate it by accident.
 - Generally, to improve the speed, we can either choose a better data structure/algorithm or use more memory.
-- Data structures are your weapons. Choosing the right weapon for the right battle is the key to victory. You wouldn't want to bring a sniper rifle into a fist fight or a baseball bat into an infiltration mission. You need to be aware about the strengths of each data structure and the time complexities for its various operations like the back of your hand. Hashes/maps are probably the most commonly used data structure for algorithm questions. If you're really stuck on a question, the last resort can be to enumerate through the possible data structures (thankfully there aren't that many of them) and consider how each of them can be applied to the problem. It has worked for me sometimes.
+- Data structures are your weapons. Choosing the right weapon for the right battle is the key to victory. You wouldn't want to bring a sniper rifle into a fist fight or a baseball bat into an infiltration mission. You need to be aware about the strengths of each data structure and the time complexities for its various operations like the back of your hand.
+- Hashes/maps are probably the most commonly used data structure for algorithm questions. If you're really stuck on a question, the last resort can be to enumerate through the possible data structures (thankfully there aren't that many of them) and consider whether each of them can be applied to the problem. This has worked for me sometimes.
+
+## Sequence
+
+- Arrays and strings are considered sequences (an array is a sequence of characters). There are overlapping tips for dealing with arrays and strings which will be covered here.
+- Corner cases:
+  - Empty sequence.
+  - Sequence with 1 or 2 elements.
+- Are there duplicate values in the sequence, would it affect the answer?
+- Check for sequence out of bounds.
+- Be mindful about slicing or concatenating sequences in your code. Typically, slicing and concatenating sequences require O(n) time. Use start and end indices to demarcate a subarray/substring where possible.
+- Sometimes you can traverse the sequence from the right rather than from the left.
+- Master the sliding window technique.
+  - https://discuss.leetcode.com/topic/30941/here-is-a-10-line-template-that-can-solve-most-substring-problems)
 
 ## Array
 
-- Corner cases:
-  - Empty array.
-  - Array with 1 or 2 elements.
-- Are there duplicate values? Does it affect the answer?
-- Check for array out of bounds.
 - Is the array sorted or partially sorted? If it is, some form of binary search should be possible.
 - Having two indices to traverse/compare two strings/arrays is quite common. For example, we use the same approach to merging two sorted arrays.
-- Sorting the array first may significantly simplify the problem. Be sure that the order of elements do not matter or else sorting will mess up the order.
-- Sometimes you can traverse from the right rather than from the left.
-- Be mindful about slicing or concatenating arrays in your code. Typically, slicing and concatenating sequences require O(n) time. Use start and end indices to demarcate a subarray where possible.
-- Sliding window is a common technique used for sequence-based data, such as arrays and strings.
-  - TODO: Explain what a sliding window is.
+- Can you sort the array? Sometimes sorting the array first may significantly simplify the problem. Be sure that the order of elements do not matter or else sorting will mess up the order.
 - For questions where summation or multiplication of a subarray is involved, pre-computation using hashing or a prefix/suffix sum/product might be useful.
-- If question asks for O(1) space, perhaps using the array itself as a hash table might be useful. If array only has positive values from 1 to N, negate the value at that index to indicate presence of that number.
+- If you are given a sequence and the interviewer asks for O(1) space, it might be possible to use the array itself as a hash table. For example, if the array only has values from 0 to N - 1, where N is the length of the array, negate the value at that index to indicate presence of that number.
+
+#### Questions
+
+- [Two Sum](https://leetcode.com/problems/two-sum/)
+- [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+- [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
+- [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
+- [Maximum Subarray](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
+- [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
+- [3Sum](https://leetcode.com/problems/3sum/)
 
 ## Binary
 
@@ -175,6 +190,8 @@ The next section dives deep into practical tips for certain topics of each type 
 - [Combination Sum](https://leetcode.com/problems/combination-sum-iv/)
 - [House Robber](https://leetcode.com/problems/house-robber/) and [House Robber II](https://leetcode.com/problems/house-robber-ii/)
 - [Decode Ways](https://leetcode.com/problems/decode-ways/)
+- [Unique Paths](https://leetcode.com/problems/unique-paths/)
+- [Jump Game](https://leetcode.com/problems/jump-game/)
 
 ## Geometry
 
@@ -183,24 +200,36 @@ The next section dives deep into practical tips for certain topics of each type 
 
 ## Graph
 
-TODO
+- BFS.
+- DFS.
+- Topological sort.
+- Dijkstra's algorithm.
+
+##### Questions
+
+- [Clone Graph](https://leetcode.com/problems/clone-graph/)
+- [Course Schedule](https://leetcode.com/problems/course-schedule/)
+- [Alien Dictionary](https://leetcode.com/problems/alien-dictionary/)
+- [Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/)
+- [Graph Valid Tree](https://leetcode.com/problems/graph-valid-tree/)
+- [Number of Connected Components in an Undirected Graph](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/)
 
 ## Linked List
 
 - Corner cases:
   - Single node.
   - Two nodes.
-  - Cycle in linked list - Clarify where there can be a cycle in the list? Usually the answer is no.
-- Adding a dummy node at the head and/or tail might help to handle many edge cases where operations have to be performed at the head or the tail. The presence of dummy nodes essentially ensures that operations will never have be done on the head or the tail, thereby removing a lot of headache in dealing with corner cases. Be sure to remember to remove them at the end of your code.
+  - Cycle in linked list - Clarify whether there can be a cycle in the list? Usually the answer is no.
+- Adding a dummy node at the head and/or tail might help to handle many edge cases where operations have to be performed at the head or the tail. The presence of dummy nodes essentially ensures that operations will never have be done on the head or the tail, thereby removing a lot of headache in writing conditional checks to dealing with null pointers. Be sure to remember to remove them at the end of your code.
 - Sometimes linked lists problem can be solved without external storage. Try to borrow ideas from reverse a linked list problem.
 - For deletion in linked lists, you can either modify the node values or change the node pointers. You might need to keep a reference to the previous element.
 - For partitioning linked lists, create two separate linked lists and join them back together.
 - Linked lists problems share similarity with array problems, think about how you would do it for an array and try to apply it to a linked list.
-- Two pointer approaches are common:
+- Two pointer approaches are also common for linked lists. For example:
   - Getting the k<sup>th</sup> from last node - Have two pointers, where one is k nodes ahead of the other. When the node ahead reaches the end, the other node is k nodes behind.
   - Detecting cycles - Have two pointers, where one pointer increments twice as much as the other, if the two pointers meet, means that there is a cycle.
   - Getting the middle node - Have two pointers, where one pointer increments twice as much as the other. When the faster node reaches the end of the list, the slower node will be at the middle.
-- Be familiar with the following routines because many linked list questions make use of one or more of these routines in the solution.
+- Be familiar with the following routines because many linked list questions make use of one or more of these routines in the solution:
   - Reversing a linked list in-place.
   - Finding the middle node of the linked list using fast/slow pointers.
   - Merging two lists together.
@@ -216,40 +245,45 @@ TODO
 
 ## Math
 
-- If code involves division, remember to check for division by 0 case.
-- Check for and handle overflow/underflow.
+- If code involves division or modulo, remember to check for division or modulo by 0 case.
+- When a question involves "a multiple of a number", perhaps modulo might be useful.
+- Check for and handle overflow/underflow if you are using a typed language like Java and C++. At the very least, mention that overflow/underflow is possible and ask whether you need to handle it.
 - Do account for negative numbers and floating point numbers. This may sound obvious, but under interview pressure, many obvious cases go unnoticed.
 - Sum of 1 to N = (n+1) * n/2
-- Sum of GP = 2^0 + 2^1 + 2^2 + 2^3 + ... 2^n = 2^(n+1) - 1
+- Sum of GP = 2<sup>0</sup> + 2<sup>1</sup> + 2<sup>2</sup> + 2<sup>3</sup> + ... 2<sup>n</sup> = 2<sup>n+1</sup> - 1
 - Permutations of N = N! / (N-K)!
 - Combinations of N = N! / (K! * (N-K)!)
-- When a question involves "a multiple of a number", perhaps modulo might be useful.
+- Be familiar with how to generate all permutations of a sequence as well as how to handle duplicates.
 
 ## Matrix
 
-- A matrix is a 2-dimensional array.
-- For questions involving traversal, you almost always want to make a copy of the matrix with the same dimensions that is initialized to empty values. Check that none of the arrays are 0 length. Be familiar with that routine.
-- When recursively traversing the matrix, always ensure that your next position is within the boundary of the matrix.
-- Graphs are commonly represented as 2-D matrices where cells are the nodes and each cell can traverse to its adjacent cells (up/down/left/right).
-- Many grid-based games can be modeled as a matrix, such as Tic-Tac-Toe, Sudoku, Crossword, Connect 4, Battleship, etc. It is not uncommon to be asked to verify the winning condition of the game. For games like Tic-Tac-Toe, Connect 4 and Crosswords, where verification has to be done vertically and horizontally, one trick is to write code to verify the matrix for the horizontal cells, and transpose the matrix and reuse the logic for verifying horizontally to verify originally vertical cells.
-- https://leetcode.com/problems/pacific-atlantic-water-flow/#/solutions
+- A matrix is a 2-dimensional array. Questions involving matrices are usually related to dynamic programming or graph traversal.
+- Corner cases:
+  - Empty matrix. Check that none of the arrays are 0 length.
+  - 1 x 1 matrix.
+  - Matrix with only one row or column.
+- For questions involving traversal, you almost always want to make a copy of the matrix with the same dimensions that is initialized to empty values. Be familiar with such a routine.
+- Be familiar with 2-D matrix traversal.
+  - Graphs are commonly represented as 2-D matrices where cells are the nodes and each cell can traverse to its adjacent cells (up/down/left/right).
+  - When recursively traversing the matrix, always ensure that your next position is within the boundary of the matrix.
+  - https://leetcode.com/problems/pacific-atlantic-water-flow/#/solutions
+- Many grid-based games can be modeled as a matrix, such as Tic-Tac-Toe, Sudoku, Crossword, Connect 4, Battleship, etc. It is not uncommon to be asked to verify the winning condition of the game. For games like Tic-Tac-Toe, Connect 4 and Crosswords, where verification has to be done vertically and horizontally, one trick is to write code to verify the matrix for the horizontal cells, transpose the matrix and reuse the logic for horizontal verification to verify originally vertical cells (which are now horizontal).
 
 ##### Questions
 
 - [Number of Islands](https://leetcode.com/problems/number-of-islands/)
+- [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/)
+- [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)
+- [Rotate Image](https://leetcode.com/problems/rotate-image/)
 
 ## String
 
+- Please read the above tips on Sequences because they apply to strings too.
 - Corner cases:
-  - Empty string.
-  - String with one or two characters.
   - Strings with only one distinct character.
-- Ask about input character set and case sensitivity. Usually the characters are limited to lower case latin characters, i.e. a-z.
+- Ask about input character set and case sensitivity. Usually the characters are limited to lower case Latin characters, i.e. a-z.
 - When you need to compare strings where the order isn't important (like anagram), you may consider using a hash map as a counter.
-- If you need to keep a counter of characters, a common mistake to make is to say that the space complexity required for the counter is O(n). The space required for a counter is O(1) not O(n), because the upper bound is the range of characters, which is usually a fixed constant.
-- Sliding window is a common technique used for strings, as it is also a sequence-based data type.
-  - Sliding window template can be found [here](https://discuss.leetcode.com/topic/30941/here-is-a-10-line-template-that-can-solve-most-substring-problems).
-- Be mindful about slicing strings in your code. Typically, slicing and concatenating sequences require O(n) time and space because a new string is created. Where possible, use start and end indices to indicate the substring.
+- If you need to keep a counter of characters, a common mistake to make is to say that the space complexity required for the counter is O(n). The space required for a counter is O(1) not O(n), because the upper bound is the range of characters, which is usually a fixed constant, typically 26 when the input set is just lower case Latin characters.
 - Can I use some common data structure that can look up strings efficiently?
   - [Trie / Prefix Tree](https://www.wikiwand.com/en/Trie)
   - [Suffix Tree](https://www.wikiwand.com/en/Suffix_tree)
@@ -295,11 +329,15 @@ for c in set(word):
   - Traverse through the word.
 - Having two indices to traverse/compare two string/arrays is quite common. For example, we use the same approach to merging two sorted arrays.
 
+##### Questions
+
+- http://www.geeksforgeeks.org/string-data-structure/
+
 ## Recursion
 
-- Always must define a base case.
+- Always define a base case so that your recursion will end.
 - Useful for permutation and tree questions.
-- Recursions implicitly use a stack. Hence all recursive approaches can be rewritten by using a stack.
+- Recursion implicitly use a stack. Hence all recursive approaches can be rewritten by using a stack.
 - Beware of cases where the recursion level goes too deep (in Python the default limit is 1000).
 - Recursion will never be O(1) space complexity because a stack is involved. [Tail-call optimization](https://stackoverflow.com/questions/310974/what-is-tail-call-optimization) can be used to save on the space needed.
 
@@ -328,6 +366,7 @@ for c in set(word):
 ##### Questions
 
 - [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+- [Same Tree](https://leetcode.com/problems/same-tree/)
 - [Invert/Flip Binary Tree](https://leetcode.com/problems/invert-binary-tree/)
 - [Lowest Common Ancestor of BST](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
 - [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
@@ -335,7 +374,6 @@ for c in set(word):
 - [Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
 - [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)
 - [Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/)
-- http://www.geeksforgeeks.org/string-data-structure/
 
 ###### References
 
