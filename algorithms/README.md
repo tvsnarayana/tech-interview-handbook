@@ -23,39 +23,87 @@ discover corner cases you might have missed out or even lead you towards the opt
 - [String](string.md)
 - [Tree](tree.md)
 
-## Algorithm Coding Steps
+## Picking a Programming Language
 
-- For phone screens/remote interviews, prepare paper and pen to jot down and visualize stuff.
-- Repeat the question back at the interviewer.
-  - Make sure you understand exactly what he is asking.
-  - If you misunderstood and when you repeat back the question, he'll clarify.
-- Clarify about the question upon hearing it (where relevant).
-  - How is the dictionary stored?
-  - How big is the input?
-  - How big is the range of input values?
-  - What kind of input is there? Are there negative numbers? Floating points?
-  - Are there duplicates within the input?
-  - Extreme cases of the input?
-- Explain your high level approach to the interviewer.
-  - Consider various approaches and explain out loud why it will/will not work.
-  - Start with a brute force approach, even though it is unlikely the one you will be coding.
-  - Only start coding after the interviewer has given you the green light.
-- Start coding.
-  - Always be explaining what you are currently writing/typing to the interviewer.
-  - Use clear variable names, avoid single letter names unless they are for iteration.
-- Review your code.
-  - Come up with small test cases.
-  - Step through the code (not your algorithm!) with those sample input.
-  - You should emulate a debugger when stepping through.
-  - Is there duplicated code? Perhaps you can refactor them.
-  - Is there repeated work done? Can the time complexity be improved by reusing previously computed values?
-- Analyze your code.
-  - Give the time/space complexity.
-  - Explain trade-offs made in the code possibly in terms of time/space.
+Before anything else, you need to pick a programming language to do your interviews in. Most companies will let you code in any language you want, the only exception I know being Google, where they only allow you to pick from Java, C++ or Python for their algorithmic coding interviews. Most of the time, I would recommend that you use a language that you are extremely familiar with, rather than picking up a new language just for doing interviews because the company uses that language heavily.
 
-## Must Do
+There are some languages which are more suitable than others for coding interviews and some languages you want to absolutely avoid. From my experience interviewing as an interviewer, most candidates pick Python or Java. Other commonly seen languages include JavaScript, Ruby and C++. I would absolutely avoid lower level languages like C or Go, simply because they lack in many standard library functions and available data structures.
 
-- http://www.geeksforgeeks.org/must-do-coding-questions-for-companies-like-amazon-microsoft-adobe/
+Personally, Python is my de facto choice for coding algorithm during interviews because it is succinct and has a pretty huge library of functions and data structures available. One of my top reasons for recommending Python is that it uses consistent APIs that operate on different data structures, such as `len()`, `for ... in ...` and slicing notation on sequences (strings/lists/tuples). Getting the last element in a sequence is `arr[-1]` and reversing it is simply `arr[::-1]`. You can achieve a lot with minimal syntax in Python.
+
+Java is a decent choice too but having to constantly declare types in your code means extra keystrokes which results in slower coding/typing speed. The reasons for choosing/not choosing C++ are similar to Java. Ultimately, Python, Java and C++ are decent choices of languages. If you have been using Java at work for awhile now and do not have time to be comfortably familiar with another language, I would recommend just sticking to Java instead of picking up Python from scratch just for interviews to avoid having to context switch between languages during work vs interviews.
+
+One exception to the convention of allowing you to "pick any programming language you want" is when you are interviewing for a domain-specific position, such as Front End/iOS/Android Engineer roles, in which you would need to be familiar with coding algorithms in JavaScript, Objective-C/Swift and Java respectively. If you need to use a data structure that the language does not support, such as a Queue or Heap in JavaScript, perhaps try asking the interviewer whether you can assume that you have a data structure that implements certain methods with specified time complexities. If the implementation of that data structure is not crucial to solving the problem, the interviewer will usually allow it. In reality, choosing the right data structures to tackle the right problem is more important than knowing the intricate implementation details.
+
+Next, gain familiarity and mastery of your chosen programming language:
+
+1. Practice coding algorithms using your chosen language. There are various Online Judges such as [LeetCode](https://leetcode.com/), [HackerRank](https://www.hackerrank.com/) and [CodeForces](http://codeforces.com/) for you to practice questions and get used to the language. From experience, LeetCode questions are the most similar to what is being asked in interviews, where as HackerRank and CodeForces questions are more similar to competitive programming questions.
+2. Find out the time and space complexities of the common operations in your chosen language. For Python, this [page](https://wiki.python.org/moin/TimeComplexity) will come in handy. Also find out the underlying sorting algorithm that is being used in the language's `sort()` function. After completing a question on LeetCode, I usually add the time and space complexities of the written code as comments above the function as practice for analyzing the algorithm.
+3. Find out the recommended coding style for your language and stick to it.
+4. Find out and be familiar with the common pitfalls and caveats of the language. If you point out them out during the interview and intelligently avoid falling into it, you will usually impress the interviewer and that results in bonus points in your feedback, regardless of whether the interviewer is familiar with the language or not.
+
+Practice, practice and more practice!
+
+## Algorithmic Coding Interview
+
+Your interviewer is looking out for signals that you fit the requirements of the role and it is up to you to display those signals to them. Initially it may feel weird to be talking when you are coding, as most people do not have the habit of explaining out loud as they are typing code. However, it is hard for the interviewer to know what you are thinking just by looking at the code that you type. If you communicated your approach to the interviewer before you start coding, you can validate your approach with him and both of you can agree upon an approach that he can accept.
+
+**Before the Interview**
+
+For phone screens/remote interviews, prepare paper and pen/pencil to jot down and visualize stuff. If you are given a question on trees and graphs, it will definitely help if you draw out some examples of the data structure given in the question.
+
+Use earphones and make sure you are in a quiet environment. You definitely do not want to be holding a phone in one hand and only be able to type with the other. Try avoiding using speakers as if the echo is bad, communication is harder and repeating of words will just result in loss of valuable time.
+
+**Upon Getting the Question**
+
+Many candidates jump into coding the moment they hear the question. That is usually a big mistake. Take a moment to repeat the question back at the interviewer and make sure that you understand exactly what he is asking. If you misunderstood and when you repeat back the question, he'll clarify.
+
+Always clarify about the question upon hearing it, even if it you think it is clear to you. You might discover something that you might have missed out and it also sends a signal to the interviewer that you are a careful person. Consider asking the following questions:
+
+- How big is the size of the input?
+- How big is the range of values?
+- What kind of values are there? Are there negative numbers? Floating points?
+- Are there duplicates within the input?
+- What are some extreme cases of the input?
+- How is the input stored? If you are given a dictionary of words, is it a list of strings or a Trie?
+
+After you have sufficiently clarified the scope and intention of the problem, explain your high level approach to the interviewer. If you are stuck, consider various approaches and explain out loud why it will/will not work. Sometimes your interviewer might drop hints and lead you to the right path.
+
+Start with a brute force approach, communicate it to the interviewer, explain the time and space complexity and why it is bad. It is unlikely that the brute force approach will be one that you will be coding. At this point, the interviewer will usually pop the "Can we do better?" question, meaning that he is looking for a more optimal approach. Personally, this is usually the hardest part of the interview. In general, look for repeated work and try to optimize them by potentially caching the calculated result somewhere and reference it later, rather than having to compute it all over again. There are some tips on tackling topic-specific questions that I dive into details below.
+
+Only start coding after you and your interviewer have agreed on an approach, and has given you the green light.
+
+**Starting to Code**
+
+Write your code with good coding style. Reading code written by others is usually not an enjoyable task. Reading horribly formatted code by others makes it worse. Your goal is to make your interviewer understand the code you have written so that he can quickly evaluate if your code does what you say it does and whether it solves the given problem. If you have chose Python, refer to the [PEP 8 Style Guide](https://pep8.org/), or if you have chosen Java, refer to [Google's Java Style Guide](https://google.github.io/styleguide/javaguide.html). Use clear variable names, avoid single letter names unless they are for iteration.
+
+Always be explaining what you are currently writing/typing to the interviewer. This is not about literally reading out what you are typing to the interviewer. Talk about the section of the code you are currently implementing at a higher level, explain why it is written as such and what it is trying to achieve.
+
+When you copy and paste code, consider whether it is necessary. Sometimes it is, sometimes it is not. If you find yourself copying and pasting one whole chunk of code, it is probably an indicator that you can refactor by containing those lines into a function. If it is just a single line you copied, usually it is fine. Do remember to change the respective variables in your copied line of code where relevant. Copy-paste errors are a common source of bugs even in day-to-day coding!
+
+**After Coding**
+
+After you have finished coding, do not immediately announce to the interviewer that you are done. In most cases, your code is usually not perfect and contains some bugs or syntax errors. What you need to do now is to review your code.
+
+Firstly, come up with small test cases and step through the code (not your algorithm!) with those sample input. Interviewers like it when you read their mind, and what they usually do after you have finished coding would be to get you to write tests. It is a huge plus if you write tests for your code even without prompts from them. You should be emulating a debugger when stepping through and jot down the values of certain variables as you step through them or say them out.
+
+If there are huge duplicated chunks of code in your solution, it would be a good chance to refactor it and demonstrate to the interviewer that you are one who values code quality. Look out for places where you can short-circuit the logic.
+
+Lastly, give the time/space complexity of your code and explain why it is such. You can even annotate certain chunks of your code with the various time/space complexities to demonstrate your understanding of your code and the APIs of your chosen programming language. Explain any trade-offs made in the code possibly in terms of time/space.
+
+If your interviewer is happy with the solution, the interview usually ends here. It is also not uncommon that the interviewer asks you extension questions, such as how you would handle the problem if the whole input is too large to fit into memory. This is a common follow-up question at Google where they care a lot about scale. The answer is usually a divide-and-conquer approach - perform distributed processing of the data and only read certain chunks of the input from disk into memory, write the output back to disk and combine them later on.
+
+## Mock Interviews
+
+Interviewing is a skill that you can get better at. The steps mentioned above can be rehearsed over and over again until you have fully internalized them and following those steps become second nature to you. To get more practice for interviews, I would recommend finding a friend to partner with and you two can practice interviewing each other.
+
+A great resource for practicing mock interviews would be [interviewing.io](https://interviewing.io/). interiewing.io is a platform that matches interviewees with interviewers from top companies and provides an environment for interviews to be conducted anonymously. At the end of the interview, both interviewer and interviewees can provide feedback to each other for the purpose of improvement. Doing well in your mock interviews will unlock the jobs page and allow you to book interviews with top companies like Uber, Lyft, Quora, Asana and more.
+
+I have used interviewing.io both as an interviewer and an interviewee and found the user experience to be really great! [Aline Lerner](https://twitter.com/alinelernerLLC), the CEO and co-founder of interviewing.io is passionate about revolutionizing the technical interview process and helping candidates to improve their skills at interviewing. She has also published a number of technical interview-related articles on the [interviewing.io blog](http://blog.interviewing.io/).
+
+Another platform that allows you to practice coding interviews is [Pramp](https://pramp.com/). Where interviewing.io matches potential job seekers with seasoned technical interviewers, Pramp differs takes a different approach. Pramp pairs you up with another peer who is also a job seeker and both of you take turns to play the role of interviewer and interviewee. Pramp also prepares questions for you, along with suggested solutions and hints. Personally, I do not really like Pramp's approach because if I were to interview someone, I would rather choose a question which I am familiar with. Also, many users of the platform do not have the experience of being interviewers and that can result in a horrible interview experience. There was once where my matched peer, as the interviewer, did not have the right understanding of the question and attempted to lead me down the wrong path of solving the question.
+
+The next section dives deep into practical tips for certain topics of each type of algorithmic coding questions. Many algorithm questions involve techniques that can be applied to questions of similar nature. The more techniques you have in your arsenal, the higher the chances of succeeding in your interview.
 
 ## General
 
@@ -75,7 +123,7 @@ discover corner cases you might have missed out or even lead you towards the opt
   - Avoid relying and mutating global variables.
   - If you have to rely on global variables, make sure that you do not accidentally mutate it.
 - Generally, to improve the speed, we can either choose a better data structure/algorithm or use more memory.
-- When you copy and paste code, firstly consider whether it is necessary. Sometimes it is, sometimes it is not. If you find yourself copying and pasting multiple lines, it's probably better to refactor it into a function. But if it is just a single line, usually it is fine. But remember to change the respective variables. It's a common source of bugs!
+- Data structures are your weapons. Choosing the right weapon for the right battle is the key to victory. You wouldn't want to bring a sniper rifle into a fist fight or a baseball bat into an infiltration mission. You need to be aware about the strengths of each data structure and the time complexities for its various operations like the back of your hand. Hashes/maps are probably the most commonly used data structure for algorithm questions. If you're really stuck on a question, the last resort can be to enumerate through the possible data structures (thankfully there aren't that many of them) and consider how each of them can be applied to the problem. It has worked for me sometimes.
 
 ## Array
 
