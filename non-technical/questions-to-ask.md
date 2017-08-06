@@ -8,6 +8,7 @@ Here are some good questions to ask at the end of the interview, extracted from 
 - How do your clients and customers define success?
 - What would you change around here if you could?
 - What are some weaknesses of the organization?
+- **What are you most proud about in your career so far?**
 
 ## Culture
 
@@ -29,7 +30,7 @@ Here are some good questions to ask at the end of the interview, extracted from 
 - What concerns/reservations do you have about me for this position?
 - What can I help to clarify that would make hiring me an easy decision?
 - **How do you see this position evolving in the next three years?**
-- **Who's your ideal candidate and how can I make myself more like them?**
+- **Who is your ideal candidate and how can I make myself more like them?**
 - How does the management team deal with mistakes?
 
 ## Engineering Related
@@ -60,4 +61,4 @@ Here are some good questions to ask at the end of the interview, extracted from 
 - [Fastcompany](https://www.fastcompany.com/40406730/7-questions-recruiters-at-amazon-spotify-and-more-want-you-to-ask)
 - [Questions I'm asking in interviews](http://jvns.ca/blog/2013/12/30/questions-im-asking-in-interviews/)
 - [How to interview your interviewers](http://blog.alinelerner.com/how-to-interview-your-interviewers/)
-- [](https://haseebq.com/how-to-break-into-tech-job-hunting-and-interviews/)
+- [How to Break Into the Tech Industry—a Guide to Job Hunting and Tech Interviews](https://haseebq.com/how-to-break-into-tech-job-hunting-and-interviews/)

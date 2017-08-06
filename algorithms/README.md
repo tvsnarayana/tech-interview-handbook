@@ -97,11 +97,11 @@ If your interviewer is happy with the solution, the interview usually ends here.
 
 Interviewing is a skill that you can get better at. The steps mentioned above can be rehearsed over and over again until you have fully internalized them and following those steps become second nature to you. To get more practice for interviews, I would recommend finding a friend to partner with and you two can practice interviewing each other.
 
-A great resource for practicing mock interviews would be [interviewing.io](https://interviewing.io/). interiewing.io is a platform that matches interviewees with interviewers from top companies and provides an environment for interviews to be conducted anonymously. At the end of the interview, both interviewer and interviewees can provide feedback to each other for the purpose of improvement. Doing well in your mock interviews will unlock the jobs page and allow you to book interviews with top companies like Uber, Lyft, Quora, Asana and more.
+A great resource for practicing mock interviews would be [interviewing.io](https://interviewing.io/). interiewing.io is a platform that matches interviewees with interviewers from top companies and provides an environment for interviews to be conducted anonymously. At the end of the interview, both interviewer and interviewees can provide feedback to each other for the purpose of improvement. Doing well in your mock interviews will unlock the jobs page and allow you to book interviews (also anonymously) with top companies like Uber, Lyft, Quora, Asana and more.
 
-I have used interviewing.io both as an interviewer and an interviewee and found the user experience to be really great! [Aline Lerner](https://twitter.com/alinelernerLLC), the CEO and co-founder of interviewing.io is passionate about revolutionizing the technical interview process and helping candidates to improve their skills at interviewing. She has also published a number of technical interview-related articles on the [interviewing.io blog](http://blog.interviewing.io/).
+I have used interviewing.io both as an interviewer and an interviewee and found the user experience to be really great! [Aline Lerner](https://twitter.com/alinelernerLLC), the CEO and co-founder of interviewing.io is passionate about revolutionizing the technical interview process and helping candidates to improve their skills at interviewing. She has also published a number of technical interview-related articles on the [interviewing.io blog](http://blog.interviewing.io/). interviewing.io is still in beta now but I recommend signing up early to increase the likelihood of getting an invite as soon as possible.
 
-Another platform that allows you to practice coding interviews is [Pramp](https://pramp.com/). Where interviewing.io matches potential job seekers with seasoned technical interviewers, Pramp differs takes a different approach. Pramp pairs you up with another peer who is also a job seeker and both of you take turns to play the role of interviewer and interviewee. Pramp also prepares questions for you, along with suggested solutions and hints. Personally, I do not really like Pramp's approach because if I were to interview someone, I would rather choose a question which I am familiar with. Also, many users of the platform do not have the experience of being interviewers and that can result in a horrible interview experience. There was once where my matched peer, as the interviewer, did not have the right understanding of the question and attempted to lead me down the wrong path of solving the question.
+Another platform that allows you to practice coding interviews is [Pramp](https://pramp.com/). Where interviewing.io matches potential job seekers with seasoned technical interviewers, Pramp differs takes a different approach. Pramp pairs you up with another peer who is also a job seeker and both of you take turns to play the role of interviewer and interviewee. Pramp also prepares questions for you, along with suggested solutions and hints. Personally, I do not really like Pramp's approach because if I were to interview someone, I would rather choose a question I am familiar with. Also, many users of the platform do not have the experience of being interviewers and that can result in a horrible interview experience. There was once where my matched peer, as the interviewer, did not have the right understanding of the question and attempted to lead me down the wrong path of solving the question.
 
 The next section dives deep into practical tips for certain topics of each type of algorithmic coding questions. Many algorithm questions involve techniques that can be applied to questions of similar nature. The more techniques you have in your arsenal, the higher the chances of succeeding in your interview.
 
@@ -144,13 +144,37 @@ The next section dives deep into practical tips for certain topics of each type 
 
 ## Binary
 
-- To check if a number is a power of 2, `n & n-1 == 0`.
-- Use the XOR operator `^` to flip bits. Usually combined with `1 << k` to shift the k-th bit: `num ^ (1 << k)`.
+- Questions involving binary representations and bitwise operations are asked sometimes, and you must be absolutely be familiar with how to convert a number from decimal form into binary form in your programming language of choice.
+- Test k<sup>th</sup> bit is set: `num & (1 << k) != 0`.
+- Set k<sup>th</sup> bit: `num |= (1 << k)`.
+- Turn off k<sup>th</sup> bit: `num &= ~(1 << k)`.
+- Toggle the k<sup>th</sup> bit: `num ^= (1 << k)`.
+- To check if a number is a power of 2, `num & num - 1 == 0`.
+
+##### Questions
+
+- [Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers/)
+- [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)
+- [Counting Bits](https://leetcode.com/problems/counting-bits/)
+- [Missing Number](https://leetcode.com/problems/missing-number/)
+- [Reverse Bits](https://leetcode.com/problems/reverse-bits/)
 
 ## Dynamic Programming
 
 - Usually used to solve optimization problems.
-- Sometimes you do not need to store the whole DP table in memory. Perhaps the last two values or the last two rows of the matrix will suffice.
+- Sometimes you do not need to store the whole DP table in memory, the last two values or the last two rows of the matrix will suffice.
+
+##### Questions
+
+- 0/1 Knapsack
+- [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
+- [Coin Change](https://leetcode.com/problems/coin-change/)
+- [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
+- [Longest Common Subsequence]()
+- [Word Break Problem](https://leetcode.com/problems/word-break/)
+- [Combination Sum](https://leetcode.com/problems/combination-sum-iv/)
+- [House Robber](https://leetcode.com/problems/house-robber/) and [House Robber II](https://leetcode.com/problems/house-robber-ii/)
+- [Decode Ways](https://leetcode.com/problems/decode-ways/)
 
 ## Geometry
 
@@ -176,6 +200,19 @@ TODO
   - Getting the k<sup>th</sup> from last node - Have two pointers, where one is k nodes ahead of the other. When the node ahead reaches the end, the other node is k nodes behind.
   - Detecting cycles - Have two pointers, where one pointer increments twice as much as the other, if the two pointers meet, means that there is a cycle.
   - Getting the middle node - Have two pointers, where one pointer increments twice as much as the other. When the faster node reaches the end of the list, the slower node will be at the middle.
+- Be familiar with the following routines because many linked list questions make use of one or more of these routines in the solution.
+  - Reversing a linked list in-place.
+  - Finding the middle node of the linked list using fast/slow pointers.
+  - Merging two lists together.
+
+##### Questions
+
+- [Reverse a Linked List](https://leetcode.com/problems/reverse-linked-list/)
+- [Detect Cycle in a Linked List](https://leetcode.com/problems/linked-list-cycle/)
+- [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
+- [Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
+- [Remove Nth Node From End Of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
+- [Reorder List](https://leetcode.com/problems/reorder-list/)
 
 ## Math
 
@@ -191,9 +228,15 @@ TODO
 ## Matrix
 
 - A matrix is a 2-dimensional array.
+- For questions involving traversal, you almost always want to make a copy of the matrix with the same dimensions that is initialized to empty values. Check that none of the arrays are 0 length. Be familiar with that routine.
 - When recursively traversing the matrix, always ensure that your next position is within the boundary of the matrix.
+- Graphs are commonly represented as 2-D matrices where cells are the nodes and each cell can traverse to its adjacent cells (up/down/left/right).
 - Many grid-based games can be modeled as a matrix, such as Tic-Tac-Toe, Sudoku, Crossword, Connect 4, Battleship, etc. It is not uncommon to be asked to verify the winning condition of the game. For games like Tic-Tac-Toe, Connect 4 and Crosswords, where verification has to be done vertically and horizontally, one trick is to write code to verify the matrix for the horizontal cells, and transpose the matrix and reuse the logic for verifying horizontally to verify originally vertical cells.
 - https://leetcode.com/problems/pacific-atlantic-water-flow/#/solutions
+
+##### Questions
+
+- [Number of Islands](https://leetcode.com/problems/number-of-islands/)
 
 ## String
 
@@ -206,7 +249,7 @@ TODO
 - If you need to keep a counter of characters, a common mistake to make is to say that the space complexity required for the counter is O(n). The space required for a counter is O(1) not O(n), because the upper bound is the range of characters, which is usually a fixed constant.
 - Sliding window is a common technique used for strings, as it is also a sequence-based data type.
   - Sliding window template can be found [here](https://discuss.leetcode.com/topic/30941/here-is-a-10-line-template-that-can-solve-most-substring-problems).
-- Be mindful about slicing strings in your code. Typically, slicing and concatenating sequences require O(n) time. Use start and end indices to demarcate a substring where possible.
+- Be mindful about slicing strings in your code. Typically, slicing and concatenating sequences require O(n) time and space because a new string is created. Where possible, use start and end indices to indicate the substring.
 - Can I use some common data structure that can look up strings efficiently?
   - [Trie / Prefix Tree](https://www.wikiwand.com/en/Trie)
   - [Suffix Tree](https://www.wikiwand.com/en/Suffix_tree)
@@ -282,7 +325,20 @@ for c in set(word):
 
 - In-order traversal will give you all elements in order.
 
+##### Questions
+
+- [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+- [Invert/Flip Binary Tree](https://leetcode.com/problems/invert-binary-tree/)
+- [Lowest Common Ancestor of BST](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
+- [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
+- [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
+- [Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
+- [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)
+- [Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/)
+- http://www.geeksforgeeks.org/string-data-structure/
+
 ###### References
 
 - http://blog.triplebyte.com/how-to-pass-a-programming-interview
 - https://quip.com/q41AA3OmoZbC
+- http://www.geeksforgeeks.org/must-do-coding-questions-for-companies-like-amazon-microsoft-adobe/
