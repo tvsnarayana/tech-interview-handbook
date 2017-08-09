@@ -58,7 +58,7 @@ Use earphones and make sure you are in a quiet environment. You definitely do no
 
 Many candidates jump into coding the moment they hear the question. That is usually a big mistake. Take a moment to repeat the question back at the interviewer and make sure that you understand exactly what he is asking. If you misunderstood and when you repeat back the question, he'll clarify.
 
-Always clarify about the question upon hearing it, even if it you think it is clear to you. You might discover something that you might have missed out and it also sends a signal to the interviewer that you are a careful person. Consider asking the following questions:
+Always clarify about the question upon hearing it, even if it you think it is clear to you. You might discover something that you might have missed out and it also sends a signal to the interviewer that you are a careful person who pays attention to details. Consider asking the following questions:
 
 - How big is the size of the input?
 - How big is the range of values?
@@ -124,7 +124,7 @@ The next section dives deep into practical tips for specific topics of algorithm
   - If you have to rely on global variables, make sure that you do not mutate it by accident.
 - Generally, to improve the speed, we can either choose a better data structure/algorithm or use more memory.
 - Data structures are your weapons. Choosing the right weapon for the right battle is the key to victory. You wouldn't want to bring a sniper rifle into a fist fight or a baseball bat into an infiltration mission. You need to be aware about the strengths of each data structure and the time complexities for its various operations like the back of your hand.
-- Hashes/maps are probably the most commonly used data structure for algorithm questions. If you're really stuck on a question, the last resort can be to enumerate through the possible data structures (thankfully there aren't that many of them) and consider whether each of them can be applied to the problem. This has worked for me sometimes.
+- Hashes/maps are probably the most commonly used data structure for algorithm questions. If you're really stuck on a question, your last resort can be to enumerate through the possible data structures (thankfully there aren't that many of them) and consider whether each of them can be applied to the problem. This has worked for me sometimes.
 
 ## Sequence
 
@@ -136,8 +136,7 @@ The next section dives deep into practical tips for specific topics of algorithm
 - Check for sequence out of bounds.
 - Be mindful about slicing or concatenating sequences in your code. Typically, slicing and concatenating sequences require O(n) time. Use start and end indices to demarcate a subarray/substring where possible.
 - Sometimes you can traverse the sequence from the right rather than from the left.
-- Master the sliding window technique.
-  - https://discuss.leetcode.com/topic/30941/here-is-a-10-line-template-that-can-solve-most-substring-problems)
+- Master the [sliding window technique](https://discuss.leetcode.com/topic/30941/here-is-a-10-line-template-that-can-solve-most-substring-problems) that applies to many substring/subarray problems.
 
 ## Array
 
@@ -153,7 +152,7 @@ The next section dives deep into practical tips for specific topics of algorithm
 - [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 - [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
 - [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
-- [Maximum Subarray](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
+- [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 - [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
 - [3Sum](https://leetcode.com/problems/3sum/)
 
@@ -178,6 +177,7 @@ The next section dives deep into practical tips for specific topics of algorithm
 
 - Usually used to solve optimization problems.
 - Sometimes you do not need to store the whole DP table in memory, the last two values or the last two rows of the matrix will suffice.
+- TODO
 
 ##### Questions
 
@@ -195,15 +195,44 @@ The next section dives deep into practical tips for specific topics of algorithm
 
 ## Geometry
 
-- When comparing euclidean distance between two points, use dx<sup>2</sup> + dy<sup>2</sup>. It is unnecessary to square root the value.
+- When comparing euclidean distance between two pairs of points, using dx<sup>2</sup> + dy<sup>2</sup> is sufficient. It is unnecessary to square root the value.
 - To find out if two circles overlap, check that the distance between the two centers of the circles is less than the sum of their radii.
 
 ## Graph
 
-- BFS.
-- DFS.
-- Topological sort.
-- Dijkstra's algorithm.
+- Corner cases:
+  - Empty graph.
+  - Graph with one or two nodes.
+  - Disjoint graphs.
+- Be familiar with the various graph representations, graph search algorithms and their time and space complexities.
+- You can be given a list of edges and tasked to build your own graph from the edges to perform a traversal on. The common graph representations are:
+  - Adjacency matrix.
+  - Adjacency list.
+  - Hashmap of hashmaps.
+- Graph search algorithms:
+  - **Common** - Breadth-first Search, Depth-first Search
+  - **Uncommon** - Topological Sort, Dijkstra's algorithm
+  - **Rare** - Bellman-Ford algorithm, Floyd-Warshall algorithm, Prim's algorithm, Kruskal's algorithm
+- In coding interviews, graphs are commonly represented as 2-D matrices where cells are the nodes and each cell can traverse to its adjacent cells (up/down/left/right), hence it is important that you be familiar with traversing a 2-D matrix. When recursively traversing the matrix, always ensure that your next position is within the boundary of the matrix. More tips for doing depth-first searches on a matrix can be found [here](https://discuss.leetcode.com/topic/66065/python-dfs-bests-85-tips-for-all-dfs-in-matrix-question/). A simple template for doing depth-first searches on a matrix goes like this:
+
+```py
+rows, cols = len(matrix), len(matrix[0])
+visited = set()
+directions = ((0, 1), (0, -1), (1, 0), (-1, 0))
+def dfs(i, j):
+  if (i, j) in visited:
+    return
+  visited.add((i, j))
+  for direction in directions:
+    next_i, next_j = i + direction[0], j + direction[1]
+    if 0 <= next_i < rows and 0 <= next_j < cols: # Check boundary
+      # Add any other checking here ^
+      dfs(next_i, next_j)
+
+for i, row in enumerate(matrix):
+  for j, col in enumerate(row):
+    dfs(i, j)
+```
 
 ##### Questions
 
@@ -211,8 +240,13 @@ The next section dives deep into practical tips for specific topics of algorithm
 - [Course Schedule](https://leetcode.com/problems/course-schedule/)
 - [Alien Dictionary](https://leetcode.com/problems/alien-dictionary/)
 - [Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/)
+- [Number of Islands](https://leetcode.com/problems/number-of-islands/)
 - [Graph Valid Tree](https://leetcode.com/problems/graph-valid-tree/)
 - [Number of Connected Components in an Undirected Graph](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/)
+
+## Interval
+
+TODO
 
 ## Linked List
 
@@ -262,19 +296,38 @@ The next section dives deep into practical tips for specific topics of algorithm
   - Empty matrix. Check that none of the arrays are 0 length.
   - 1 x 1 matrix.
   - Matrix with only one row or column.
-- For questions involving traversal, you almost always want to make a copy of the matrix with the same dimensions that is initialized to empty values. Be familiar with such a routine.
-- Be familiar with 2-D matrix traversal.
-  - Graphs are commonly represented as 2-D matrices where cells are the nodes and each cell can traverse to its adjacent cells (up/down/left/right).
-  - When recursively traversing the matrix, always ensure that your next position is within the boundary of the matrix.
-  - https://leetcode.com/problems/pacific-atlantic-water-flow/#/solutions
+- For questions involving traversal or dynamic programming, you almost always want to make a copy of the matrix with the same dimensions that is initialized to empty values to store the visited state or dynamic programming table. Be familiar with such a routine:
+
+```py
+rows, cols = len(matrix), len(matrix[0])
+copy = [[0 for _ in range(cols)] for _ in range(rows)]
+```
+
 - Many grid-based games can be modeled as a matrix, such as Tic-Tac-Toe, Sudoku, Crossword, Connect 4, Battleship, etc. It is not uncommon to be asked to verify the winning condition of the game. For games like Tic-Tac-Toe, Connect 4 and Crosswords, where verification has to be done vertically and horizontally, one trick is to write code to verify the matrix for the horizontal cells, transpose the matrix and reuse the logic for horizontal verification to verify originally vertical cells (which are now horizontal).
+- Transposing a matrix in Python is simply:
+
+```py
+transposed_matrix = zip(*matrix)
+```
 
 ##### Questions
 
-- [Number of Islands](https://leetcode.com/problems/number-of-islands/)
 - [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/)
 - [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)
 - [Rotate Image](https://leetcode.com/problems/rotate-image/)
+- [Word Search](https://leetcode.com/problems/word-search/)
+
+## Recursion
+
+- Always define a base case so that your recursion will end.
+- Useful for permutation and tree questions.
+- Recursion implicitly use a stack. Hence all recursive approaches can be rewritten by using a stack.
+- Beware of cases where the recursion level goes too deep (in Python the default limit is 1000).
+- Recursion will never be O(1) space complexity because a stack is involved. [Tail-call optimization](https://stackoverflow.com/questions/310974/what-is-tail-call-optimization) can be used to save on the space needed.
+
+## Searching and Sorting
+
+- TODO
 
 ## String
 
@@ -284,7 +337,7 @@ The next section dives deep into practical tips for specific topics of algorithm
 - Ask about input character set and case sensitivity. Usually the characters are limited to lower case Latin characters, i.e. a-z.
 - When you need to compare strings where the order isn't important (like anagram), you may consider using a hash map as a counter.
 - If you need to keep a counter of characters, a common mistake to make is to say that the space complexity required for the counter is O(n). The space required for a counter is O(1) not O(n), because the upper bound is the range of characters, which is usually a fixed constant, typically 26 when the input set is just lower case Latin characters.
-- Can I use some common data structure that can look up strings efficiently?
+- Common data structure for looking up strings efficiently:
   - [Trie / Prefix Tree](https://www.wikiwand.com/en/Trie)
   - [Suffix Tree](https://www.wikiwand.com/en/Suffix_tree)
 - Common string algorithms:
@@ -307,9 +360,8 @@ for c in set(word):
 
 - Determine if two strings are anagrams:
   - Sorting both strings should produce the same resulting string.
-  - If we map each character to a prime number and the whole string is mapped to the multiples of all the prime numbers of its characters, anagrams should have the same multiple.
+  - If we map each character to a prime number and we multiply each mapped number together, anagrams should have the same multiple (prime factor decomposition).
   - Frequency counting of characters will help to determine if two strings are anagrams.
-- When the question is about anagrams, you can usually use a hash map as the order does not matter.
 
 #### Palindrome
 
@@ -331,15 +383,14 @@ for c in set(word):
 
 ##### Questions
 
+- [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+- [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/description/)
+- [Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/)
+- [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
+- [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
+- [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
+
 - http://www.geeksforgeeks.org/string-data-structure/
-
-## Recursion
-
-- Always define a base case so that your recursion will end.
-- Useful for permutation and tree questions.
-- Recursion implicitly use a stack. Hence all recursive approaches can be rewritten by using a stack.
-- Beware of cases where the recursion level goes too deep (in Python the default limit is 1000).
-- Recursion will never be O(1) space complexity because a stack is involved. [Tail-call optimization](https://stackoverflow.com/questions/310974/what-is-tail-call-optimization) can be used to save on the space needed.
 
 ## Tree
 
@@ -348,6 +399,7 @@ for c in set(word):
   - Single node.
   - Two nodes.
   - Very skewed tree (like a linked list).
+- A tree is an undirected, connected, acyclic graph.
 - Recursion is a common approach for trees. When you notice the subtree problem can be used to solve the whole problem, you should try recursion.
 - When using recursion, always remember to check for the base case, usually where the node is `null`.
 - When you are asked to traverse a tree by level, use depth-first search.
@@ -357,13 +409,38 @@ for c in set(word):
 
 **Binary Tree**
 
-- In-order traversal of a binary tree is insufficient to uniquely serialize a tree. Pre-order/post-order traversal is also required.
+- In-order traversal of a binary tree is insufficient to uniquely serialize a tree. Pre-order or post-order traversal is also required.
 
 **Binary Search Tree**
 
 - In-order traversal will give you all elements in order.
 
-**Heaps**
+##### Questions
+
+- [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+- [Same Tree](https://leetcode.com/problems/same-tree/)
+- [Invert/Flip Binary Tree](https://leetcode.com/problems/invert-binary-tree/)
+- [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
+- [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
+- [Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
+- [Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/)
+- [Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+- [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
+- [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)
+- [Lowest Common Ancestor of BST](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
+
+## Trie
+
+- TODO
+- https://leetcode.com/articles/implement-trie-prefix-tree/
+
+##### Questions
+
+- [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree)
+- [Word Search II](https://leetcode.com/problems/word-search-ii/)
+- [Add and Search Word](https://leetcode.com/problems/add-and-search-word-data-structure-design)
+
+## Heap
 
 - A Heap is a specialized tree based structure data structure that satisfies the heap property: if A is a parent node of B, then the key (the value) of node A is ordered with respect to the key of node B with the same ordering applying across the entire heap.
 - A heap can be classified further as either a max heap or a min heap.
@@ -372,15 +449,9 @@ for c in set(word):
 
 ##### Questions
 
-- [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
-- [Same Tree](https://leetcode.com/problems/same-tree/)
-- [Invert/Flip Binary Tree](https://leetcode.com/problems/invert-binary-tree/)
-- [Lowest Common Ancestor of BST](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
-- [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
-- [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
-- [Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
-- [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)
-- [Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/)
+- [Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
+- [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
+- [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
 
 ###### References
 
