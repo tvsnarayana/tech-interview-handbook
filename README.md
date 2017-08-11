@@ -14,7 +14,6 @@ While there are many awesome books like Cracking the Coding Interview and reposi
   - Questions categorized by topic and company. Currently contains questions by Airbnb, Facebook, Lyft and Palantir.
   - **HELP WANTED** - Would like help in adding Google, Amazon, Microsoft and Apple questions!
 - [Design Questions](design)
-- [Domain-specific Questions](domain)
 - [Front End Study Notes](front-end)
   - Summarized notes on the various aspects of front end.
   - [Front End Job Interview Questions and Answers](front-end/interview-questions.md) ⭐
