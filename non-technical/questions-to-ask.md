@@ -24,6 +24,7 @@ Here are some good questions to ask at the end of the interview, extracted from 
 - Does the company culture encourage entrepreneurship? Could you give me any specific examples?
 - What was something you wish someone would have told you before you joined?
 - What is unique about working at this company that you have not experienced elsewhere?
+- What does the company do to nurture and train its employees?
 
 ## HR
 
