@@ -28,35 +28,12 @@ sub.release(); // `sub` is the reference returned by `subscribe` above.
 
 class Emitter {
     constructor() {
-        this.events = {};
     }
 
-    subscribe(eventName, callback) {
-        if (!this.events[eventName]) {
-            this.events[eventName] = new Map();
-        }
-        const events = this.events;
-        const subscriber = {
-            release: function () {
-                events[eventName].delete(this);
-                // No more subscriptions for that event. Delete that eventName from events.
-                if (!events[eventName].size) {
-                    delete events[eventName];
-                }
-            },
-        };
-        this.events[eventName].set(subscriber, callback);
-        return subscriber;
+    subscribe() {
     }
 
-    emit(eventName, ...parameters) {
-        const callbacks = this.events[eventName];
-        if (!callbacks) {
-            return;
-        }
-        callbacks.forEach(callback => {
-            callback(...parameters);
-        });
+    emit() {
     }
 }
 
