@@ -328,10 +328,10 @@ transposed_matrix = zip(*matrix)
 ## Recursion
 
 - Always define a base case so that your recursion will end.
-- Useful for permutation and tree questions.
-- Recursion implicitly use a stack. Hence all recursive approaches can be rewritten by using a stack.
-- Beware of cases where the recursion level goes too deep (in Python the default limit is 1000).
-- Recursion will never be O(1) space complexity because a stack is involved. [Tail-call optimization](https://stackoverflow.com/questions/310974/what-is-tail-call-optimization) can be used to save on the space needed.
+- Useful for permutation and tree-based questions.
+- Recursion implicitly use a stack. Hence all recursive approaches can be rewritten iteratively using a stack.
+- Beware of cases where the recursion level goes too deep and causes a stack overflow (in Python the default limit is 1000).
+- Recursion will never be O(1) space complexity because a stack is involved. [Tail-call optimization](https://stackoverflow.com/questions/310974/what-is-tail-call-optimization) can be used to save on the space needed, so do find out if your chosen language supports tail-call optimization.
 
 ## Searching and Sorting
 
@@ -343,7 +343,7 @@ transposed_matrix = zip(*matrix)
 - Corner cases:
   - Strings with only one distinct character.
 - Ask about input character set and case sensitivity. Usually the characters are limited to lower case Latin characters, i.e. a-z.
-- When you need to compare strings where the order isn't important (like anagram), you may consider using a hash map as a counter.
+- When you need to compare strings where the order isn't important (like anagram), you may consider using a hash map as a counter. If your language has a built-in `Counter` class like Python, use that instead.
 - If you need to keep a counter of characters, a common mistake to make is to say that the space complexity required for the counter is O(n). The space required for a counter is O(1) not O(n), because the upper bound is the range of characters, which is usually a fixed constant, typically 26 when the input set is just lower case Latin characters.
 - Common data structure for looking up strings efficiently:
   - [Trie / Prefix Tree](https://www.wikiwand.com/en/Trie)
@@ -397,7 +397,6 @@ for c in set(word):
 - [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
 - [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
 - [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
-
 - http://www.geeksforgeeks.org/string-data-structure/
 
 ## Tree
