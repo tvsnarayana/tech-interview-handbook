@@ -246,7 +246,15 @@ for i, row in enumerate(matrix):
 
 ## Interval
 
-TODO
+- Interval questions are questions where you are given an array of two-element arrays, where the two values in the array represent a start and end value. They are considered part of the array questions family but they involve some common techniques so they are in this special section on their own.
+- TODO
+
+##### Questions
+
+- [Insert Interval](https://leetcode.com/problems/insert-interval/)
+- [Merge Intervals](https://leetcode.com/problems/merge-intervals/)
+- [Meeting Rooms](https://leetcode.com/problems/meeting-rooms/) and [Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/)
+- [Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/)
 
 ## Linked List
 
