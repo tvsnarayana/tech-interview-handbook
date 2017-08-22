@@ -48,6 +48,7 @@ Here are some good questions to ask at the end of the interview, extracted from 
 - **What is the most fulfilling/exciting/technically complex project that you've worked on here so far?**
 - Was there a time where you messed up and how was it handled?
 - How would you see yourself growing at this company in the next few years?
+- **How do you train/ramp up engineers who are new to the team?**
 
 ## Attrition
 

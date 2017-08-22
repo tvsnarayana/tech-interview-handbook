@@ -9,6 +9,8 @@ Behavioural
 
 ## Airbnb
 
+While loving to travel or appreciating our growth may be good answers, try to demonstrate the deep connection you have with the product.
+
 - What does it mean to be you belong anywhere?
 - What large problems in the world would you solve today?
 - Why do you like Airbnb?
@@ -29,6 +31,9 @@ Behavioural
 - How did you work with senior management on large projects as well as multiple internal teams?
 - Tell me about a time you had to give someone terrible news.
 - If you were a gerbil, which gerbil would you be?
+- What excites you about the company?
+- How does Airbnb impact our guests and hosts?
+- What part of our mission resonates the most with you?
 
 ## Amazon
 
@@ -47,19 +52,21 @@ Behavioural
 
 ## Facebook
 
-- Why do you want to work at Facebook?
+- Why do you want to work at Facebook? What kind of impact would you like to have here?
 - Why do you want to work on a front end position?
 - Tell me about a problem you had and how you solved it?
-- How do you tackle challenges? Name a difficult challenge you faced while working on a project.
+- How do you tackle challenges? Name a difficult challenge you faced while working on a project, how you overcame it, and what you learned.
 - Tell me about a conflict you had at work and how you dealt with it?
 - Are you a designer or developer? You can't possibly be both. It's incomprehensible.
 - What are you excited about?
 – Imagine it is your first day here at Facebook. What do you want to work on? What features would you improve on?
-– Why are you interested in Facebook? Know about our technical environment, projects, challenges, etc. and what would you passionate about working on!
+– Why are you interested in Facebook? Know about our technical environment, projects, challenges, etc. and what would you passionate about working on?
 – What are the most interesting projects you have worked on and how might they be relevant to the Facebook environment?
 – What are some of the biggest professional challenges you have faced, and how did you overcome them?
 - Tell me about a time in which you had a conflict and needed to influence somebody else.
 - Tell me about a time you had a disagreement with your manager.
+- What have you been working on in the past few years?
+- Talk about a project you are most passionate about, or one where you did your best work.
 
 ## Hired
 
