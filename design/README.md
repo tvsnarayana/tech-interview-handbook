@@ -89,6 +89,12 @@ Source: https://github.com/jwasham/coding-interview-university#system-design-sca
 - Design an Internationalization System.
 - Rebuild Twitter from the ground up.
 
+## Asana
+
+- Design 2048.
+- Design a Twitter feed API.
+- Design a relational schema for an online RSS reader.
+
 ## Dropbox
 
 - Design a Hit counter. Implement methods to track a hit as well as once to return the hit count for the last 5 minutes.

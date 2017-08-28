@@ -10,6 +10,10 @@ Sorting and Searching
 - Search for an element in a sorted and rotated array.
   - [Source](http://blog.gainlo.co/index.php/2017/01/12/rotated-array-binary-search/)
 
+## Asana
+
+- Sort a list where each element is no more than k positions away from its sorted position.
+
 ## Facebook
 
 - If you have `N` revisions of a program, write a program that will find and return the first bad revision given a `isBad(revision i)` function.

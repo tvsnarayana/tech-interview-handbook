@@ -16,6 +16,7 @@ discover corner cases you might have missed out or even lead you towards the opt
 - [Linked List](linked-list.md)
 - [Math](math.md)
 - [Matrix](matrix.md)
+- [Object-Oriented Programming](oop.md)
 - [Permutation](permutation.md)
 - [Queue](queue.md)
 - [Sorting and Searching](sorting-searching.md)

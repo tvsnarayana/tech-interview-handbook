@@ -13,6 +13,10 @@ Tree
 - Given a binary tree and two nodes, how to find the common ancestor of the two nodes?
   - [Source](http://blog.gainlo.co/index.php/2016/07/06/lowest-common-ancestor/)
 
+## Asana
+
+- How do you check if a binary tree is a BST?
+
 ## Dropbox
 
 - Print the nodes in an n-ary tree level by level, one printed line per level.

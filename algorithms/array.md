@@ -21,6 +21,11 @@ Arrays
 ******
 ```
 
+## Asana
+
+- Given an array and an index, find the product of the elements of the array except the element at that index.
+- Given a set of rectangles represented by a height and an interval along the y-axis, determine the size of its union.
+
 ## Dropbox
 
 - Given 2 separate arrays, write a method to find the values that exist in both arrays and return them.
