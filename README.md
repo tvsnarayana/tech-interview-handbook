@@ -11,7 +11,7 @@ While there are many awesome books like Cracking the Coding Interview and reposi
 ## Contents
 
 - [Algorithms Questions](algorithms)
-  - Questions categorized by topic and company. Currently contains questions by Airbnb, Asana, Facebook, Lyft and Palantir.
+  - Questions categorized by topic and company. Currently contains questions by Airbnb, Asana, Dropbox, Facebook, Lyft and Palantir.
   - **HELP WANTED** - Would like help in adding Google, Amazon, Microsoft and Apple questions!
 - [Design Questions](design)
 - [Domain-specific Questions](domain)

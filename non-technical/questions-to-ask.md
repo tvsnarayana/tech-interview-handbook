@@ -14,7 +14,7 @@ Here are some good questions to ask at the end of the interview, extracted from 
 
 - What was your best moment so far at the company?
 - What do you like most about working here?
-- **What is the most frustrating part of working here?**
+- **What is the most frustrating part about working here?**
 - **How will the work I will be doing contribute to the organization's mission?**
 - How are you improving diversity?
 - When you were last interviewing, what were some of your other options, and what made you choose this company?

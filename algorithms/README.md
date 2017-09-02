@@ -205,11 +205,13 @@ The next section dives deep into practical tips for specific topics of algorithm
   - Empty graph.
   - Graph with one or two nodes.
   - Disjoint graphs.
+  - Graph with cycles.
 - Be familiar with the various graph representations, graph search algorithms and their time and space complexities.
 - You can be given a list of edges and tasked to build your own graph from the edges to perform a traversal on. The common graph representations are:
   - Adjacency matrix.
   - Adjacency list.
   - Hashmap of hashmaps.
+- Some questions look like they are trees but they are actually graphs. In that case you will have to handle cycles and keep a set of visited nodes.
 - Graph search algorithms:
   - **Common** - Breadth-first Search, Depth-first Search
   - **Uncommon** - Topological Sort, Dijkstra's algorithm
