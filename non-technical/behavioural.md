@@ -1,8 +1,17 @@
 Behavioural
 ==
 
+Learn the [STAR](https://en.wikipedia.org/wiki/Situation,_task,_action,_result) format. From Wikipedia:
+
+- **Situation** - The interviewer wants you to present a recent challenge and situation in which you found yourself.
+- **Task** - What were you required to achieve? The interviewer will be looking to see what you were trying to achieve from the situation. Some performance development methods[1] use “Target” rather than “Task”. Job interview candidates who describe a “Target” they set themselves instead of an externally imposed “Task” emphasize their own intrinsic motivation to perform and to develop their performance.
+- **Action** - What did you do? The interviewer will be looking for information on what you did, why you did it and what the alternatives were.
+- **Results** - What was the outcome of your actions? What did you achieve through your actions and did you meet your objectives? What did you learn from this experience and have you used this learning since?
+
 ## General
 
+- Why do you want to work for X company?
+- Tell me about a time where you had a conflict with a co-worker.
 - What project are you currently working on?
 - What is the most challenging aspect of your current project?
 - What was the most difficult bug that you fixed in the past 6 months?
@@ -38,7 +47,6 @@ While loving to travel or appreciating our growth may be good answers, try to de
 ## Amazon
 
 - How do you deal with a failed deadline?
-- Use [STAR](https://www.wikiwand.com/en/Situation,_Task,_Action,_Result) format.
 - Why do you want to work for Amazon?
 - Talked about a situation where you had a conflict with a teammate.
 - In my professional experience have you worked on something without getting approval from your manager?
