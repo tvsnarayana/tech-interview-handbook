@@ -697,7 +697,17 @@ As a personal habit, I never leave my variables undeclared or unassigned. I will
 
 #### What is a closure, and how/why would you use one?
 
-TODO
+A closure is the combination of a function and the lexical environment within which that function was declared. The word "lexical" refers to the fact that lexical scoping uses the location where a variable is declared within the source code to determine where that variable is available. Closures are functions that have access to the outer (enclosing) function’s variables—scope chain even after the outer function has returned.
+
+**Why would you use one?**
+
+- Data privacy / emulating private methods with closures. Commonly used in the [module pattern](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript).
+- [Partial applications or currying](https://medium.com/javascript-scene/curry-or-partial-application-8150044c78b8#.l4b6l1i3x).
+
+###### References
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+- https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36
 
 #### What's a typical use case for anonymous functions?
 
@@ -734,7 +744,11 @@ console.log(double); // [2, 4, 6]
 
 #### How do you organize your code? (module pattern, classical inheritance?)
 
-TODO
+In the past, I used Backbone for my models which encourages a more OOP approach, creating Backbone models and attaching methods to them.
+
+The module pattern is still great, but these days, I use the Flux architecture based on React/Redux which encourages a single-directional functional programming approach instead. I would represent my app's models using plain objects and write utility pure functions to manipulate these objects. State is manipulated using actions and reducers like in any other Redux application.
+
+I avoid using classical inheritance where possible. When and if I do, I stick to [these rules](https://medium.com/@dan_abramov/how-to-use-classes-and-sleep-at-night-9af8de78ccb4).
 
 #### What's the difference between host objects and native objects?
 
@@ -810,19 +824,100 @@ There are some answers online that explain `document.write()` is being used in a
 
 #### What's the difference between feature detection, feature inference, and using the UA string?
 
-TODO
+**Feature Detection**
+
+Feature detection involves working out whether a browser supports a certain block of code, and running different code dependent on whether it does (or doesn't), so that the browser can always provide a working experience rather crashing/erroring in some browsers. For example:
+
+```js
+if ('geolocation' in navigator) {
+  // Can use navigator.geolocation
+} else {
+  // Handle lack of feature
+}
+```
+
+[Modernizr](https://modernizr.com/) is a great library to handle feature detection.
+
+**Feature Inference**
+
+Feature inference checks for a feature just like feature detection, but uses another function because it assumes it will also exist, e.g.:
+
+```js
+if (document.getElementsByTagName) {
+    element = document.getElementById(id);
+}
+```
+
+This is not really recommended. Feature detection is more foolproof.
+
+**UA String**
+
+This is a browser-reported string that allows the network protocol peers to identify the application type, operating system, software vendor or software version of the requesting software user agent. It can be accessed via `navigator.userAgent`. However, the string is tricky to parse and can be spoofed. For example, Chrome reports both as Chrome and Safari. So to detect Safari you have to check for the Safari string and the absence of the Chrome string. Avoid this method.
+
+###### References
+
+- https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection
+- https://stackoverflow.com/questions/20104930/whats-the-difference-between-feature-detection-feature-inference-and-using-th
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent
 
 #### Explain Ajax in as much detail as possible.
 
-TODO
+Ajax (asynchronous JavaScript and XML") is a set of web development techniques using many web technologies on the client side to create asynchronous web applications. With Ajax, web applications can send data to and retrieve from a server asynchronously (in the background) without interfering with the display and behavior of the existing page. By decoupling the data interchange layer from the presentation layer, Ajax allows for web pages, and by extension web applications, to change content dynamically without the need to reload the entire page. In practice, modern implementations commonly substitute JSON for XML due to the advantages of being native to JavaScript.
+
+The `XMLHttpRequest` API is frequently used for the asynchronous communication or these days, the `fetch` API.
+
+###### References
+
+- https://en.wikipedia.org/wiki/Ajax_(programming)
+- https://developer.mozilla.org/en-US/docs/AJAX
 
 #### What are the advantages and disadvantages of using Ajax?
 
-TODO
+**Advantages**
+
+- Better interactivity. New content from the server can be changed dynamically without the need to reload the entire page.
+- Reduce connections to the server since scripts and stylesheets only have to be requested once.
+- State can be maintained on a page. JavaScript variables and DOM state will persist because the main container page was not reloaded.
+- Basically most of the advantages of an SPA.
+
+**Disadvantages**
+
+- Dynamic webpages are harder to bookmark.
+- Does not work if JavaScript has been disabled in the browser.
+- Some webcrawlers do not execute JavaScript and would not see content that has been loaded by JavaScript.
+- Basically most of the disadvantages of an SPA.
 
 #### Explain how JSONP works (and how it's not really Ajax).
 
-TODO
+JSONP (JSON with Padding) is a method commonly used to bypass the cross-domain policies in web browsers because Ajax requests from the current page to a cross-origin domain is not allowed.
+
+JSONP works by making a request to a cross-origin domain via a `<script>` tag and usually with a `callback` query parameter, for example: `https://example.com?callback=printData`. The server will then wrap the data within the a function called `printData` and return it to the client.
+
+```html
+<!-- https://mydomain.com -->
+<script>
+function printData(data) {
+  console.log(`My name is ${data.name}!`);
+}
+</script>
+
+<script src="https://example.com?callback=printData"></script>
+```
+
+```js
+// File loaded from https://example.com?callback=printData
+printData({ name: 'Yang Shun' });
+```
+
+The client has to have the `printData` function in its global scope and the function will be executed by the client when the response from the cross-origin domain is received.
+
+JSONP can be unsafe and has some security implications. As JSONP is really JavaScript, it can do everything else JavaScript can do, so you need to trust the provider of the JSONP data.
+
+These days, [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) is the recommended approach and JSONP is seen as a hack.
+
+###### References
+
+- https://stackoverflow.com/a/2067584/1751946
 
 #### Have you ever used JavaScript templating? If so, what libraries have you used?
 
@@ -943,7 +1038,11 @@ console.log(a == undefined); // true
 
 #### Explain the same-origin policy with regards to JavaScript.
 
-TODO
+The same-origin policy prevents JavaScript from making requests across domain boundaries. An origin is defined as a combination of URI scheme, hostname, and port number. This policy prevents a malicious script on one page from obtaining access to sensitive data on another web page through that page's Document Object Model.
+
+###### References
+
+- https://en.wikipedia.org/wiki/Same-origin_policy
 
 #### Make this work:
 
@@ -1017,7 +1116,15 @@ Every script has access to the global scope, and if everyone is using the global
 
 #### Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
 
-TODO
+The `load` event fires at the end of the document loading process. At this point, all of the objects in the document are in the DOM, and all the images, scripts, links and sub-frames have finished loading.
+
+The DOM event `DOMContentLoaded` will fire after the DOM for the page has been constructed, but do not wait for other resources to finish loading. This is preferred in certain cases when you do not need the full page to be loaded before initializing.
+
+TODO.
+
+###### References
+
+- https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload
 
 #### Explain what a single page app is and how to make one SEO-friendly.
 
@@ -1048,11 +1155,26 @@ The downsides:
 
 #### What is the extent of your experience with Promises and/or their polyfills?
 
-TODO
+Possess working knowledge of it. A promise is an object that may produce a single value some time in the future: either a resolved value, or a reason that it’s not resolved (e.g., a network error occurred). A promise may be in one of 3 possible states: fulfilled, rejected, or pending. Promise users can attach callbacks to handle the fulfilled value or the reason for rejection.
+
+Some common polyfills are `$.deferred`, Q and Bluebird but not all of them comply to the specification. ES2015 supports Promises out of the box and polyfills are typically not needed these days.
+
+###### References
+
+- https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261
 
 #### What are the pros and cons of using Promises instead of callbacks?
 
-TODO
+**Pros**
+
+- Avoid callback hell which can be unreadable.
+- Makes it easy to write sequential asynchronous code that is readable with `.then()`.
+- Makes it easy to write parallel asynchronous code with `Promise.all()`.
+
+**Cons**
+
+- Slightly more complex code (debatable).
+- In older browsers where ES2015 is not supported, you need to load a polyfill in order to use it.
 
 #### What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
 
@@ -1076,13 +1198,24 @@ Disadvantages:
 
 Practically, ES2015 has vastly improved JavaScript and made it much nicer to write. I don't really see the need for CoffeeScript these days.
 
-#### References
+###### References
 
 - https://softwareengineering.stackexchange.com/questions/72569/what-are-the-pros-and-cons-of-coffeescript
 
 #### What tools and techniques do you use debugging JavaScript code?
 
-TODO
+- React and Redux
+  - [React Devtools](https://github.com/facebook/react-devtools)
+  - [Redux Devtools](https://github.com/gaearon/redux-devtools)
+- JavaScript
+  - [Chrome Devtools](https://hackernoon.com/twelve-fancy-chrome-devtools-tips-dc1e39d10d9d)
+  - `debugger` statement
+  - Good old `console.log` debugging
+
+###### References
+
+- https://hackernoon.com/twelve-fancy-chrome-devtools-tips-dc1e39d10d9d
+- https://raygun.com/blog/javascript-debugging/
 
 #### What language constructions do you use for iterating over object properties and array items?
 
@@ -1109,7 +1242,9 @@ TODO
 
 #### Explain the difference between synchronous and asynchronous functions.
 
-TODO
+Synchronous functions are blocking while asynchronous functions are not. In synchronous functions, statements complete before the next statement is run. In this case the program is evaluated exactly in order of the statements and execution of the program is paused if one of the statements take a very long time.
+
+Asynchronous functions usually accept a callback as a parameter and execution continues on the next line immediately after the asynchronous function is invoked. The callback is only invoked when the asynchronous operation is complete and the call stack is empty. Heavy duty operations such as loading data from a web server or querying a database should be done asynchronously so that the main thread can continue executing other operations instead of blocking until that long operation to complete (in the case of browsers, the UI will freeze).
 
 #### What is event loop? What is the difference between call stack and task queue?
 
